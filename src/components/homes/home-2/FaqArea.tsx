@@ -1,19 +1,16 @@
 import { useEffect } from "react";
-
- 
+import FAQQuestion from "../../reusable/FAQQuestion";
 
 const FaqArea = ({ style_2 }: any) => {
-
-    useEffect(() => {
-      if (typeof window !== "undefined") {
-        import("bootstrap/dist/js/bootstrap.bundle.min.js");
-      }
-    }, []);
-
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      import("bootstrap/dist/js/bootstrap.bundle.min.js");
+    }
+  }, []);
 
   return (
     <>
-      <div className={`faq-wrapper ${style_2 ? 'bg-secondary' : ''}`}>
+      <div className={`faq-wrapper ${style_2 ? "bg-secondary" : ""}`}>
         <div className="divider"></div>
 
         <div className="container">
@@ -25,10 +22,8 @@ const FaqArea = ({ style_2 }: any) => {
 
               <div className="divider-sm"></div>
 
-
               <div className="faq-image">
                 <img src="/assets/img/bg-img/26.jpg" alt="" />
-
 
                 <div className="faq-info d-flex align-items-center">
                   <h2 className="mb-0">10k+</h2>
@@ -40,81 +35,35 @@ const FaqArea = ({ style_2 }: any) => {
             <div className="col-12 col-lg-6">
               <div className="faq-accordion ps-lg-4">
                 <div className="accordion" id="faqAccordion">
+                  <FAQQuestion
+                    id={1}
+                    question="What is your vision?"
+                    answer="We help small businesses build a strong online presence with simple, effective, and scalable web solutions."
+                  />
 
-                  <div className="accordion-item">
-                    <h2 className="accordion-header">
-                      <button className="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faqQuestion1" aria-expanded="true" aria-controls="faqQuestion1">
-                        What is vision for the future?
-                      </button>
-                    </h2>
-                    <div id="faqQuestion1" className="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                      <div className="accordion-body pt-0">
-                        A business consultant is a professional who provides expert advice and guidance on various
-                        aspects such.
-                      </div>
-                    </div>
-                  </div>
+                  <FAQQuestion
+                    id={2}
+                    question="Do you offer free consultations?"
+                    answer="Yes! We offer a free consultation to understand your needs and suggest the best approach for your website."
+                  />
 
-                  <div className="accordion-item">
-                    <h2 className="accordion-header">
-                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faqQuestion2" aria-expanded="false" aria-controls="faqQuestion2">
-                        Do you offer free resources?
-                      </button>
-                    </h2>
-                    <div id="faqQuestion2" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                      <div className="accordion-body pt-0">
-                        A business consultant is a professional who provides expert advice and guidance on various
-                        aspects such.
-                      </div>
-                    </div>
-                  </div>
+                  <FAQQuestion
+                    id={3}
+                    question="Can you help with website updates and maintenance?"
+                    answer="Absolutely! We provide ongoing support to keep your website running smoothly."
+                  />
 
-                  <div className="accordion-item">
-                    <h2 className="accordion-header">
-                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faqQuestion3" aria-expanded="false" aria-controls="faqQuestion3">
-                        Can help to find investors?
-                      </button>
-                    </h2>
-                    <div id="faqQuestion3" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                      <div className="accordion-body pt-0">
-                        A business consultant is a professional who provides expert advice and guidance on various
-                        aspects such.
-                      </div>
-                    </div>
-                  </div>
+                  <FAQQuestion
+                    id={4}
+                    question="Do you offer e-commerce solutions?"
+                    answer="Yes, we build secure and user-friendly online stores to help you sell your products easily."
+                  />
 
-                  <div className="accordion-item">
-                    <h2 className="accordion-header">
-                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faqQuestion4" aria-expanded="false" aria-controls="faqQuestion4">
-                        Can help to find investors?
-                      </button>
-                    </h2>
-                    <div id="faqQuestion4" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                      <div className="accordion-body pt-0">
-                        A business consultant is a professional who provides expert advice and guidance on various
-                        aspects such.
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="accordion-item">
-                    <h2 className="accordion-header">
-                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faqQuestion5" aria-expanded="false" aria-controls="faqQuestion5">
-                        What services do you offer?
-                      </button>
-                    </h2>
-                    <div id="faqQuestion5" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                      <div className="accordion-body pt-0">
-                        A business consultant is a professional who provides expert advice and guidance on various
-                        aspects such.
-                      </div>
-                    </div>
-                  </div>
+                  <FAQQuestion
+                    id={5}
+                    question="How long does it take to build a website?"
+                    answer="It depends on the project, but a standard website usually takes 1 week."
+                  />
                 </div>
               </div>
             </div>

@@ -3,11 +3,11 @@ const menu_data = [
     id: 1,
     title: "Home",
     link: "/",
-    has_dropdown: true,
-    sub_menus: [
-      { link: "/", title: "Home 01" },
-      { link: "/home-2", title: "Home 02" },
-    ],
+    has_dropdown: false,
+    // sub_menus: [
+    //   { link: "/", title: "Home 01" },
+    //   { link: "/home-2", title: "Home 02" },
+    // ],
   },
   {
     id: 2,
@@ -15,11 +15,6 @@ const menu_data = [
     link: "#",
     has_dropdown: true,
     sub_menus: [
-      {
-        link: "/about-us",
-        title: "About Us",
-        has_inner_dropdown: false,
-      },
       {
         link: "#",
         title: "Service",
@@ -29,15 +24,15 @@ const menu_data = [
           { link: "/service-details", title: "Service Details" },
         ],
       },
-      {
-        link: "#",
-        title: "Authentification",
-        has_inner_dropdown: true,
-        inner_submenu: [
-          { link: "/register", title: "Register" },
-          { link: "/login", title: "Login" },
-        ],
-      },
+      // {
+      //   link: "#",
+      //   title: "Authentification",
+      //   has_inner_dropdown: true,
+      //   inner_submenu: [
+      //     { link: "/register", title: "Register" },
+      //     { link: "/login", title: "Login" },
+      //   ],
+      // },
       {
         link: "/pricing-plan",
         title: "Pricing Plan",
@@ -48,21 +43,21 @@ const menu_data = [
         title: "FAQ",
         has_inner_dropdown: false,
       },
-      {
-        link: "/team",
-        title: "Team",
-        has_inner_dropdown: false,
-      },
-      {
-        link: "/team-details",
-        title: "Team Details",
-        has_inner_dropdown: false,
-      },
-      {
-        link: "/404",
-        title: "404 - Error",
-        has_inner_dropdown: false,
-      },
+      // {
+      //   link: "/team",
+      //   title: "Team",
+      //   has_inner_dropdown: false,
+      // },
+      // {
+      //   link: "/team-details",
+      //   title: "Team Details",
+      //   has_inner_dropdown: false,
+      // },
+      // {
+      //   link: "/404",
+      //   title: "404 - Error",
+      //   has_inner_dropdown: false,
+      // },
     ],
   },
   {
@@ -77,14 +72,20 @@ const menu_data = [
   },
   {
     id: 4,
-    title: "Blog",
-    link: "#",
-    has_dropdown: true,
-    sub_menus: [
-      { link: "/blog", title: "Blog" },
-      { link: "/blog-details", title: "Blog Details" },
-    ],
+    title: "About",
+    link: "/about-us",
+    has_dropdown: false,
   },
+  // {
+  //   id: 4,
+  //   title: "Blog",
+  //   link: "#",
+  //   has_dropdown: true,
+  //   sub_menus: [
+  //     { link: "/blog", title: "Blog" },
+  //     { link: "/blog-details", title: "Blog Details" },
+  //   ],
+  // },
 ];
 
 export default menu_data;
