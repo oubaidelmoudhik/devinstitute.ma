@@ -63,13 +63,13 @@ const HeaderOne = ({ style_2 }: any) => {
                 className="dark-logo"
                 src="/assets/img/core-img/logo.png"
                 alt=""
-                style={{ maxWidth: "50%" }}
+                style={{ maxWidth: "30%" }}
               />
               <img
                 className="light-logo"
                 src="/assets/img/core-img/logo-light.png"
                 alt=""
-                style={{ maxWidth: "50%" }}
+                style={{ maxWidth: "30%" }}
               />
             </Link>
 
@@ -150,7 +150,7 @@ const HeaderOne = ({ style_2 }: any) => {
               </ul>
 
               <div className="d-flex align-items-center">
-                <div className="header-search-btn" id="searchButton">
+                {/* <div className="header-search-btn" id="searchButton">
                   <button className="btn">
                     <svg
                       onClick={() => setSearchOpen(!isSearchOpen)}
@@ -175,7 +175,7 @@ const HeaderOne = ({ style_2 }: any) => {
                       </defs>
                     </svg>
                   </button>
-                </div>
+                </div> */}
 
                 <button
                   id="theme-toggle"
