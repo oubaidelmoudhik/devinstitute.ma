@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import FAQQuestion from "../../reusable/FAQQuestion";
+import { NUM_CLIENTS } from "../../../data/constants";
 
 const FaqArea = ({ style_2 }: any) => {
   useEffect(() => {
@@ -23,10 +24,10 @@ const FaqArea = ({ style_2 }: any) => {
               <div className="divider-sm"></div>
 
               <div className="faq-image">
-                <img src="/assets/img/bg-img/26.jpg" alt="" />
+                <img src="/assets/img/bg-img/faq.png" alt="" />
 
                 <div className="faq-info d-flex align-items-center">
-                  <h2 className="mb-0">30+</h2>
+                  <h2 className="mb-0">{NUM_CLIENTS}+</h2>
                   <p className="mb-0">Clients</p>
                 </div>
               </div>

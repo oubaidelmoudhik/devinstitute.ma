@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { NUM_CLIENTS } from "../../../data/constants";
 
 const HeroArea = () => {
   return (
@@ -35,7 +36,7 @@ const HeroArea = () => {
                     </div>
                   </div>
                   <h6 className="mb-0">
-                    More than 30 <br />
+                    More than {NUM_CLIENTS} <br />
                     trusted customers
                   </h6>
                 </div>

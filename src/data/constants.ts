@@ -1,6 +1,5 @@
-import { link } from "fs";
-
-export const COLORS = {
+export const NUM_CLIENTS: number = 30;
+export const COLORS: object = {
   primaryGreen: "#49a078",
   darkGreen: "#33c1216869ff",
   black: "#1f2421",
@@ -34,7 +33,7 @@ export const COUNTER_DATA = [
       "From landing pages to complex websites, each solution built to get results",
   },
   {
-    count: 30,
+    count: NUM_CLIENTS,
     label: "Satisfied Customers",
     description:
       "Trusted by entrepreneurs and businesses who come back because we get results.",

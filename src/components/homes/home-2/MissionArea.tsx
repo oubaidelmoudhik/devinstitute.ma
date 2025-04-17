@@ -16,7 +16,7 @@ const MissionArea = () => {
           <div className="row g-4 align-items-center">
             <div className="col-12 col-lg-6">
               <div className="mission-vision-img-container">
-                <img src="/assets/img/bg-img/6.jpg" alt="" />
+                <img src="/assets/img/bg-img/missionarea.png" alt="" />
 
                 <div className="experience">
                   <h3 className="mb-0">7+</h3>
