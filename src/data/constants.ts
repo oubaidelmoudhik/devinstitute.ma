@@ -1,3 +1,5 @@
+import { link } from "fs";
+
 export const COLORS = {
   primaryGreen: "#49a078",
   darkGreen: "#33c1216869ff",
@@ -20,7 +22,7 @@ export const LOGO = {
 
 export const COUNTER_DATA = [
   {
-    count: 5,
+    count: 7,
     label: "Years of Experience",
     description:
       "Solid foundation in web development and automation, delivering consistent value since day one.",
@@ -32,7 +34,7 @@ export const COUNTER_DATA = [
       "From landing pages to complex websites, each solution built to get results",
   },
   {
-    count: 15,
+    count: 30,
     label: "Satisfied Customers",
     description:
       "Trusted by entrepreneurs and businesses who come back because we get results.",
@@ -42,3 +44,49 @@ export const COUNTER_DATA = [
 export const IMAGES = {
   underHero: "/assets/img/bg-img/underHero.png",
 };
+
+// projectData.js
+export const PROJECTS = [
+  {
+    title: "Rim Bakhat",
+    technology: "WordPress",
+    link: "https://rimbakhat.com",
+    imgLink: "/assets/img/portfolio/rimbakhat.png",
+  },
+  {
+    title: "Rif Walks",
+    technology: "WordPress",
+    link: "https://rifwalks.com",
+    imgLink: "/assets/img/portfolio/rifwalks.png",
+  },
+  {
+    title: "Blausee Switzerland",
+    technology: "Shopify",
+    link: "https://blauseeswitzerland.com/",
+    imgLink: "/assets/img/portfolio/blausee.png",
+  },
+  {
+    title: "SunnySide Agency",
+    technology: "HTML / CSS",
+    link: "https://oubaidelmoudhik.github.io/Sunnyside-agency-landing-page/",
+    imgLink: "/assets/img/portfolio/sunnyside.png",
+  },
+  {
+    title: "Blue Guide",
+    technology: "React.JS",
+    link: "https://theblueguide.com/",
+    imgLink: "/assets/img/portfolio/blueguide.png",
+  },
+  {
+    title: "Tip Splitter App",
+    technology: "React.JS",
+    link: "https://oubaidelmoudhik.github.io/tip-calculator-app-main/",
+    imgLink: "/assets/img/portfolio/tipsplitter.png",
+  },
+  {
+    title: "Gavilia",
+    technology: "WordPress",
+    link: "https://gavilia.ma/",
+    imgLink: "/assets/img/portfolio/gavilia.png",
+  },
+];

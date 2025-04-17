@@ -49,15 +49,17 @@ const HeroArea = () => {
                   us beyond their first project.
                 </p>
 
-                <Link
-                  to={"/contact"}
+                <a
+                  href={
+                    "https://wa.me/212776932898?text=Bonjour%20!%20Je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20services%20de%20d%C3%A9veloppement%20web.%20Pouvez-vous%20me%20donner%20plus%20d'informations%20%3F"
+                  }
                   className="btn btn-primary wow fadeInUp"
                   data-wow-duration="1000ms"
                   data-wow-delay="1200ms"
                 >
                   <span>Free Consultation</span>
                   <span>Free Consultation</span>
-                </Link>
+                </a>
               </div>
             </div>
           </div>

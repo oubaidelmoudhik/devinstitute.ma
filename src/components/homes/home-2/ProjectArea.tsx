@@ -1,6 +1,7 @@
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ProjectCard from "../../reusable/ProjectCard";
+import { PROJECTS } from "../../../data/constants";
 
 const ProjectArea = () => {
   return (
@@ -93,49 +94,11 @@ const ProjectArea = () => {
               }}
               className="swiper portfolio-swiper"
             >
-              <SwiperSlide className="swiper-slide">
-                <ProjectCard
-                  title={"Rim Bakhat"}
-                  technology={"WordPress"}
-                  link="https://rimbakhat.com"
-                />
-              </SwiperSlide>
-
-              <SwiperSlide className="swiper-slide">
-                <ProjectCard
-                  title={"Blausee Switzerland"}
-                  technology={"Shopify"}
-                  link="https://blauseeswitzerland.com/"
-                />
-              </SwiperSlide>
-
-              <SwiperSlide className="swiper-slide">
-                <ProjectCard
-                  title={"SunnySide Agency"}
-                  technology={"HTML / CSS"}
-                  link="https://oubaidelmoudhik.github.io/Sunnyside-agency-landing-page/"
-                />
-              </SwiperSlide>
-
-              <SwiperSlide className="swiper-slide">
-                <ProjectCard
-                  title={"Blue Guide"}
-                  technology={"React.JS"}
-                  link="https://theblueguide.com/"
-                />
-              </SwiperSlide>
-
-              <SwiperSlide className="swiper-slide">
-                <ProjectCard
-                  title={"Tip Splitter App"}
-                  technology={"React.JS"}
-                  link="https://oubaidelmoudhik.github.io/tip-calculator-app-main/"
-                />
-              </SwiperSlide>
-
-              <SwiperSlide className="swiper-slide">
-                <ProjectCard title={"Gavilia"} technology={"WordPress"} />
-              </SwiperSlide>
+              {PROJECTS.map((project, index) => (
+                <SwiperSlide className="swiper-slide" key={index}>
+                  <ProjectCard {...project} />
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
         </div>

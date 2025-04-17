@@ -2,16 +2,18 @@ interface ProjectCardProps {
   title: string;
   technology: string;
   link?: string;
+  imgLink?: string;
 }
 export default function ProjectCard({
   title,
   technology,
   link = "#",
+  imgLink = "/assets/img/bg-img/20.jpg",
 }: ProjectCardProps) {
   return (
     <>
       <div className="portfolio-card-two">
-        <img src="/assets/img/bg-img/20.jpg" alt="" />
+        <img src={imgLink} alt="" />
 
         <div className="portfolio-overlay-content d-flex align-items-center justify-content-between">
           <a href={link} target="_blank">
