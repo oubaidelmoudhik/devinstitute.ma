@@ -1,4 +1,4 @@
-import { SOCIALS } from "../../data/constants";
+import { LOGO, SOCIALS } from "../../data/constants";
 
 const FooterOne = ({ style_2 }: any) => {
   return (
@@ -13,16 +13,8 @@ const FooterOne = ({ style_2 }: any) => {
             <div className="col-12 col-md-6 col-xl">
               <div className="footer-card">
                 <a href="#">
-                  <img
-                    className="dark-logo"
-                    src="/assets/img/core-img/logo.png"
-                    alt=""
-                  />
-                  <img
-                    className="light-logo"
-                    src="/assets/img/core-img/logo-light.png"
-                    alt=""
-                  />
+                  <img className="dark-logo" src={LOGO.dark} alt="" />
+                  <img className="light-logo" src={LOGO.light} alt="" />
                 </a>
 
                 <p className="mb-0">
@@ -99,16 +91,16 @@ const FooterOne = ({ style_2 }: any) => {
                   <li>
                     <a href="#">SaaS Design</a>
                   </li>
-                  {/* <li>
+                  <li>
                     <a href="#">Webflow Design</a>
-                  </li> */}
+                  </li>
                 </ul>
               </div>
             </div>
 
             <div className="col-12 col-md-6 col-xl">
               <div className="footer-card">
-                <h5 className="mb-0">Resources</h5>
+                {/* <h5 className="mb-0">Resources</h5>
 
                 <ul className="footer-nav">
                   <li>
@@ -123,10 +115,10 @@ const FooterOne = ({ style_2 }: any) => {
                   <li>
                     <a href="#">Pricing Plan</a>
                   </li>
-                  {/* <li>
+                  <li>
                     <a href="#">Blog & News</a>
-                  </li> */}
-                </ul>
+                  </li>
+                </ul> */}
               </div>
             </div>
 

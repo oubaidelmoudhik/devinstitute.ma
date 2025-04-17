@@ -5,7 +5,7 @@ import ProjectCard from "../../reusable/ProjectCard";
 const ProjectArea = () => {
   return (
     <>
-      <div className="projects-wrapper-two">
+      <div className="projects-wrapper-two" id="projects">
         <div className="divider"></div>
 
         <div className="container">

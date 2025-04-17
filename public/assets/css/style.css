@@ -1,9 +1,4 @@
 /* ---------------------
-   [Master Stylesheet]
-   Template Name: Vorix - Creative Digital Agency HTML Template
-   Version: 1.0.0
---------------------- */
-/* ---------------------
    [Table of Contents]
 
    1. Global Elements
@@ -43,7 +38,7 @@
       5.2 Light Version
 --------------------- */
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200..900&display=swap&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 @font-face {
   font-family: "Material Symbols Outlined";
@@ -109,12 +104,16 @@
 }
 /* Global variables */
 :root {
+  /* colors */
   --clr-primary-green: #49a078;
   --clr-dark-green: #216869;
   --clr-black: #1f2421;
   --clr-light-green: #9cc5a1;
   --clr-platinum: #dce1de;
   --clr-off-white: #f6f5f3;
+
+  /* fonts */
+  --ff-text: "Raleway", sans-serif;
 }
 
 /* Reboot */
@@ -127,7 +126,8 @@ body,
 html {
   color: #c8c8cd;
   scroll-behavior: smooth;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: var(--ff-text);
   background-color: var(--clr-black);
   overflow-x: hidden;
 }
@@ -668,7 +668,7 @@ picture.jarallax-img img {
 }
 @media only screen and (min-width: 992px) {
   .header-area .navbar .navbar-brand {
-    margin-right: 3rem;
+    /* margin-right: 3rem; */
   }
 }
 @media only screen and (min-width: 1200px) {

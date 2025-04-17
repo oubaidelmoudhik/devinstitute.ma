@@ -12,11 +12,11 @@ export default function FAQQuestion({
     <div className="accordion-item">
       <h2 className="accordion-header">
         <button
-          className="accordion-button"
+          className="accordion-button collapsed"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target={`#faqQuestion${id}`}
-          aria-expanded="true"
+          aria-expanded="false"
           aria-controls={`faqQuestion${id}`}
         >
           {question}
@@ -24,7 +24,8 @@ export default function FAQQuestion({
       </h2>
       <div
         id={`faqQuestion${id}`}
-        className="accordion-collapse collapse show"
+        // add 'show' classname if wanted to be open by default
+        className="accordion-collapse collapse "
         data-bs-parent="#faqAccordion"
       >
         <div className="accordion-body pt-0">{answer}</div>

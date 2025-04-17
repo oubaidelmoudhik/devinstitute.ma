@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import menu_data from "../../data/menu-data";
 import SearchArea from "../../common/SearchArea";
 import OffCanvas from "../../common/OffCanvas";
+import { LOGO } from "../../data/constants";
 
 const HeaderOne = ({ style_2 }: any) => {
   const [theme, setTheme] = useState(() => {
@@ -61,15 +62,15 @@ const HeaderOne = ({ style_2 }: any) => {
             <Link className="navbar-brand" to="/">
               <img
                 className="dark-logo"
-                src="/assets/img/core-img/logo.png"
+                src={LOGO.dark}
                 alt=""
-                style={{ maxWidth: "30%" }}
+                style={{ maxWidth: "20%" }}
               />
               <img
                 className="light-logo"
-                src="/assets/img/core-img/logo-light.png"
+                src={LOGO.light}
                 alt=""
-                style={{ maxWidth: "30%" }}
+                style={{ maxWidth: "20%" }}
               />
             </Link>
 
@@ -92,7 +93,7 @@ const HeaderOne = ({ style_2 }: any) => {
               }`}
               id="vorixNav"
             >
-              <ul className="navbar-nav navbar-nav-scroll">
+              {/* <ul className="navbar-nav navbar-nav-scroll">
                 {menu_data.map((item, i) => (
                   <li key={i} className="vorix-dd">
                     <Link
@@ -147,7 +148,7 @@ const HeaderOne = ({ style_2 }: any) => {
                     )}
                   </li>
                 ))}
-              </ul>
+              </ul> */}
 
               <div className="d-flex align-items-center">
                 {/* <div className="header-search-btn" id="searchButton">

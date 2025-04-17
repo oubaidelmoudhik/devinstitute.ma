@@ -26,8 +26,8 @@ const FaqArea = ({ style_2 }: any) => {
                 <img src="/assets/img/bg-img/26.jpg" alt="" />
 
                 <div className="faq-info d-flex align-items-center">
-                  <h2 className="mb-0">10k+</h2>
-                  <p className="mb-0">Client Review</p>
+                  <h2 className="mb-0">30+</h2>
+                  <p className="mb-0">Clients</p>
                 </div>
               </div>
             </div>

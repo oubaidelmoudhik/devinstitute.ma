@@ -6,9 +6,9 @@ import ProjectArea from "./ProjectArea";
 import CategoryArea from "./CategoryArea";
 import ProcessArea from "./ProcessArea";
 // import TeamArea from "./TeamArea";
-import PriceArea from "./PriceArea";
+// import PriceArea from "./PriceArea";
 import FaqArea from "./FaqArea";
-import TestimonialArea from "./TestimonialArea";
+// import TestimonialArea from "./TestimonialArea";
 // import BlogArea from "./BlogArea";
 import HeaderOne from "../../../layouts/headers/HeaderOne";
 import FooterOne from "../../../layouts/footers/FooterOne";
@@ -27,8 +27,8 @@ const HomeTwo = () => {
       <ProcessArea />
       {/* <TeamArea /> */}
       <FaqArea />
-      <PriceArea />
-      <TestimonialArea />
+      {/* <PriceArea /> */}
+      {/* <TestimonialArea /> */}
       {/* <BlogArea /> */}
       <FooterOne style_2={true} />
       <BackToTop />
