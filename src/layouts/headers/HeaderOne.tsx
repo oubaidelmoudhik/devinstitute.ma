@@ -30,25 +30,25 @@ const HeaderOne = ({ style_2 }: any) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openCanvas, setOpenCavas] = useState(false);
 
-  const [navTitle, setNavTitle] = useState("");
+  // const [navTitle, setNavTitle] = useState("");
   //openMobileMenu
-  const openMobileMenu = (menu: string) => {
-    if (navTitle === menu) {
-      setNavTitle("");
-    } else {
-      setNavTitle(menu);
-    }
-  };
+  // const openMobileMenu = (menu: string) => {
+  //   if (navTitle === menu) {
+  //     setNavTitle("");
+  //   } else {
+  //     setNavTitle(menu);
+  //   }
+  // };
 
-  const [navTitle2, setNavTitle2] = useState("");
+  // const [navTitle2, setNavTitle2] = useState("");
   //openMobileMenu
-  const openMobileMenu2 = (menu: string) => {
-    if (navTitle2 === menu) {
-      setNavTitle2("");
-    } else {
-      setNavTitle2(menu);
-    }
-  };
+  // const openMobileMenu2 = (menu: string) => {
+  //   if (navTitle2 === menu) {
+  //     setNavTitle2("");
+  //   } else {
+  //     setNavTitle2(menu);
+  //   }
+  // };
 
   return (
     <>

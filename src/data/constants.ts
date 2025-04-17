@@ -1,5 +1,5 @@
 export const NUM_CLIENTS: number = 30;
-export const COLORS: object = {
+export const COLORS = {
   primaryGreen: "#49a078",
   darkGreen: "#33c1216869ff",
   black: "#1f2421",
