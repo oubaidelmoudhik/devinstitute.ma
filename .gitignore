@@ -86,6 +86,7 @@ Thumbs.db
 dist/
 dist-ssr/
 *.local
+build/
 
 # Debug files
 *.log
