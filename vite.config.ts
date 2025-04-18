@@ -17,5 +17,5 @@ export default defineConfig({
   server: {
     open: true,
   },
-  base: "/",
+  // base: "/devinstitute.ma",
 });
