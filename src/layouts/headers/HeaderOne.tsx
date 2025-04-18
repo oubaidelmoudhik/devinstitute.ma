@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import useSticky from "../../hooks/use-sticky";
 import { Link } from "react-router-dom";
 // import menu_data from "../../data/menu-data";
-import SearchArea from "../../common/SearchArea";
+// import SearchArea from "../../common/SearchArea";
 import OffCanvas from "../../common/OffCanvas";
 import { LOGO } from "../../data/constants";
 
