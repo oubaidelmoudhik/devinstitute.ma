@@ -24,7 +24,7 @@ const FaqArea = ({ style_2 }: any) => {
               <div className="divider-sm"></div>
 
               <div className="faq-image">
-                <img src="/assets/img/bg-img/faq.png" alt="" />
+                <img src="/assets/img/bg-img/faq.webp" alt="" />
 
                 <div className="faq-info d-flex align-items-center">
                   <h2 className="mb-0">{NUM_CLIENTS}+</h2>

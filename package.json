@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "optimize-images": "node scripts/optimize-images.js",
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run optimize-images && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -45,9 +46,8 @@
     "eslint-plugin-react-refresh": "^0.4.9",
     "gh-pages": "^6.3.0",
     "globals": "^15.9.0",
-    "typescript": "^5.5.3",
+    "sharp": "^0.34.1",
     "typescript-eslint": "^8.0.1",
-    "vite": "^6.3.2",
-    "vite-plugin-imagemin": "^0.6.1"
+    "vite": "^6.3.2"
   }
 }

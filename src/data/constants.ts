@@ -15,8 +15,8 @@ export const SOCIALS = {
 };
 
 export const LOGO = {
-  light: "/assets/img/core-img/logo-light.png",
-  dark: "/assets/img/core-img/logo.png",
+  light: "/assets/img/core-img/logo-light.webp",
+  dark: "/assets/img/core-img/logo.webp",
 };
 
 export const COUNTER_DATA = [
@@ -41,7 +41,7 @@ export const COUNTER_DATA = [
 ];
 
 export const IMAGES = {
-  underHero: "/assets/img/bg-img/underHero.png",
+  underHero: "/assets/img/bg-img/underHero.webp",
 };
 
 // projectData.js
@@ -50,42 +50,42 @@ export const PROJECTS = [
     title: "Rim Bakhat",
     technology: "WordPress",
     link: "https://rimbakhat.com",
-    imgLink: "/assets/img/portfolio/rimbakhat.png",
+    imgLink: "/assets/img/portfolio/rimbakhat.webp",
   },
   {
     title: "Rif Walks",
     technology: "WordPress",
     link: "https://rifwalks.com",
-    imgLink: "/assets/img/portfolio/rifwalks.png",
+    imgLink: "/assets/img/portfolio/rifwalks.webp",
   },
   {
     title: "Blausee Switzerland",
     technology: "Shopify",
     link: "https://blauseeswitzerland.com/",
-    imgLink: "/assets/img/portfolio/blausee.png",
+    imgLink: "/assets/img/portfolio/blausee.webp",
   },
   {
     title: "SunnySide Agency",
     technology: "HTML / CSS",
     link: "https://oubaidelmoudhik.github.io/Sunnyside-agency-landing-page/",
-    imgLink: "/assets/img/portfolio/sunnyside.png",
+    imgLink: "/assets/img/portfolio/sunnyside.webp",
   },
   {
     title: "Blue Guide",
     technology: "React.JS",
     link: "https://theblueguide.com/",
-    imgLink: "/assets/img/portfolio/blueguide.png",
+    imgLink: "/assets/img/portfolio/blueguide.webp",
   },
   {
     title: "Tip Splitter App",
     technology: "React.JS",
     link: "https://oubaidelmoudhik.github.io/tip-calculator-app-main/",
-    imgLink: "/assets/img/portfolio/tipsplitter.png",
+    imgLink: "/assets/img/portfolio/tipsplitter.webp",
   },
   {
     title: "Gavilia",
     technology: "WordPress",
     link: "https://gavilia.ma/",
-    imgLink: "/assets/img/portfolio/gavilia.png",
+    imgLink: "/assets/img/portfolio/gavilia.webp",
   },
 ];

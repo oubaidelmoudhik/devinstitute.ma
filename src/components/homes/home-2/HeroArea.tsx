@@ -29,8 +29,11 @@ const HeroArea = () => {
                   data-wow-delay="900ms"
                 >
                   <div className="imgs-group">
-                    <img src="/assets/img/bg-img/lumasmallicon.png" alt="" />
-                    <img src="/assets/img/bg-img/blauseesmallicon.png" alt="" />
+                    <img src="/assets/img/bg-img/lumasmallicon.webp" alt="" />
+                    <img
+                      src="/assets/img/bg-img/blauseesmallicon.webp"
+                      alt=""
+                    />
                     <div>
                       <span className="counter">30</span>
                     </div>
