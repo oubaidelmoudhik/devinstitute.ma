@@ -27,7 +27,7 @@ const HeaderOne = ({ style_2 }: any) => {
 
   const { sticky } = useSticky();
   const [isSearchOpen, setSearchOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  // const [menuOpen, setMenuOpen] = useState(false);
   const [openCanvas, setOpenCavas] = useState(false);
 
   // const [navTitle, setNavTitle] = useState("");
