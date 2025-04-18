@@ -26,7 +26,7 @@ const HeaderOne = ({ style_2 }: any) => {
   };
 
   const { sticky } = useSticky();
-  const [isSearchOpen, setSearchOpen] = useState(false);
+  // const [isSearchOpen, setSearchOpen] = useState(false);
   // const [menuOpen, setMenuOpen] = useState(false);
   const [openCanvas, setOpenCavas] = useState(false);
 
@@ -52,11 +52,10 @@ const HeaderOne = ({ style_2 }: any) => {
 
   return (
     <>
-      <header
-        className={`header-area ${sticky && "sticky-on"} ${
+      {/* add ${
           menuOpen ? "mobile-menu-open" : ""
-        }`}
-      >
+        }`  if want to use mobile menu*/}
+      <header className={`header-area ${sticky && "sticky-on"}`}>
         <nav className="navbar navbar-expand-lg">
           <div className="container">
             <Link className="navbar-brand" to="/">
@@ -77,11 +76,10 @@ const HeaderOne = ({ style_2 }: any) => {
               <span className="material-symbols-outlined">view_cozy</span>
             </button> */}
 
-            {/* add collapse & navbar-collapse className if want to hide on mobile */}
-            <div
-              className={` justify-content-end ${menuOpen ? "show" : ""}`}
-              id="vorixNav"
-            >
+            {/* add collapse & navbar-collapse className if want to hide on mobile  
+            and:
+            ${menuOpen ? "show" : ""}*/}
+            <div className={` justify-content-end `} id="vorixNav">
               {/* <ul className="navbar-nav navbar-nav-scroll">
                 {menu_data.map((item, i) => (
                   <li key={i} className="vorix-dd">
@@ -258,7 +256,7 @@ const HeaderOne = ({ style_2 }: any) => {
           </div>
         </nav>
       </header>
-      <SearchArea setSearchOpen={setSearchOpen} isSearchOpen={isSearchOpen} />
+      {/* <SearchArea setSearchOpen={setSearchOpen} isSearchOpen={isSearchOpen} /> */}
       <OffCanvas setOpenCavas={setOpenCavas} openCanvas={openCanvas} />
     </>
   );
