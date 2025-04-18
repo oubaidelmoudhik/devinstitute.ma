@@ -1,5 +1,5 @@
 // import { Link } from "react-router-dom";
-import { COLORS, SOCIALS } from "../data/constants";
+import { COLORS, LOGO, SOCIALS } from "../data/constants";
 
 const OffCanvas = ({ openCanvas, setOpenCavas }: any) => {
   return (
@@ -13,18 +13,8 @@ const OffCanvas = ({ openCanvas, setOpenCavas }: any) => {
       >
         <div className="offcanvas-header">
           <div>
-            <img
-              className="dark-logo"
-              src="/assets/img/core-img/logo.png"
-              alt=""
-              style={{ maxWidth: "30%" }}
-            />
-            <img
-              className="light-logo"
-              src="/assets/img/core-img/logo-light.png"
-              alt=""
-              style={{ maxWidth: "30%" }}
-            />
+            <img className="dark-logo" src={LOGO.dark} alt="" />
+            <img className="light-logo" src={LOGO.light} alt="" />
           </div>
 
           <button

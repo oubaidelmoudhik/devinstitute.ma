@@ -60,21 +60,11 @@ const HeaderOne = ({ style_2 }: any) => {
         <nav className="navbar navbar-expand-lg">
           <div className="container">
             <Link className="navbar-brand" to="/">
-              <img
-                className="dark-logo"
-                src={LOGO.dark}
-                alt=""
-                style={{ maxWidth: "20%" }}
-              />
-              <img
-                className="light-logo"
-                src={LOGO.light}
-                alt=""
-                style={{ maxWidth: "20%" }}
-              />
+              <img className="dark-logo" src={LOGO.dark} alt="" />
+              <img className="light-logo" src={LOGO.light} alt="" />
             </Link>
 
-            <button
+            {/* <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="navbar-toggler"
               type="button"
@@ -85,12 +75,11 @@ const HeaderOne = ({ style_2 }: any) => {
               aria-label="Toggle navigation"
             >
               <span className="material-symbols-outlined">view_cozy</span>
-            </button>
+            </button> */}
 
+            {/* add collapse & navbar-collapse className if want to hide on mobile */}
             <div
-              className={`collapse navbar-collapse justify-content-end ${
-                menuOpen ? "show" : ""
-              }`}
+              className={` justify-content-end ${menuOpen ? "show" : ""}`}
               id="vorixNav"
             >
               {/* <ul className="navbar-nav navbar-nav-scroll">
@@ -191,7 +180,7 @@ const HeaderOne = ({ style_2 }: any) => {
                   <span className="material-symbols-outlined sun">bedtime</span>
                 </button>
                 {style_2 ? (
-                  <div className="mb-3 mb-lg-0" id="sideMenuButton">
+                  <div className="mb-0 mb-lg-0" id="sideMenuButton">
                     <a
                       onClick={() => setOpenCavas(!openCanvas)}
                       className="btn btn-primary sideMenuButton"

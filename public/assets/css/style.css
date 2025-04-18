@@ -665,6 +665,15 @@ picture.jarallax-img img {
 .header-area .navbar .navbar-brand {
   margin-right: 2rem;
   line-height: 1 !important;
+  max-width: 50%;
+}
+.navbar-brand > img {
+  max-width: 20%;
+}
+@media (width < 992px) {
+  .navbar-brand > img {
+    max-width: 90%;
+  }
 }
 @media only screen and (min-width: 992px) {
   .header-area .navbar .navbar-brand {
@@ -908,19 +917,36 @@ picture.jarallax-img img {
 }
 
 .right-side-vorix-offcanvas {
-  width: 320px !important;
+  width: 95% !important;
   background-color: var(--clr-black);
 }
-@media only screen and (min-width: 576px) {
-  .right-side-vorix-offcanvas {
-    width: 450px !important;
+.offcanvas-header > div > img {
+  max-width: 50%;
+}
+@media (width > 500px) {
+  .offcanvas-header > div > img {
+    max-width: 30%;
   }
 }
-@media only screen and (min-width: 1200px) {
-  .right-side-vorix-offcanvas {
-    width: 500px !important;
+@media (width > 960px) {
+  .offcanvas-header > div > img {
+    max-width: 30%;
   }
 }
+@media (width > 1000px) {
+  .right-side-vorix-offcanvas {
+    width: 50% !important;
+  }
+}
+@media (width > 1200px) {
+  .right-side-vorix-offcanvas {
+    width: 40% !important;
+  }
+  .offcanvas-header > div > img {
+    max-width: 40%;
+  }
+}
+
 .right-side-vorix-offcanvas .offcanvas-header {
   height: 110px;
   -webkit-box-pack: justify;
