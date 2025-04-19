@@ -1,5 +1,6 @@
 // import { Link } from "react-router-dom";
-import { NUM_CLIENTS } from "../../../data/constants";
+
+import { NUM_CLIENTS } from "../../data/constants";
 
 const HeroArea = () => {
   return (

@@ -1,10 +1,9 @@
- 
-import BackToTop from '../../common/BackToTop';
-import Breacrumb from '../../common/Breacrumb';
-import FooterOne from '../../layouts/footers/FooterOne';
-import HeaderOne from '../../layouts/headers/HeaderOne';
-import Cta2Area from '../homes/home/Cta2Area';
-import BlogDetailsArea from './BlogDetailsArea'; 
+import BackToTop from "../../common/BackToTop";
+import Breacrumb from "../../common/Breacrumb";
+import FooterOne from "../../layouts/footers/FooterOne";
+import HeaderOne from "../../layouts/headers/HeaderOne";
+import Cta2Area from "../home/home/Cta2Area";
+import BlogDetailsArea from "./BlogDetailsArea";
 
 const BlogDetails = () => {
   return (

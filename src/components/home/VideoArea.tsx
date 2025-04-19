@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "jarallax/dist/jarallax.css";
-import Count from "../../../common/count";
-import { COUNTER_DATA, IMAGES } from "../../../data/constants";
+import { COUNTER_DATA, IMAGES } from "../../data/constants";
+import Count from "../../common/count";
 
 const VideoArea = ({ style_2 }: any) => {
   useEffect(() => {

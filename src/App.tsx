@@ -1,7 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Wrapper from "./layouts/Wrapper";
 // import HomeOne from "./components/homes/home";
-import HomeTwo from "./components/homes/home-2";
+import Home from "./components/home";
+
 // import Aboutus from "./components/about-us";
 // import Service from "./components/service";
 // import ServiceDetails from "./components/service-details";
@@ -19,7 +20,7 @@ import Contact from "./components/contact";
 import ErrorArea from "./components/error";
 
 const router = createBrowserRouter([
-  { path: "/", element: <HomeTwo /> },
+  { path: "/", element: <Home /> },
   // { path: "/home-2", element: <HomeOne /> },
   // { path: "/about-us", element: <Aboutus /> },
   // { path: "/service", element: <Service /> },

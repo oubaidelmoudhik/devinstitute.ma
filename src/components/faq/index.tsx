@@ -1,11 +1,9 @@
-
- 
-import FaqsArea from './FaqsArea'; 
-import Cta2Area from '../homes/home/Cta2Area'; 
-import HeaderOne from '../../layouts/headers/HeaderOne';
-import Breacrumb from '../../common/Breacrumb';
-import FooterOne from '../../layouts/footers/FooterOne';
-import BackToTop from '../../common/BackToTop';
+import FaqsArea from "./FaqsArea";
+import Cta2Area from "../home/home/Cta2Area";
+import HeaderOne from "../../layouts/headers/HeaderOne";
+import Breacrumb from "../../common/Breacrumb";
+import FooterOne from "../../layouts/footers/FooterOne";
+import BackToTop from "../../common/BackToTop";
 
 const Faq = () => {
   return (

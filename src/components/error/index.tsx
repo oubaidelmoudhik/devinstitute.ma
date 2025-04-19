@@ -1,10 +1,8 @@
- 
-import Cta2Area from '../homes/home/Cta2Area'; 
-import BackToTop from '../../common/BackToTop';
-import HeaderOne from '../../layouts/headers/HeaderOne';
-import Breacrumb from '../../common/Breacrumb';
-import { Link } from 'react-router-dom';
-import FooterOne from '../../layouts/footers/FooterOne';
+import BackToTop from "../../common/BackToTop";
+import HeaderOne from "../../layouts/headers/HeaderOne";
+import Breacrumb from "../../common/Breacrumb";
+import { Link } from "react-router-dom";
+import FooterOne from "../../layouts/footers/FooterOne";
 
 const ErrorArea = () => {
   return (
@@ -18,14 +16,27 @@ const ErrorArea = () => {
           <div className="row">
             <div className="col-12">
               <div className="d-flex justify-content-center">
-                <img className="pb-2 dark-mode-404" src="/assets/img/core-img/404.png" alt="" />
-                <img className="pb-2 light-mode-404" src="/assets/img/core-img/404-light.png" alt="" />
+                <img
+                  className="pb-2 dark-mode-404"
+                  src="/assets/img/core-img/404.png"
+                  alt=""
+                />
+                <img
+                  className="pb-2 light-mode-404"
+                  src="/assets/img/core-img/404-light.png"
+                  alt=""
+                />
               </div>
               <div className="section-heading mt-5">
                 <h2 className="mb-4">Look Like You're Lost</h2>
-                <p>The link you followed probably broken or the page has been removed</p>
-                <Link to="/" className="btn btn-primary mt-5"><span>BACK TO HOME</span><span>BACK TO
-                  HOME</span></Link>
+                <p>
+                  The link you followed probably broken or the page has been
+                  removed
+                </p>
+                <Link to="/" className="btn btn-primary mt-5">
+                  <span>BACK TO HOME</span>
+                  <span>BACK TO HOME</span>
+                </Link>
               </div>
             </div>
           </div>
@@ -33,10 +44,8 @@ const ErrorArea = () => {
 
         <div className="divider"></div>
       </div>
-      <Cta2Area />
       <FooterOne />
       <BackToTop />
-
     </>
   );
 };

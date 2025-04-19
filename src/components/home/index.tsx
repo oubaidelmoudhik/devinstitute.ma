@@ -8,13 +8,13 @@ import ProcessArea from "./ProcessArea";
 // import TeamArea from "./TeamArea";
 // import PriceArea from "./PriceArea";
 import FaqArea from "./FaqArea";
+import FooterOne from "../../layouts/footers/FooterOne";
+import BackToTop from "../../common/BackToTop";
+import HeaderOne from "../../layouts/headers/HeaderOne";
 // import TestimonialArea from "./TestimonialArea";
 // import BlogArea from "./BlogArea";
-import HeaderOne from "../../../layouts/headers/HeaderOne";
-import FooterOne from "../../../layouts/footers/FooterOne";
-import BackToTop from "../../../common/BackToTop";
 
-const HomeTwo = () => {
+const Home = () => {
   return (
     <>
       <HeaderOne style_2={true} />
@@ -36,4 +36,4 @@ const HomeTwo = () => {
   );
 };
 
-export default HomeTwo;
+export default Home;

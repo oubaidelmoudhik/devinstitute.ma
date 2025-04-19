@@ -1,7 +1,7 @@
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ProjectCard from "../../reusable/ProjectCard";
-import { PROJECTS } from "../../../data/constants";
+import ProjectCard from "../reusable/ProjectCard";
+import { PROJECTS } from "../../data/constants";
 
 const ProjectArea = () => {
   return (
