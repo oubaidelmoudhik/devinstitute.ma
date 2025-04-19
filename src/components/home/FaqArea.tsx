@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { NUM_CLIENTS } from "../../data/constants";
 import FAQQuestion from "../reusable/FAQQuestion";
+import { NUM_CLIENTS } from "../../data/constants";
 
 const FaqArea = ({ style_2 }: any) => {
   useEffect(() => {

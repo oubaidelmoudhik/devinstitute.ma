@@ -1,9 +1,9 @@
 import BlogArea from "./BlogArea";
-import Cta2Area from "../home/home/Cta2Area";
 import HeaderOne from "../../layouts/headers/HeaderOne";
 import Breacrumb from "../../common/Breacrumb";
 import FooterOne from "../../layouts/footers/FooterOne";
 import BackToTop from "../../common/BackToTop";
+import Cta2Area from "../home/Cta2Area";
 
 const Blog = () => {
   return (

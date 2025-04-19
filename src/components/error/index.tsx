@@ -3,6 +3,7 @@ import HeaderOne from "../../layouts/headers/HeaderOne";
 import Breacrumb from "../../common/Breacrumb";
 import { Link } from "react-router-dom";
 import FooterOne from "../../layouts/footers/FooterOne";
+import Cta2Area from "../home/Cta2Area";
 
 const ErrorArea = () => {
   return (
@@ -44,6 +45,7 @@ const ErrorArea = () => {
 
         <div className="divider"></div>
       </div>
+      <Cta2Area />
       <FooterOne />
       <BackToTop />
     </>
