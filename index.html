@@ -3,8 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/public/assets/favicon.ico" />
+
+    <!-- Viewport for responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title -->
     <title>DEV Institute</title>
+
+    <!-- Description for SEO -->
+    <meta
+      name="description"
+      content="DEV Institute offers professional web development services, specializing in creating custom websites and web applications."
+    />
+
+    <!-- Keywords for SEO -->
+    <meta
+      name="keywords"
+      content="web development, React, Next.js, custom websites, web applications, development agency, Morocco"
+    />
+
+    <!-- Author -->
+    <meta name="author" content="DEV Institute" />
+
+    <!-- Open Graph tags for social media -->
+    <meta
+      property="og:title"
+      content="DEV Institute - Web Development Services"
+    />
+    <meta
+      property="og:description"
+      content="DEV Institute offers professional web development services, specializing in creating custom websites and web applications."
+    />
+    <meta property="og:image" content="/public/assets/og-image.jpg" />
+    <meta property="og:url" content="https://devinstitute.ma" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="DEV Institute - Web Development Services"
+    />
+    <meta
+      name="twitter:description"
+      content="DEV Institute offers professional web development services, specializing in creating custom websites and web applications."
+    />
+    <meta name="twitter:image" content="/public/assets/og-image.jpg" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "DEV Institute",
+        "url": "https://devinstitute.ma",
+        "logo": "/public/assets/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/devinstitute",
+          "https://www.instagram.com/devinstitute.ma"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+212776932898",
+          "contactType": "Customer Service",
+          "areaServed": "MA",
+          "availableLanguage": "en"
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
