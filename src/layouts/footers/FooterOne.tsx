@@ -1,3 +1,4 @@
+import SubscribeForm from "../../components/reusable/SubscribeForm";
 import { LOGO, SOCIALS } from "../../data/constants";
 
 const FooterOne = ({ style_2 }: any) => {
@@ -124,22 +125,7 @@ const FooterOne = ({ style_2 }: any) => {
 
             <div className="col-12 col-md-6 col-xl-4">
               <div className="footer-card">
-                <h5 className="mb-0">Subscribe</h5>
-                <form action="#" className="subscribe-form">
-                  <input
-                    type="email"
-                    className="form-control"
-                    placeholder="Email address"
-                  />
-                  <button className="btn">
-                    <span className="material-symbols-outlined">
-                      arrow_forward
-                    </span>
-                    <span className="material-symbols-outlined">
-                      arrow_forward
-                    </span>
-                  </button>
-                </form>
+                <SubscribeForm />
 
                 {/* <div className="form-check">
                   <input
