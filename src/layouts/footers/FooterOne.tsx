@@ -1,5 +1,6 @@
+import Logo from "../../common/Logo";
 import SubscribeForm from "../../components/reusable/SubscribeForm";
-import { LOGO, SOCIALS } from "../../data/constants";
+import { SOCIALS } from "../../data/constants";
 
 const FooterOne = ({ style_2 }: any) => {
   return (
@@ -13,10 +14,7 @@ const FooterOne = ({ style_2 }: any) => {
           <div className="row g-5">
             <div className="col-12 col-md-6 col-xl">
               <div className="footer-card">
-                <a href="#">
-                  <img className="dark-logo" src={LOGO.dark} alt="" />
-                  <img className="light-logo" src={LOGO.light} alt="" />
-                </a>
+                <Logo />
 
                 <p className="mb-0">
                   Creative agency specializing in modern design and development.

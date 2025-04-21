@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // import menu_data from "../../data/menu-data";
 // import SearchArea from "../../common/SearchArea";
 import OffCanvas from "../../common/OffCanvas";
-import { LOGO } from "../../data/constants";
+import Logo from "../../common/Logo";
 
 const HeaderOne = ({ style_2 }: any) => {
   const [theme, setTheme] = useState(() => {
@@ -58,10 +58,7 @@ const HeaderOne = ({ style_2 }: any) => {
       <header className={`header-area ${sticky && "sticky-on"}`}>
         <nav className="navbar navbar-expand-lg">
           <div className="container">
-            <Link className="navbar-brand" to="/">
-              <img className="dark-logo" src={LOGO.dark} alt="" />
-              <img className="light-logo" src={LOGO.light} alt="" />
-            </Link>
+            <Logo className="navbar-brand" />
 
             {/* <button
               onClick={() => setMenuOpen(!menuOpen)}
@@ -172,10 +169,9 @@ const HeaderOne = ({ style_2 }: any) => {
                     theme === "light-mode" ? "" : "light-mode-active"
                   }`}
                 >
-                  <span className="material-symbols-outlined moon">
-                    clear_day
+                  <span className="material-symbols-outlined">
+                    {theme === "light-mode" ? "bedtime" : "clear_day"}
                   </span>
-                  <span className="material-symbols-outlined sun">bedtime</span>
                 </button>
                 {style_2 ? (
                   <div className="mb-0 mb-lg-0" id="sideMenuButton">

@@ -39,26 +39,15 @@
 --------------------- */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200..900&display=swap&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
 
-@font-face {
-  font-family: "Material Symbols Outlined";
-  font-style: normal;
-  font-weight: 100 700;
-  src: url("./fonts/materialsymbolsoutlined.woff2") format("woff2");
-  font-display: swap;
-}
 .material-symbols-outlined {
   font-family: "Material Symbols Outlined";
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
+  line-height: 1;
   direction: ltr;
-  -moz-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
@@ -676,7 +665,7 @@ picture.jarallax-img img {
   }
 }
 .navbar-brand > img {
-  max-width: 20%;
+  max-width: 30%;
 }
 @media (width < 992px) {
   .navbar-brand > img {
@@ -928,16 +917,16 @@ picture.jarallax-img img {
   width: 95% !important;
   background-color: var(--clr-black);
 }
-.offcanvas-header > div > img {
+.offcanvas-header > a > img {
   max-width: 50%;
 }
 @media (width > 500px) {
-  .offcanvas-header > div > img {
+  .offcanvas-header > a > img {
     max-width: 30%;
   }
 }
 @media (width > 960px) {
-  .offcanvas-header > div > img {
+  .offcanvas-header > a > img {
     max-width: 30%;
   }
 }
@@ -950,7 +939,7 @@ picture.jarallax-img img {
   .right-side-vorix-offcanvas {
     width: 40% !important;
   }
-  .offcanvas-header > div > img {
+  .offcanvas-header > a > img {
     max-width: 40%;
   }
 }

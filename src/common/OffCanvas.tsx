@@ -1,5 +1,6 @@
 // import { Link } from "react-router-dom";
-import { COLORS, LOGO, SOCIALS } from "../data/constants";
+import { COLORS, SOCIALS } from "../data/constants";
+import Logo from "./Logo";
 
 const OffCanvas = ({ openCanvas, setOpenCavas }: any) => {
   return (
@@ -12,10 +13,7 @@ const OffCanvas = ({ openCanvas, setOpenCavas }: any) => {
         id="sideMenuOffcanvas"
       >
         <div className="offcanvas-header">
-          <div>
-            <img className="dark-logo" src={LOGO.dark} alt="" />
-            <img className="light-logo" src={LOGO.light} alt="" />
-          </div>
+          <Logo />
 
           <button
             type="button"
