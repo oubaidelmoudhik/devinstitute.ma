@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 // import SearchArea from "../../common/SearchArea";
 import OffCanvas from "../../common/OffCanvas";
 import Logo from "../../common/Logo";
+import ThemeToggle from "../../common/ThemeToggle";
 
 const HeaderOne = ({ style_2 }: any) => {
   const [theme, setTheme] = useState(() => {
@@ -162,17 +163,7 @@ const HeaderOne = ({ style_2 }: any) => {
                   </button>
                 </div> */}
 
-                <button
-                  id="theme-toggle"
-                  onClick={toggleTheme}
-                  className={`theme-btn ${
-                    theme === "light-mode" ? "" : "light-mode-active"
-                  }`}
-                >
-                  <span className="material-symbols-outlined">
-                    {theme === "light-mode" ? "bedtime" : "clear_day"}
-                  </span>
-                </button>
+                <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
                 {style_2 ? (
                   <div className="mb-0 mb-lg-0" id="sideMenuButton">
                     <a
