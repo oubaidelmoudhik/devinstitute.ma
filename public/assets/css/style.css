@@ -48,49 +48,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@font-face {
-  font-family: "Material Symbols Rounded";
-  font-style: normal;
-  font-weight: 100 700;
-  src: url("./fonts/materialsymbolsrounded.woff2") format("woff2");
-  font-display: swap;
-}
 .material-symbols-rounded {
   font-family: "Material Symbols Rounded";
   font-weight: normal;
   font-style: normal;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
   display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
+  line-height: 1;
   direction: ltr;
-  -moz-font-feature-settings: "liga";
   -moz-osx-font-smoothing: grayscale;
 }
 
-@font-face {
-  font-family: "Material Symbols Sharp";
-  font-style: normal;
-  font-weight: 100 700;
-  src: url("./fonts/materialsymbolssharp.woff2") format("woff2");
-  font-display: swap;
-}
 .material-symbols-sharp {
   font-family: "Material Symbols Sharp";
   font-weight: normal;
   font-style: normal;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
   display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
+  line-height: 1;
   direction: ltr;
-  -moz-font-feature-settings: "liga";
   -moz-osx-font-smoothing: grayscale;
 }
+
 /* Global variables */
 :root {
   /* colors */
