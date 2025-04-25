@@ -13,6 +13,7 @@ import BackToTop from "../../common/BackToTop";
 import HeaderOne from "../../layouts/headers/HeaderOne";
 // import TestimonialArea from "./TestimonialArea";
 // import BlogArea from "./BlogArea";
+import "../../translation/i18n";
 
 const Home = () => {
   return (
