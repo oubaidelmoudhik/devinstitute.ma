@@ -162,7 +162,6 @@ const HeaderOne = ({ style_2 }: any) => {
                     </svg>
                   </button>
                 </div> */}
-
                 <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
                 {style_2 ? (
                   <div className="mb-0 mb-lg-0" id="sideMenuButton">
