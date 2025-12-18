@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "check-unused": "knip",
-    "optimize-images": "node scripts/optimize-images.js",
     "dev": "next dev",
-    "build": "npm run optimize-images && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint .",
     "preview": "next start"
