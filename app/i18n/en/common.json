@@ -1,0 +1,13 @@
+{
+  "free_consultation_cta": "Free Consultation",
+  "get_in_touch_cta": "Get In Touch",
+  "learn_more_cta": "Learn More",
+  "submit_form_cta": "Submit",
+  "send_message_cta": "Send Message",
+  "contact_us_cta": "Contact Us",
+  "view_projects_cta": "View Our Projects",
+  "read_more_cta": "Read More",
+  "form_validation_email_invalid": "Please enter a valid email address.",
+  "form_error_generic": "Something went wrong. Try again later.",
+  "newsletter_success_message": "Thanks for subscribing!"
+}

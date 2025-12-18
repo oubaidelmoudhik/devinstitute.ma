@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap");
+
+@import "swiper/css/bundle";
+// @import "~bootstrap/scss/bootstrap";
+@import "react-modal-video/css/modal-video.css";
+
+@import "../../public/assets/css/animate.css";
+@import "../../public/assets/css/bootstrap.min.css";
+@import "../../public/assets/css/style.css";
+
+// Custom theme and language toggle enhancements
+.theme-btn {
+  position: relative;
+
+  &.system-following .system-indicator {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    opacity: 0.7;
+  }
+
+  &.user-override {
+    // Add subtle border or glow for manual override
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+  }
+
+  .system-indicator {
+    display: none;
+  }
+}
+
+.language-btn {
+  margin-right: 16px;
+
+  @media only screen and (min-width: 992px) {
+    margin-right: 16px;
+  }
+}

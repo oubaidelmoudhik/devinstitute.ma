@@ -1,0 +1,23 @@
+{
+  "page_title": "Contactez-nous",
+  "page_subtitle": "Entrez en contact avec notre équipe",
+
+  "contact_info_phone_label": "Numéro de téléphone",
+  "contact_info_phone_value": "+44 204 577 0077",
+
+  "contact_info_email_label": "Adresse e-mail",
+  "contact_info_email_value": "Vorix@gmail.com",
+
+  "contact_info_address_label": "Adresse du bureau",
+  "contact_info_address_value": "Washington Ave, NY",
+
+  "contact_form_title": "Vous avez des questions ? Contactez-nous !",
+  "contact_form_name_placeholder": "Votre nom",
+  "contact_form_email_placeholder": "Adresse e-mail",
+  "contact_form_phone_placeholder": "Votre téléphone",
+  "contact_form_subject_placeholder": "Sélectionnez le sujet",
+  "contact_form_subject_help_support": "Aide et support",
+  "contact_form_subject_features": "Demande de fonctionnalités",
+  "contact_form_message_placeholder": "Tapez votre message",
+  "contact_form_submit_button": "ENVOYER LE MESSAGE"
+}

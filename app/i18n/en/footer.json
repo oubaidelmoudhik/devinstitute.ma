@@ -1,0 +1,18 @@
+{
+  "company_description": "Creative agency specializing in modern design and development.",
+  "newsletter_title": "Stay Updated",
+  "newsletter_description": "Subscribe to our newsletter for the latest updates and insights.",
+  "newsletter_placeholder": "Enter your email address",
+  "copyright_text": "© 2025 Dev Institute. All rights reserved.",
+  "privacy_policy_link": "Privacy Policy",
+  "terms_of_service_link": "Terms of Service",
+  "social_facebook_alt": "Follow us on Facebook",
+  "social_instagram_alt": "Follow us on Instagram",
+  "social_whatsapp_alt": "Contact us on WhatsApp",
+
+  "footer_service_web_development": "Web Development",
+  "footer_service_ui_ux_design": "UI/UX Design",
+  "footer_service_mobile_apps": "Mobile Apps Design",
+  "footer_service_saas_design": "SaaS Design",
+  "footer_service_webflow_design": "Webflow Design"
+}

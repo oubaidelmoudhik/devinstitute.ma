@@ -1,0 +1,25 @@
+{
+  "brand_name": "Dev Institute",
+  "brand_tagline": "Development Agency",
+  "home_link": "Home",
+  "services_link": "Services",
+  "about_link": "About",
+  "contact_link": "Contact",
+  "portfolio_link": "Portfolio",
+  "blog_link": "Blog",
+  "theme_toggle_label": "Toggle theme",
+
+  "pages_menu": "Pages",
+  "portfolio_menu": "Portfolio",
+  "about_menu": "About",
+
+  "service_menu": "Service",
+  "service_details_menu": "Service Details",
+  "pricing_plan_menu": "Pricing Plan",
+  "faq_menu": "FAQ",
+
+  "page_title_about_us": "About Us",
+  "page_title_contact_us": "Contact Us",
+  "page_title_contact": "Contact",
+  "page_title_home": "Home"
+}

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /service
+Disallow: /api/
+Disallow: /_next/
+Disallow: /src/
+
+Sitemap: https://devinstitute.ma/sitemap.xml
