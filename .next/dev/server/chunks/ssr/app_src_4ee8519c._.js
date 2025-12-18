@@ -42,6 +42,9 @@ const HeroArea = ()=>{
                                         className: "mb-0 wow fadeInUp",
                                         "data-wow-duration": "1000ms",
                                         "data-wow-delay": "700ms",
+                                        style: {
+                                            fontSize: "4.5rem"
+                                        },
                                         children: t("hero_headline_primary", "home")
                                     }, void 0, false, {
                                         fileName: "[project]/app/src/components/home/HeroArea.tsx",
@@ -76,7 +79,7 @@ const HeroArea = ()=>{
                                                             alt: ""
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/src/components/home/HeroArea.tsx",
-                                                            lineNumber: 35,
+                                                            lineNumber: 36,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
@@ -84,7 +87,7 @@ const HeroArea = ()=>{
                                                             alt: ""
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/src/components/home/HeroArea.tsx",
-                                                            lineNumber: 36,
+                                                            lineNumber: 37,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -93,18 +96,18 @@ const HeroArea = ()=>{
                                                                 children: "30"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/src/components/home/HeroArea.tsx",
-                                                                lineNumber: 41,
+                                                                lineNumber: 42,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/src/components/home/HeroArea.tsx",
-                                                            lineNumber: 40,
+                                                            lineNumber: 41,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/src/components/home/HeroArea.tsx",
-                                                    lineNumber: 34,
+                                                    lineNumber: 35,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h6", {
@@ -112,13 +115,13 @@ const HeroArea = ()=>{
                                                     children: t("hero_clients_count_text", "home").replace("{{count}}", __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$src$2f$data$2f$constants$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["NUM_CLIENTS"].toString())
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/src/components/home/HeroArea.tsx",
-                                                    lineNumber: 44,
+                                                    lineNumber: 45,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/src/components/home/HeroArea.tsx",
-                                            lineNumber: 29,
+                                            lineNumber: 30,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -128,7 +131,7 @@ const HeroArea = ()=>{
                                             children: t("hero_description_paragraph", "home")
                                         }, void 0, false, {
                                             fileName: "[project]/app/src/components/home/HeroArea.tsx",
-                                            lineNumber: 51,
+                                            lineNumber: 52,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -144,31 +147,31 @@ const HeroArea = ()=>{
                                                     children: t("hero_free_consultation_cta", "home")
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/src/components/home/HeroArea.tsx",
-                                                    lineNumber: 68,
+                                                    lineNumber: 69,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: t("hero_free_consultation_cta", "home")
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/src/components/home/HeroArea.tsx",
-                                                    lineNumber: 69,
+                                                    lineNumber: 70,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/src/components/home/HeroArea.tsx",
-                                            lineNumber: 59,
+                                            lineNumber: 60,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/src/components/home/HeroArea.tsx",
-                                    lineNumber: 28,
+                                    lineNumber: 29,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/app/src/components/home/HeroArea.tsx",
-                                lineNumber: 27,
+                                lineNumber: 28,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
@@ -186,14 +189,14 @@ const HeroArea = ()=>{
                     className: "divider"
                 }, void 0, false, {
                     fileName: "[project]/app/src/components/home/HeroArea.tsx",
-                    lineNumber: 76,
+                    lineNumber: 77,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "divider"
                 }, void 0, false, {
                     fileName: "[project]/app/src/components/home/HeroArea.tsx",
-                    lineNumber: 77,
+                    lineNumber: 78,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]

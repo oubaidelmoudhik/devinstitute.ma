@@ -18,6 +18,7 @@ const HeroArea = () => {
                   className="mb-0 wow fadeInUp"
                   data-wow-duration="1000ms"
                   data-wow-delay="700ms"
+                  style={{ fontSize: "4.5rem" }}
                 >
                   {t("hero_headline_primary", "home")}
                 </h1>
