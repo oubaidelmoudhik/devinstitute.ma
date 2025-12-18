@@ -248,7 +248,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$src$2f$common$2f$Logo
 const OffCanvas = ({ openCanvas, setOpenCavas })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: `offcanvas offcanvas-start right-side-vorix-offcanvas shadow-lg ${openCanvas ? "show" : ""}`,
+            className: `offcanvas offcanvas-start right-side-devAgency-offcanvas shadow-lg ${openCanvas ? "show" : ""}`,
             tabIndex: -1,
             id: "sideMenuOffcanvas",
             children: [
@@ -749,7 +749,7 @@ __turbopack_context__.v({"company_description":"Creative agency specializing in 
 __turbopack_context__.v({"hero_headline_primary":"We're a Development Agency","hero_clients_count_text":"More than {{count}} trusted customers","hero_description_paragraph":"We believe that the surest measure of success is client satisfaction. Over half of our clients continue working with us beyond their first project.","hero_free_consultation_cta":"Free Consultation","video_section_headline":"Why Choose DEV Agency?","video_section_description":"Discover what makes us different in just 60 seconds.","mission_section_title":"Our Mission","mission_main_title":"Digital Solutions Made Simple","mission_main_description":"Helping small businesses grow online with easy, effective websites.","mission_accordion_mission_title":"Our Mission","mission_accordion_mission_content":"We create websites that attract customers and drive growth—without the hassle.","mission_accordion_vision_title":"Our Vision","mission_accordion_vision_content":"Empowering small businesses with simple, effective digital solutions to grow and succeed online.","mission_point_1":"Deliver clean and scalable code","mission_point_2":"Empower businesses through digital tools","mission_point_3":"Support clients with transparency and speed","projects_section_title":"Let's See Our Projects","projects_section_description":"Check out our latest work in web development.","services_section_title":"Our Services","services_web_design":"Web Design","services_web_development":"Web Development","services_ui_ux_design":"UI/UX Design","services_ecommerce_solutions":"E-commerce Solutions","services_seo_performance":"SEO & Performance","services_website_maintenance":"Website Maintenance","process_section_title":"Simple Our Work Process","process_step_1_title":"Strategy & Planning","process_step_1_description":"We take the time to understand your business, goals, and vision to create a clear plan.","process_step_2_title":"Design & Visuals","process_step_2_description":"We create a professional design that aligns with your brand and engages your audience.","process_step_3_title":"Development","process_step_3_description":"We build your website with care, ensuring it's fast, and ready to grow your business.","faq_section_title":"Frequently Asked Questions","faq_question_1":"How long does it take to build a website?","faq_answer_1":"The timeline depends on the complexity of your project. A simple landing page can take 1-2 weeks, while a full e-commerce site might take 4-6 weeks. We'll provide a detailed timeline during our initial consultation.","faq_question_2":"Do you provide ongoing support after the website is launched?","faq_answer_2":"Yes, we offer comprehensive maintenance packages to keep your website secure, updated, and performing optimally. This includes security updates, content changes, and performance monitoring.","faq_question_3":"What technologies do you use?","faq_answer_3":"We use modern, scalable technologies including React, Next.js, WordPress, Shopify, and custom solutions. Our choice depends on your specific needs and goals.","faq_question_4":"How much does a website cost?","faq_answer_4":"Costs vary based on complexity and features. A basic website starts at $1,500, while complex e-commerce sites can range from $5,000 to $15,000+. We'll provide a detailed quote after understanding your requirements.","faq_question_5":"What is your vision?","faq_answer_5":"We help small businesses build a strong online presence with simple, effective, and scalable web solutions.","faq_question_6":"Do you offer free consultations?","faq_answer_6":"Yes! We offer a free consultation to understand your needs and suggest the best approach for your website.","faq_question_7":"Can you help with website updates and maintenance?","faq_answer_7":"Absolutely! We provide ongoing support to keep your website running smoothly.","faq_question_8":"Do you offer e-commerce solutions?","faq_answer_8":"Yes, we build secure and user-friendly online stores to help you sell your products easily.","counter_years_experience_label":"Years of Experience","counter_years_experience_description":"Solid foundation in web development and automation, delivering consistent value since day one.","counter_successful_projects_label":"Successful Projects","counter_successful_projects_description":"From landing pages to complex websites, each solution built to get results","counter_satisfied_customers_label":"Satisfied Customers","counter_satisfied_customers_description":"Trusted by entrepreneurs and businesses who come back because we get results.","process_step_1_label":"Step 1","process_step_2_label":"Step 2","process_step_3_label":"Step 3"});}),
 "[project]/app/i18n/en/contact.json (json)", ((__turbopack_context__) => {
 
-__turbopack_context__.v({"page_title":"Contact Us","page_subtitle":"Get in touch with our team","contact_info_phone_label":"Phone number","contact_info_phone_value":"+44 204 577 0077","contact_info_email_label":"Email address","contact_info_email_value":"Vorix@gmail.com","contact_info_address_label":"Office Address","contact_info_address_value":"Washington Ave, NY","contact_form_title":"Have Questions? Contact us!","contact_form_name_placeholder":"Your Name","contact_form_email_placeholder":"Email Address","contact_form_phone_placeholder":"Your Phone","contact_form_subject_placeholder":"Select Subject","contact_form_subject_help_support":"Help & Support","contact_form_subject_features":"Features Inquiry","contact_form_message_placeholder":"Type your message","contact_form_submit_button":"SEND MESSAGE"});}),
+__turbopack_context__.v({"page_title":"Contact Us","page_subtitle":"Get in touch with our team","contact_info_phone_label":"Phone number","contact_info_phone_value":"+212 776 932898","contact_info_email_label":"Email address","contact_info_email_value":"contact@devagency.ma","contact_info_address_label":"Office Address","contact_info_address_value":"Tetouan, Morocco","contact_form_title":"Have Questions? Contact us!","contact_form_name_placeholder":"Your Name","contact_form_email_placeholder":"Email Address","contact_form_phone_placeholder":"Your Phone","contact_form_subject_placeholder":"Select Subject","contact_form_subject_help_support":"Help & Support","contact_form_subject_features":"Features Inquiry","contact_form_message_placeholder":"Type your message","contact_form_submit_button":"SEND MESSAGE"});}),
 "[project]/app/i18n/fr/common.json (json)", ((__turbopack_context__) => {
 
 __turbopack_context__.v({"free_consultation_cta":"Consultation gratuite","get_in_touch_cta":"Prendre contact","learn_more_cta":"En savoir plus","submit_form_cta":"Soumettre","send_message_cta":"Envoyer le message","contact_us_cta":"Contactez-nous","view_projects_cta":"Voir nos projets","read_more_cta":"Lire la suite","form_validation_email_invalid":"Veuillez saisir une adresse e-mail valide.","form_error_generic":"Quelque chose s'est mal passé. Réessayez plus tard.","newsletter_success_message":"Merci de vous être abonné !"});}),
@@ -764,7 +764,7 @@ __turbopack_context__.v({"company_description":"Agence créative spécialisée d
 __turbopack_context__.v({"hero_headline_primary":"Nous sommes une agence de développement","hero_clients_count_text":"Plus de {{count}} clients satisfaits","hero_description_paragraph":"Nous pensons que la meilleure preuve de réussite, c'est la satisfaction client. Plus de la moitié de nos clients continuent à travailler avec nous après leur premier projet.","hero_free_consultation_cta":"Consultation gratuite","video_section_headline":"Pourquoi choisir DEV Agency ?","video_section_description":"Découvrez ce qui nous rend différents en seulement 60 secondes.","mission_section_title":"Notre Mission","mission_main_title":"Solutions numériques simplifiées","mission_main_description":"Aider les petites entreprises à se développer en ligne avec des sites web faciles et efficaces.","mission_accordion_mission_title":"Notre Mission","mission_accordion_mission_content":"Nous créons des sites web qui attirent les clients et stimulent la croissance—sans les tracas.","mission_accordion_vision_title":"Notre Vision","mission_accordion_vision_content":"Donner du pouvoir aux petites entreprises avec des solutions numériques simples et efficaces pour grandir et réussir en ligne.","mission_point_1":"Fournir un code propre et évolutif","mission_point_2":"Donner du pouvoir aux entreprises grâce aux outils numériques","mission_point_3":"Soutenir les clients avec transparence et rapidité","projects_section_title":"Voyons nos projets","projects_section_description":"Découvrez notre dernier travail en développement web.","services_section_title":"Nos Services","services_web_design":"Conception web","services_web_development":"Développement web","services_ui_ux_design":"Design UI/UX","services_ecommerce_solutions":"Solutions e-commerce","services_seo_performance":"SEO et Performance","services_website_maintenance":"Maintenance de site web","process_section_title":"Notre processus de travail simple","process_step_1_title":"Stratégie et planification","process_step_1_description":"Nous prenons le temps de comprendre votre entreprise, vos objectifs et votre vision pour créer un plan clair.","process_step_2_title":"Design et visuels","process_step_2_description":"Nous créons un design professionnel qui s'aligne avec votre marque et engage votre audience.","process_step_3_title":"Développement","process_step_3_description":"Nous construisons votre site web avec soin, en veillant à ce qu'il soit rapide et prêt à développer votre entreprise.","faq_section_title":"Questions fréquemment posées","faq_question_1":"Combien de temps faut-il pour construire un site web ?","faq_answer_1":"Le délai dépend de la complexité de votre projet. Une simple page d'atterrissage peut prendre 1-2 semaines, tandis qu'un site e-commerce complet peut prendre 4-6 semaines. Nous fournirons un calendrier détaillé lors de notre consultation initiale.","faq_question_2":"Fournissez-vous un support continu après le lancement du site web ?","faq_answer_2":"Oui, nous proposons des forfaits de maintenance complets pour garder votre site web sécurisé, mis à jour et performant de manière optimale. Cela inclut les mises à jour de sécurité, les changements de contenu et la surveillance des performances.","faq_question_3":"Quelles technologies utilisez-vous ?","faq_answer_3":"Nous utilisons des technologies modernes et évolutives incluant React, Next.js, WordPress, Shopify et des solutions personnalisées. Notre choix dépend de vos besoins et objectifs spécifiques.","faq_question_4":"Combien coûte un site web ?","faq_answer_4":"Les coûts varient selon la complexité et les fonctionnalités. Un site web de base commence à 1 500 $, tandis que les sites e-commerce complexes peuvent coûter entre 5 000 $ et 15 000 $ +. Nous fournirons un devis détaillé après avoir compris vos exigences.","faq_question_5":"Quelle est votre vision ?","faq_answer_5":"Nous aidons les petites entreprises à construire une présence en ligne forte avec des solutions web simples, efficaces et évolutives.","faq_question_6":"Offrez-vous des consultations gratuites ?","faq_answer_6":"Oui ! Nous offrons une consultation gratuite pour comprendre vos besoins et suggérer la meilleure approche pour votre site web.","faq_question_7":"Pouvez-vous aider avec les mises à jour et la maintenance du site web ?","faq_answer_7":"Absolument ! Nous fournissons un support continu pour garder votre site web opérationnel en douceur.","faq_question_8":"Offrez-vous des solutions e-commerce ?","faq_answer_8":"Oui, nous construisons des boutiques en ligne sécurisées et conviviales pour vous aider à vendre vos produits facilement.","counter_years_experience_label":"Années d'expérience","counter_years_experience_description":"Base solide en développement web et automatisation, offrant une valeur constante depuis le premier jour.","counter_successful_projects_label":"Projets réussis","counter_successful_projects_description":"Des pages d'atterrissage aux sites web complexes, chaque solution est conçue pour obtenir des résultats","counter_satisfied_customers_label":"Clients satisfaits","counter_satisfied_customers_description":"Fait confiance par les entrepreneurs et les entreprises qui reviennent parce que nous obtenons des résultats.","process_step_1_label":"Étape 1","process_step_2_label":"Étape 2","process_step_3_label":"Étape 3"});}),
 "[project]/app/i18n/fr/contact.json (json)", ((__turbopack_context__) => {
 
-__turbopack_context__.v({"page_title":"Contactez-nous","page_subtitle":"Entrez en contact avec notre équipe","contact_info_phone_label":"Numéro de téléphone","contact_info_phone_value":"+44 204 577 0077","contact_info_email_label":"Adresse e-mail","contact_info_email_value":"Vorix@gmail.com","contact_info_address_label":"Adresse du bureau","contact_info_address_value":"Washington Ave, NY","contact_form_title":"Vous avez des questions ? Contactez-nous !","contact_form_name_placeholder":"Votre nom","contact_form_email_placeholder":"Adresse e-mail","contact_form_phone_placeholder":"Votre téléphone","contact_form_subject_placeholder":"Sélectionnez le sujet","contact_form_subject_help_support":"Aide et support","contact_form_subject_features":"Demande de fonctionnalités","contact_form_message_placeholder":"Tapez votre message","contact_form_submit_button":"ENVOYER LE MESSAGE"});}),
+__turbopack_context__.v({"page_title":"Contactez-nous","page_subtitle":"Entrez en contact avec notre équipe","contact_info_phone_label":"Numéro de téléphone","contact_info_phone_value":"+212 776 932898","contact_info_email_label":"Adresse e-mail","contact_info_email_value":"contact@devagency.ma","contact_info_address_label":"Adresse du bureau","contact_info_address_value":"Tetouan, Morocco","contact_form_title":"Vous avez des questions ? Contactez-nous !","contact_form_name_placeholder":"Votre nom","contact_form_email_placeholder":"Adresse e-mail","contact_form_phone_placeholder":"Votre téléphone","contact_form_subject_placeholder":"Sélectionnez le sujet","contact_form_subject_help_support":"Aide et support","contact_form_subject_features":"Demande de fonctionnalités","contact_form_message_placeholder":"Tapez votre message","contact_form_submit_button":"ENVOYER LE MESSAGE"});}),
 "[project]/app/i18n/index.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -818,15 +818,15 @@ const translations = {
 };
 const I18nContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"])(null);
 function useTranslation(namespaces = [
-    'common'
+    "common"
 ]) {
     _s();
     const context = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"])(I18nContext);
     if (!context) {
-        throw new Error('useTranslation must be used within an I18nProvider');
+        throw new Error("useTranslation must be used within an I18nProvider");
     }
     const t = (key, namespace)=>{
-        const ns = namespace || namespaces[0] || 'common';
+        const ns = namespace || namespaces[0] || "common";
         return context.t(key, ns);
     };
     return {
@@ -838,7 +838,7 @@ function useTranslation(namespaces = [
 }
 _s(useTranslation, "b9L3QQ+jgeyIrH0NfHrJ8nn7VMU=");
 function createTranslationFunction(locale) {
-    return (key, namespace = 'common')=>{
+    return (key, namespace = "common")=>{
         const translation = translations[locale][namespace];
         const value = translation[key];
         if (value === undefined) {
@@ -1000,8 +1000,8 @@ const HeaderOne = ({ style_2 })=>{
                                 className: "navbar-toggler d-lg-none",
                                 type: "button",
                                 "data-bs-toggle": "collapse",
-                                "data-bs-target": "#vorixNav",
-                                "aria-controls": "vorixNav",
+                                "data-bs-target": "#devAgencyNav",
+                                "aria-controls": "devAgencyNav",
                                 "aria-expanded": "false",
                                 "aria-label": "Toggle navigation",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1019,7 +1019,7 @@ const HeaderOne = ({ style_2 })=>{
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "collapse navbar-collapse justify-content-end",
-                                id: "vorixNav",
+                                id: "devAgencyNav",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
                                         className: "navbar-nav navbar-nav-scroll",
@@ -1069,7 +1069,7 @@ const HeaderOne = ({ style_2 })=>{
                                                         resetToSystem: resetLanguageToSystem
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                                        lineNumber: 185,
+                                                        lineNumber: 156,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$src$2f$common$2f$ThemeToggle$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1085,13 +1085,13 @@ const HeaderOne = ({ style_2 })=>{
                                                         resetToSystem: resetThemeToSystem
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                                        lineNumber: 197,
+                                                        lineNumber: 168,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                                lineNumber: 181,
+                                                lineNumber: 152,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             style_2 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1120,7 +1120,7 @@ const HeaderOne = ({ style_2 })=>{
                                                                         strokeLinecap: "round"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                                                        lineNumber: 229,
+                                                                        lineNumber: 200,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1130,7 +1130,7 @@ const HeaderOne = ({ style_2 })=>{
                                                                         strokeLinecap: "round"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                                                        lineNumber: 235,
+                                                                        lineNumber: 206,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1140,18 +1140,18 @@ const HeaderOne = ({ style_2 })=>{
                                                                         strokeLinecap: "round"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                                                        lineNumber: 241,
+                                                                        lineNumber: 212,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                                                lineNumber: 222,
+                                                                lineNumber: 193,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                                            lineNumber: 221,
+                                                            lineNumber: 192,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1169,7 +1169,7 @@ const HeaderOne = ({ style_2 })=>{
                                                                         strokeLinecap: "round"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                                                        lineNumber: 257,
+                                                                        lineNumber: 228,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1179,7 +1179,7 @@ const HeaderOne = ({ style_2 })=>{
                                                                         strokeLinecap: "round"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                                                        lineNumber: 263,
+                                                                        lineNumber: 234,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1189,29 +1189,29 @@ const HeaderOne = ({ style_2 })=>{
                                                                         strokeLinecap: "round"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                                                        lineNumber: 269,
+                                                                        lineNumber: 240,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                                                lineNumber: 250,
+                                                                lineNumber: 221,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                                            lineNumber: 249,
+                                                            lineNumber: 220,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                                    lineNumber: 213,
+                                                    lineNumber: 184,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                                lineNumber: 212,
+                                                lineNumber: 183,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                 className: "btn btn-primary",
@@ -1221,26 +1221,26 @@ const HeaderOne = ({ style_2 })=>{
                                                         children: "GET IN TOUCH"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                                        lineNumber: 281,
+                                                        lineNumber: 252,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "GET IN TOUCH"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                                        lineNumber: 282,
+                                                        lineNumber: 253,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                                lineNumber: 280,
+                                                lineNumber: 251,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                                        lineNumber: 150,
+                                        lineNumber: 147,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
@@ -1270,7 +1270,7 @@ const HeaderOne = ({ style_2 })=>{
                 openCanvas: openCanvas
             }, void 0, false, {
                 fileName: "[project]/app/src/layouts/headers/HeaderOne.tsx",
-                lineNumber: 291,
+                lineNumber: 262,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -1899,17 +1899,17 @@ __turbopack_context__.s([
 ]);
 const i18nConfig = {
     locales: [
-        'en',
-        'fr'
+        "en",
+        "fr"
     ],
-    defaultLocale: 'en',
+    defaultLocale: "en",
     localeLabels: {
-        en: 'English',
-        fr: 'Français'
+        en: "English",
+        fr: "Français"
     },
     direction: {
-        en: 'ltr',
-        fr: 'ltr'
+        en: "ltr",
+        fr: "ltr"
     }
 };
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
@@ -2026,28 +2026,12 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 // src/ga/index.ts
 __turbopack_context__.s([
     "initGA",
-    ()=>initGA,
-    "trackEvent",
-    ()=>trackEvent,
-    "trackPageView",
-    ()=>trackPageView
+    ()=>initGA
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$ga4$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-ga4/dist/index.js [app-client] (ecmascript)");
 ;
 const initGA = ()=>{
     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$ga4$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].initialize("G-CHLV3WJMNY");
-};
-const trackPageView = (url)=>{
-    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$ga4$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].send({
-        hitType: "pageview",
-        page: url
-    });
-};
-const trackEvent = (action, category)=>{
-    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$ga4$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].event({
-        category,
-        action
-    });
 };
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
@@ -2134,11 +2118,14 @@ __turbopack_context__.s([
     ()=>ClientLayout
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$src$2f$layouts$2f$headers$2f$HeaderOne$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/src/layouts/headers/HeaderOne.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$src$2f$layouts$2f$footers$2f$FooterOne$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/src/layouts/footers/FooterOne.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$src$2f$common$2f$ScrollToTop$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/src/common/ScrollToTop.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$src$2f$common$2f$BackToTop$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/src/common/BackToTop.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$ClientProviders$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/ClientProviders.tsx [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
@@ -2147,46 +2134,54 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$ClientProviders$2e$ts
 ;
 ;
 function ClientLayout({ children }) {
+    _s();
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "ClientLayout.useEffect": ()=>{
+            // Import Bootstrap JS for navbar collapse functionality on client side only
+            __turbopack_context__.A("[project]/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js [app-client] (ecmascript, async loader)");
+        }
+    }["ClientLayout.useEffect"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$ClientProviders$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$src$2f$layouts$2f$headers$2f$HeaderOne$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 style_2: true
             }, void 0, false, {
                 fileName: "[project]/app/ClientLayout.tsx",
-                lineNumber: 13,
+                lineNumber: 18,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
                 children: children
             }, void 0, false, {
                 fileName: "[project]/app/ClientLayout.tsx",
-                lineNumber: 14,
+                lineNumber: 19,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$src$2f$layouts$2f$footers$2f$FooterOne$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 style_2: true
             }, void 0, false, {
                 fileName: "[project]/app/ClientLayout.tsx",
-                lineNumber: 17,
+                lineNumber: 22,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$src$2f$common$2f$ScrollToTop$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/ClientLayout.tsx",
-                lineNumber: 18,
+                lineNumber: 23,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$src$2f$common$2f$BackToTop$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/ClientLayout.tsx",
-                lineNumber: 19,
+                lineNumber: 24,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/ClientLayout.tsx",
-        lineNumber: 12,
+        lineNumber: 17,
         columnNumber: 5
     }, this);
 }
+_s(ClientLayout, "OD7bBpZva5O2jO+Puf00hKivP7c=");
 _c = ClientLayout;
 var _c;
 __turbopack_context__.k.register(_c, "ClientLayout");

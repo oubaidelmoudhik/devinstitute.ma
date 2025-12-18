@@ -6,7 +6,7 @@ const OffCanvas = ({ openCanvas, setOpenCavas }: any) => {
   return (
     <>
       <div
-        className={`offcanvas offcanvas-start right-side-vorix-offcanvas shadow-lg ${
+        className={`offcanvas offcanvas-start right-side-devAgency-offcanvas shadow-lg ${
           openCanvas ? "show" : ""
         }`}
         tabIndex={-1}
@@ -109,7 +109,7 @@ const OffCanvas = ({ openCanvas, setOpenCavas }: any) => {
 
               <div>
                 <p>Office Address</p>
-                <h5 className="mb-0">Washington Ave, NY </h5>
+                <h5 className="mb-0">Tetouan, Morocco </h5>
               </div>
             </div> */}
           </div>

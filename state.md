@@ -1,11 +1,13 @@
 # Website State - Dev Institute
 
 ## Overview
+
 Dev Institute is a web development agency website built with Next.js, React, TypeScript, and Vite. The site serves as a portfolio and lead generation platform for a Moroccan-based development company specializing in web development, e-commerce solutions, and digital marketing.
 
 ## Current Status: **Partially Complete with Recent Enhancements**
 
 ### ✅ Active Features
+
 - **Home Page**: Fully functional with all sections enabled
 - **Contact Page**: Basic contact information with placeholder data
 - **Error Page**: 404 handling with custom styling
@@ -16,6 +18,7 @@ Dev Institute is a web development agency website built with Next.js, React, Typ
 - **Performance**: Image optimization and lazy loading
 
 ### ❌ Inactive Features (Commented Out)
+
 - About Us page
 - Services page
 - Service Details page
@@ -30,6 +33,7 @@ Dev Institute is a web development agency website built with Next.js, React, Typ
 - Blog Details page
 
 ## Technical Stack
+
 - **Framework**: Next.js 16.0.10 with App Router
 - **Frontend**: React 18.3.1, TypeScript 5.x
 - **Build Tool**: Vite 6.3.2 with Turbopack
@@ -43,6 +47,7 @@ Dev Institute is a web development agency website built with Next.js, React, Typ
 - **Additional Libraries**: React Fast Marquee, React Modal Video, React Slick, Jarallax
 
 ## Content & Branding
+
 - **Company**: Dev Institute (devinstitute.ma)
 - **Tagline**: "We're a Development Agency"
 - **Mission**: "Digital Solutions Made Simple" - Helping small businesses grow online
@@ -51,6 +56,7 @@ Dev Institute is a web development agency website built with Next.js, React, Typ
 - **Services**: Web Design, Web Development, UI/UX Design, E-commerce Solutions, SEO & Performance, Website Maintenance
 
 ## Portfolio Projects (7 total)
+
 1. **Rim Bakhat** - WordPress (rimbakhat.com)
 2. **Rif Walks** - WordPress (rifwalks.com)
 3. **Blausee Switzerland** - Shopify (blauseeswitzerland.com)
@@ -60,12 +66,14 @@ Dev Institute is a web development agency website built with Next.js, React, Typ
 7. **Gavilia** - WordPress (gavilia.ma)
 
 ## Contact Information
-- **Phone**: +44 204 577 0077 (placeholder)
-- **Email**: Vorix@gmail.com (placeholder)
+
+- **Phone**: +212 776 932898 (placeholder)
+- **Email**: contact@devagency.ma (placeholder)
 - **WhatsApp**: +212 776 932 898 (Moroccan number - legitimate)
 - **Social Media**: Facebook, Instagram links available
 
 ## Home Page Sections
+
 1. **Hero**: Main headline, client count, free consultation CTA
 2. **Video**: "Why Choose DEV Agency?" section
 3. **Mission**: Accordion with mission/vision statements
@@ -76,12 +84,14 @@ Dev Institute is a web development agency website built with Next.js, React, Typ
 8. **Footer**: Standard footer with links
 
 ## Recent Enhancements (December 2025)
+
 - **Advanced Theme System**: Automatic dark/light mode based on system preferences with manual override capability
 - **Improved Theme Toggle**: Visual indicators for system-following vs manual override, right-click to reset to system preference
 - **Build Optimization**: Enhanced image optimization script with Sharp integration
 - **Performance Improvements**: Better code splitting and lazy loading
 
 ## Issues & Gaps
+
 - **Incomplete Translations**: French content partially translated (hero, basic sections done, video/mission sections still in English)
 - **Placeholder Data**: Contact information uses dummy data
 - **Missing Pages**: Most secondary pages are disabled but components exist
@@ -90,6 +100,7 @@ Dev Institute is a web development agency website built with Next.js, React, Typ
 - **Limited Services Detail**: Services mentioned but no dedicated page
 
 ## Analytics & Performance
+
 - Google Analytics 4 integrated with custom tracking
 - Image optimization script included in build process (Sharp-based)
 - Responsive design with Bootstrap 5
@@ -100,6 +111,7 @@ Dev Institute is a web development agency website built with Next.js, React, Typ
 ## Project Structure
 
 ### Root Directory
+
 ```
 devinstitute.ma/
 ├── .next/                          # Next.js build output
@@ -210,6 +222,7 @@ devinstitute.ma/
 ```
 
 ## Development Notes
+
 - **TypeScript**: Strict mode enabled with comprehensive type checking
 - **ESLint**: Modern configuration with React hooks and TypeScript rules
 - **Code Quality**: Knip for unused dependency detection
@@ -219,4 +232,4 @@ devinstitute.ma/
 - **Theme System**: Advanced implementation with system preference detection
 - **Build Process**: Automated image optimization with Sharp
 - **Performance**: Code splitting, lazy loading, and optimized assets</content>
-<parameter name="filePath">/home/oubaid/Documents/Web Dev/Projects/devinstitute.ma/state.md
+  <parameter name="filePath">/home/oubaid/Documents/Web Dev/Projects/devinstitute.ma/state.md

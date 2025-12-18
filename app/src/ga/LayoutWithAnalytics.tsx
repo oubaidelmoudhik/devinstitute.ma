@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 // import { Outlet, useLocation } from "next/link";
 import Wrapper from "../layouts/Wrapper";
-import { initGA, trackPageView } from ".";
+import { initGA } from ".";
 
 export default function LayoutWithAnalytics() {
   // const location = useLocation();
