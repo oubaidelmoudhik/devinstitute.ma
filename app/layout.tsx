@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./src/style.scss";
+import "../public/assets/css/style.css";
+import "../styles/style.scss";
 import "animate.css";
 
 import React from "react";
@@ -12,8 +13,14 @@ export const metadata: Metadata = {
     default: "Dev Institute – Web Development Agency in Morocco",
     template: "%s | Dev Institute",
   },
-  description: "Professional web development services in Morocco. We create modern, responsive websites and web applications for businesses.",
-  keywords: ["web development", "Morocco", "website design", "web applications"],
+  description:
+    "Professional web development services in Morocco. We create modern, responsive websites and web applications for businesses.",
+  keywords: [
+    "web development",
+    "Morocco",
+    "website design",
+    "web applications",
+  ],
   authors: [{ name: "Dev Institute" }],
   creator: "Dev Institute",
   publisher: "Dev Institute",
@@ -30,13 +37,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     siteName: "Dev Institute",
     title: "Dev Institute – Web Development Agency in Morocco",
-    description: "Professional web development services in Morocco. We create modern, responsive websites and web applications for businesses.",
+    description:
+      "Professional web development services in Morocco. We create modern, responsive websites and web applications for businesses.",
     url: "https://devinstitute.ma",
   },
   twitter: {
     card: "summary_large_image",
     title: "Dev Institute – Web Development Agency in Morocco",
-    description: "Professional web development services in Morocco. We create modern, responsive websites and web applications for businesses.",
+    description:
+      "Professional web development services in Morocco. We create modern, responsive websites and web applications for businesses.",
     creator: "@devinstitute",
   },
   robots: {

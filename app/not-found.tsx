@@ -1,10 +1,10 @@
 "use client";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
-import Breacrumb from "./src/common/Breacrumb";
+import Breacrumb from "@/components/common/Breacrumb";
+import Cta2Area from "@/components/home/Cta2Area";
 import Link from "next/link";
-import Cta2Area from "./src/components/home/Cta2Area";
 
 const ErrorArea = () => {
   return (

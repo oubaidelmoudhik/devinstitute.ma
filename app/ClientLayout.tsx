@@ -1,13 +1,17 @@
 "use client";
 
 import React, { useEffect } from "react";
-import HeaderOne from "./src/layouts/headers/HeaderOne";
-import FooterOne from "./src/layouts/footers/FooterOne";
-import ScrollToTop from "./src/common/ScrollToTop";
-import BackToTop from "./src/common/BackToTop";
+import FooterOne from "@/layouts/footers/FooterOne";
 import ClientProviders from "./ClientProviders";
+import HeaderOne from "@/layouts/headers/HeaderOne";
+import ScrollToTop from "@/hooks/scroll-to-top";
+import BackToTop from "@/components/common/BackToTop";
 
-export default function ClientLayout({ children }: { children: React.ReactNode }) {
+export default function ClientLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   useEffect(() => {
     // Import Bootstrap JS for navbar collapse functionality on client side only
     import("bootstrap/dist/js/bootstrap.bundle.min.js");
@@ -16,9 +20,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   return (
     <ClientProviders>
       <HeaderOne style_2={true} />
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
       <FooterOne style_2={true} />
       <ScrollToTop />
       <BackToTop />
