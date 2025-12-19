@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 // import { Outlet, useLocation } from "next/link";
-import Wrapper from "../layouts/Wrapper";
+import Wrapper from "../../layouts/Wrapper";
 import { initGA } from ".";
 
 export default function LayoutWithAnalytics() {

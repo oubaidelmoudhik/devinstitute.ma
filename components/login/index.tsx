@@ -1,5 +1,5 @@
-import BackToTop from "../../common/BackToTop";
-import Breacrumb from "../../common/Breacrumb";
+import BackToTop from "../common/BackToTop";
+import Breacrumb from "../common/Breacrumb";
 import FooterOne from "../../layouts/footers/FooterOne";
 import HeaderOne from "../../layouts/headers/HeaderOne";
 import Cta2Area from "../home/Cta2Area";

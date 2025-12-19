@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Breacrumb from "../common/Breacrumb";
+import Breacrumb from "../../components/common/Breacrumb";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
 };
 
 export const dynamic = "force-dynamic";
-import Cta2Area from "../components/home/Cta2Area";
-import ContactArea from "../components/contact/ContactArea";
+import Cta2Area from "../../components/home/Cta2Area";
+import ContactArea from "../../components/contact/ContactArea";
 
 const Contact = () => {
   return (

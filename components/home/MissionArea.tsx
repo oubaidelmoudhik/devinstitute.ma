@@ -7,6 +7,7 @@ const MissionArea = () => {
   const { t } = useTranslation(["home"]);
   useEffect(() => {
     if (typeof window !== "undefined") {
+      // @ts-ignore - Bootstrap JS bundle doesn't have type definitions
       import("bootstrap/dist/js/bootstrap.bundle.min.js");
     }
   }, []);

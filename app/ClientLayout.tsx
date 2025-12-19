@@ -14,6 +14,7 @@ export default function ClientLayout({
 }) {
   useEffect(() => {
     // Import Bootstrap JS for navbar collapse functionality on client side only
+    // @ts-ignore - Bootstrap JS bundle doesn't have type definitions
     import("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
 
