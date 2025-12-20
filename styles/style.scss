@@ -6,6 +6,72 @@
 
 
 
+// Back to top button styles
+.back-to-top-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+
+  &.back-to-top-btn-show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .back-to-top-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--clr-primary-green);
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    &:hover {
+      background: var(--clr-dark-green);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(10, 12, 0, 0.3);
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover svg {
+      transform: translateY(-1px);
+    }
+  }
+}
+
+.back_to_top-2 {
+  .back-to-top-btn {
+    background: var(--clr-black);
+    color: var(--clr-off-white);
+
+    &:hover {
+      background: var(--clr-primary-green);
+      color: white;
+    }
+  }
+}
+
 // Custom theme and language toggle enhancements
 .theme-btn {
   position: relative;
@@ -32,5 +98,14 @@
 
   @media only screen and (min-width: 992px) {
     margin-right: 16px;
+  }
+}
+
+// Hero title responsive font size
+.hero-title-responsive {
+  font-size: calc(1.375rem + 1.5vw);
+
+  @media (min-width: 768px) {
+    font-size: 5.1rem;
   }
 }

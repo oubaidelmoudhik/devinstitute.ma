@@ -1,13 +1,13 @@
 {
-  "free_consultation_cta": "Free Consultation",
-  "get_in_touch_cta": "Get In Touch",
-  "learn_more_cta": "Learn More",
-  "submit_form_cta": "Submit",
-  "send_message_cta": "Send Message",
-  "contact_us_cta": "Contact Us",
-  "view_projects_cta": "View Our Projects",
-  "read_more_cta": "Read More",
-  "form_validation_email_invalid": "Please enter a valid email address.",
-  "form_error_generic": "Something went wrong. Try again later.",
-  "newsletter_success_message": "Thanks for subscribing!"
+  "cta_1": "Free Consultation",
+  "cta_2": "Get In Touch",
+  "cta_3": "Learn More",
+  "cta_4": "Submit",
+  "cta_5": "Send Message",
+  "cta_6": "Contact Us",
+  "cta_7": "View Our Projects",
+  "cta_8": "Read More",
+  "form_1": "Please enter a valid email address.",
+  "form_2": "Something went wrong. Try again later.",
+  "newsletter_1": "Thanks for subscribing!"
 }

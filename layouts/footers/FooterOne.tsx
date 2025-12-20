@@ -20,7 +20,7 @@ const FooterOne = ({ style_2 }: any) => {
               <div className="footer-card">
                 <Logo />
 
-                <p className="mb-0">{t("company_description", "footer")}</p>
+                <p className="mb-0">{t("company_1", "footer")}</p>
 
                 <div className="social-nav">
                   <a href={SOCIALS.facebook}>
@@ -77,26 +77,26 @@ const FooterOne = ({ style_2 }: any) => {
 
             <div className="col-12 col-md-6 col-xl">
               <div className="footer-card">
-                <h5 className="mb-0">{t("services_section_title", "home")}</h5>
+                <h5 className="mb-0">{t("services_1", "home")}</h5>
 
                 <ul className="footer-nav">
                   <li>
                     <a href="#">
-                      {t("footer_service_web_development", "footer")}
+                      {t("footer_service_1", "footer")}
                     </a>
                   </li>
                   <li>
-                    <a href="#">{t("footer_service_ui_ux_design", "footer")}</a>
+                    <a href="#">{t("footer_service_2", "footer")}</a>
                   </li>
                   <li>
-                    <a href="#">{t("footer_service_mobile_apps", "footer")}</a>
+                    <a href="#">{t("footer_service_3", "footer")}</a>
                   </li>
                   <li>
-                    <a href="#">{t("footer_service_saas_design", "footer")}</a>
+                    <a href="#">{t("footer_service_4", "footer")}</a>
                   </li>
                   <li>
                     <a href="#">
-                      {t("footer_service_webflow_design", "footer")}
+                      {t("footer_service_5", "footer")}
                     </a>
                   </li>
                 </ul>
@@ -157,7 +157,7 @@ const FooterOne = ({ style_2 }: any) => {
           <div className="row align-items-center">
             <div className="col-12 col-lg-6">
               <p className="mb-0 copyright">
-                {t("copyright_text", "footer").replace(
+                {t("copyright_1", "footer").replace(
                   "{{year}}",
                   new Date().getFullYear().toString()
                 )}

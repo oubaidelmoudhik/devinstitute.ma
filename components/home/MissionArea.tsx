@@ -25,15 +25,15 @@ const MissionArea = () => {
 
                 <div className="experience">
                   <h3 className="mb-0">7+</h3>
-                  <span>Years Experience</span>
+                  <span>{t("counter_1", "home")}</span>
                 </div>
               </div>
             </div>
 
             <div className="col-12 col-lg-6">
               <div className="mission-vision-content">
-                <h2>{t("mission_main_title", "home")}</h2>
-                <p className="mb-4">{t("mission_main_description", "home")}</p>
+                <h2>{t("mission_2", "home")}</h2>
+                <p className="mb-4">{t("mission_3", "home")}</p>
 
                 <div className="mission-vision-accordion">
                   <div className="accordion" id="missionVision">
@@ -47,7 +47,7 @@ const MissionArea = () => {
                           aria-expanded="true"
                           aria-controls="collapseOne"
                         >
-                          {t("mission_accordion_mission_title", "home")}
+                          {t("mission_4", "home")}
                         </button>
                       </h2>
                       <div
@@ -56,7 +56,7 @@ const MissionArea = () => {
                         data-bs-parent="#missionVision"
                       >
                         <div className="accordion-body">
-                          {t("mission_accordion_mission_content", "home")}
+                          {t("mission_5", "home")}
                         </div>
                       </div>
                     </div>
@@ -71,7 +71,7 @@ const MissionArea = () => {
                           aria-expanded="false"
                           aria-controls="collapseTwo"
                         >
-                          {t("mission_accordion_vision_title", "home")}
+                          {t("mission_6", "home")}
                         </button>
                       </h2>
                       <div
@@ -80,7 +80,7 @@ const MissionArea = () => {
                         data-bs-parent="#missionVision"
                       >
                         <div className="accordion-body">
-                          {t("mission_accordion_vision_content", "home")}
+                          {t("mission_7", "home")}
                         </div>
                       </div>
                     </div>

@@ -15,7 +15,7 @@ export default function SubscribeForm() {
     setError("");
 
     if (!email.includes("@")) {
-      setError(t("form_validation_email_invalid", "common"));
+      setError(t("form_1", "common"));
       return;
     }
 
@@ -36,18 +36,18 @@ export default function SubscribeForm() {
       setSubmitted(true);
       setEmail("");
     } catch (err) {
-      setError(t("form_error_generic", "common"));
+      setError(t("form_2", "common"));
     }
   };
 
   return (
     <>
-      <h5 className="mb-0">{t("newsletter_title", "footer")}</h5>
+      <h5 className="mb-0">{t("newsletter_1", "footer")}</h5>
       <form onSubmit={handleSubmit} className="subscribe-form">
         <input
           type="email"
           className="form-control"
-          placeholder={t("newsletter_placeholder", "footer")}
+          placeholder={t("newsletter_3", "footer")}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -59,7 +59,7 @@ export default function SubscribeForm() {
 
         {submitted && (
           <p className="text-green-600">
-            {t("newsletter_success_message", "common")}
+            {t("newsletter_1", "common")}
           </p>
         )}
         {error && <p className="text-red-600">{error}</p>}

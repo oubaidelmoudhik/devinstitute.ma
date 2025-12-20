@@ -23,7 +23,7 @@ const FaqArea = ({ style_2 }: any) => {
           <div className="row g-5 align-items-center">
             <div className="col-12 col-lg-6">
               <div className="section-heading">
-                <h2 className="mb-0">{t("faq_section_title", "home")}</h2>
+                <h2 className="mb-0">{t("faq_1", "home")}</h2>
               </div>
 
               <div className="divider-sm"></div>
@@ -33,11 +33,7 @@ const FaqArea = ({ style_2 }: any) => {
 
                 <div className="faq-info d-flex align-items-center">
                   <h2 className="mb-0">{NUM_CLIENTS}+</h2>
-                  <p className="mb-0">
-                    {t("hero_clients_count_text", "home").split(
-                      "{{count}}"
-                    )[1] || "Clients"}
-                  </p>
+                  <p className="mb-0">{t("counter_5", "home") || "Clients"}</p>
                 </div>
               </div>
             </div>
@@ -47,32 +43,32 @@ const FaqArea = ({ style_2 }: any) => {
                 <div className="accordion" id="faqAccordion">
                   <FAQQuestion
                     id={1}
-                    question={t("faq_question_5", "home")}
-                    answer={t("faq_answer_5", "home")}
+                    question={t("faq_10", "home")}
+                    answer={t("faq_11", "home")}
                   />
 
                   <FAQQuestion
                     id={2}
-                    question={t("faq_question_6", "home")}
-                    answer={t("faq_answer_6", "home")}
+                    question={t("faq_12", "home")}
+                    answer={t("faq_13", "home")}
                   />
 
                   <FAQQuestion
                     id={3}
-                    question={t("faq_question_7", "home")}
-                    answer={t("faq_answer_7", "home")}
+                    question={t("faq_14", "home")}
+                    answer={t("faq_15", "home")}
                   />
 
                   <FAQQuestion
                     id={4}
-                    question={t("faq_question_8", "home")}
-                    answer={t("faq_answer_8", "home")}
+                    question={t("faq_16", "home")}
+                    answer={t("faq_17", "home")}
                   />
 
                   <FAQQuestion
                     id={5}
-                    question={t("faq_question_1", "home")}
-                    answer={t("faq_answer_1", "home")}
+                    question={t("faq_2", "home")}
+                    answer={t("faq_3", "home")}
                   />
                 </div>
               </div>

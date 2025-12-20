@@ -27,7 +27,7 @@ const Breacrumb = ({title, subtitle, titleKey, subtitleKey, isMainHeading = fals
                 <h2 className="wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="700ms">{displayTitle}</h2>
               )}
               <ul className="list-unstyled wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="1000ms">
-                <li><Link href="/">{t('home_link', 'navigation')}</Link></li>
+                <li><Link href="/">{t('nav_1', 'navigation')}</Link></li>
                 <li>{displaySubtitle}</li>
              </ul>
           </div>

@@ -14,7 +14,7 @@ const ProcessArea = () => {
           <div className="row g-3 justify-content-center">
             <div className="col-12 col-lg-6">
               <div className="section-heading text-center">
-                <h2 className="mb-0">{t("process_section_title", "home")}</h2>
+                 <h2 className="mb-0">{t("process_1", "home")}</h2>
               </div>
             </div>
           </div>
@@ -23,15 +23,15 @@ const ProcessArea = () => {
 
           <div className="stepper-wrap">
             <div>
-              <h6>{t("process_step_1_label", "home")}</h6>
+               <h6>{t("process_8", "home")}</h6>
               <span></span>
             </div>
             <div>
-              <h6>{t("process_step_2_label", "home")}</h6>
+               <h6>{t("process_9", "home")}</h6>
               <span></span>
             </div>
             <div>
-              <h6>{t("process_step_3_label", "home")}</h6>
+               <h6>{t("process_10", "home")}</h6>
               <span></span>
             </div>
           </div>
@@ -93,10 +93,10 @@ const ProcessArea = () => {
                   </defs>
                 </svg>
 
-                <h4>{t("process_step_1_title", "home")}</h4>
-                <p className="mb-0">
-                  {t("process_step_1_description", "home")}
-                </p>
+                 <h4>{t("process_2", "home")}</h4>
+                 <p className="mb-0">
+                   {t("process_3", "home")}
+                 </p>
               </div>
             </div>
 
@@ -139,10 +139,10 @@ const ProcessArea = () => {
                   />
                 </svg>
 
-                <h4>{t("process_step_2_title", "home")}</h4>
-                <p className="mb-0">
-                  {t("process_step_2_description", "home")}
-                </p>
+                 <h4>{t("process_4", "home")}</h4>
+                 <p className="mb-0">
+                   {t("process_5", "home")}
+                 </p>
               </div>
             </div>
 
@@ -161,10 +161,10 @@ const ProcessArea = () => {
                   />
                 </svg>
 
-                <h4>{t("process_step_3_title", "home")}</h4>
-                <p className="mb-0">
-                  {t("process_step_3_description", "home")}
-                </p>
+                 <h4>{t("process_6", "home")}</h4>
+                 <p className="mb-0">
+                   {t("process_7", "home")}
+                 </p>
               </div>
             </div>
           </div>

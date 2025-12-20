@@ -1,8 +1,11 @@
 // import { Link } from "next/link";
 import { COLORS, SOCIALS } from "@/data/constants";
 import Logo from "./Logo";
+import { useTranslation } from "@/i18n";
 
 const OffCanvas = ({ openCanvas, setOpenCavas }: any) => {
+  const { t } = useTranslation(["offcanvas"]);
+
   return (
     <>
       <div
@@ -25,10 +28,9 @@ const OffCanvas = ({ openCanvas, setOpenCavas }: any) => {
         </div>
 
         <div className="offcanvas-body">
-          <h4 className="mb-3">Reach Out Us!</h4>
+          <h4 className="mb-3">{t("title", "offcanvas")}</h4>
           <p>
-            Ready to take the first step towards unlocking opportunity realizing
-            goals.
+            {t("description", "offcanvas")}
           </p>
 
           <div className="contact-info">
@@ -56,7 +58,7 @@ const OffCanvas = ({ openCanvas, setOpenCavas }: any) => {
               </div>
 
               <div>
-                <p>Phone number</p>
+                <p>{t("phone_label", "offcanvas")}</p>
                 <h5 className="mb-0">
                   <a href="tel:+212776932898" target="_blank">
                     +212 776-932898
@@ -82,7 +84,7 @@ const OffCanvas = ({ openCanvas, setOpenCavas }: any) => {
               </div>
 
               <div>
-                <p>Email address</p>
+                <p>{t("email_label", "offcanvas")}</p>
                 <h5 className="mb-0">
                   <a href="mailto:devinstitute.ma@gmail.com" target="_blank">
                     devinstitute.ma@gmail.com
@@ -114,7 +116,7 @@ const OffCanvas = ({ openCanvas, setOpenCavas }: any) => {
             </div> */}
           </div>
 
-          <h4 className="mb-3">Social Networks</h4>
+          <h4 className="mb-3">{t("social_title", "offcanvas")}</h4>
 
           <div className="social-nav">
             <a href={SOCIALS.facebook} target="_blank">

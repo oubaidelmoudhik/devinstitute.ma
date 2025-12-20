@@ -17,7 +17,8 @@ const ProjectArea = () => {
           <div className="row g-5 align-items-end justify-content-between">
             <div className="col-12 col-md-6 col-lg-5">
               <div className="section-heading">
-                <h2 className="mb-0">{t("projects_section_title", "home")}</h2>
+                <h2 className="mb-0">{t("projects_1", "home")}</h2>
+                <h5 className="mb-0">{t("projects_2", "home")}</h5>
               </div>
             </div>
 

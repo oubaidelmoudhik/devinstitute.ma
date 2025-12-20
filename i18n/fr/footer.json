@@ -1,18 +1,18 @@
 {
-  "company_description": "Agence créative spécialisée dans la conception et le développement moderne.",
-  "newsletter_title": "Restez informé",
-  "newsletter_description": "Abonnez-vous à notre newsletter pour les dernières mises à jour et insights.",
-  "newsletter_placeholder": "Entrez votre adresse e-mail",
-  "copyright_text": "© 2025 Dev Institute. Tous droits réservés.",
-  "privacy_policy_link": "Politique de confidentialité",
-  "terms_of_service_link": "Conditions d'utilisation",
-  "social_facebook_alt": "Suivez-nous sur Facebook",
-  "social_instagram_alt": "Suivez-nous sur Instagram",
-  "social_whatsapp_alt": "Contactez-nous sur WhatsApp",
+  "company_1": "Agence créative spécialisée dans la conception et le développement moderne.",
+  "newsletter_1": "Restez informé",
+  "newsletter_2": "Abonnez-vous à notre newsletter pour les dernières mises à jour et insights.",
+  "newsletter_3": "Entrez votre adresse e-mail",
+  "copyright_1": "© 2025 Dev Agency. Tous droits réservés.",
+  "link_1": "Politique de confidentialité",
+  "link_2": "Conditions d'utilisation",
+  "social_1": "Suivez-nous sur Facebook",
+  "social_2": "Suivez-nous sur Instagram",
+  "social_3": "Contactez-nous sur WhatsApp",
 
-  "footer_service_web_development": "Développement web",
-  "footer_service_ui_ux_design": "Design UI/UX",
-  "footer_service_mobile_apps": "Design d'applications mobiles",
-  "footer_service_saas_design": "Design SaaS",
-  "footer_service_webflow_design": "Design Webflow"
+  "footer_service_1": "Développement web",
+  "footer_service_2": "Design UI/UX",
+  "footer_service_3": "Design d'applications mobiles",
+  "footer_service_4": "Design SaaS",
+  "footer_service_5": "Design Webflow"
 }

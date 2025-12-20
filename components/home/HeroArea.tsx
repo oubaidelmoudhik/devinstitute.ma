@@ -15,12 +15,11 @@ const HeroArea = () => {
             <div className="col-12 col-lg-8 col-xl-9">
               <div className="hero-content home2">
                 <h1
-                  className="mb-0 wow fadeInUp"
+                  className="mb-0 wow fadeInUp hero-title-responsive"
                   data-wow-duration="1000ms"
                   data-wow-delay="700ms"
-                  style={{ fontSize: "4.5rem" }}
                 >
-                  {t("hero_headline_primary", "home")}
+                  {t("hero_1", "home")}
                 </h1>
               </div>
             </div>
@@ -28,7 +27,7 @@ const HeroArea = () => {
             <div className="col-12 col-md-8 col-lg-4 col-xl-3">
               <div className="hero-content home2">
                 <div
-                  className="d-flex align-items-center gap-3 wow fadeInUp"
+                  className="d-flex align-items-center gap-5 wow fadeInUp"
                   data-wow-duration="1000ms"
                   data-wow-delay="900ms"
                 >
@@ -43,7 +42,7 @@ const HeroArea = () => {
                     </div>
                   </div>
                   <h6 className="mb-0">
-                    {t("hero_clients_count_text", "home").replace(
+                    {t("hero_2", "home").replace(
                       "{{count}}",
                       NUM_CLIENTS.toString()
                     )}
@@ -54,7 +53,7 @@ const HeroArea = () => {
                   data-wow-duration="1000ms"
                   data-wow-delay="1100ms"
                 >
-                  {t("hero_description_paragraph", "home")}
+                  {t("hero_3", "home")}
                 </p>
 
                 <a
@@ -66,8 +65,8 @@ const HeroArea = () => {
                   data-wow-delay="1200ms"
                   style={{ width: "100%" }}
                 >
-                  <span>{t("hero_free_consultation_cta", "home")}</span>
-                  <span>{t("hero_free_consultation_cta", "home")}</span>
+                  <span>{t("hero_4", "home")}</span>
+                  <span>{t("hero_4", "home")}</span>
                 </a>
               </div>
             </div>

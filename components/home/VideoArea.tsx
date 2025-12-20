@@ -128,10 +128,10 @@ const VideoArea = ({ style_2 }: any) => {
           )}
 
           <div className="row g-4 g-lg-5">
-            {COUNTER_DATA.map((item, i) => {
-              const labelKey = `counter_${item.key}_label`;
-              const descriptionKey = `counter_${item.key}_description`;
-              return (
+             {COUNTER_DATA.map((item, i) => {
+               const labelKey = `counter_${i * 2 + 1}`;
+               const descriptionKey = `counter_${i * 2 + 2}`;
+               return (
                 <div key={i} className="col-12 col-md-4">
                   <div className="cta-content">
                     <h2 className="mb-3">

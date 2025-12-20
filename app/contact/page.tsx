@@ -29,8 +29,8 @@ const Contact = () => {
   return (
     <>
       <Breacrumb
-        titleKey="page_title_contact_us"
-        subtitleKey="page_title_contact"
+        titleKey="title_2"
+        subtitleKey="title_3"
         isMainHeading={true}
       />
       <ContactArea />

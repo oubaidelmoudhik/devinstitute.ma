@@ -30,7 +30,7 @@ const ScrollToTop = ({ style }: style_type) => {
     <>
       <div
         className={`back-to-top-wrapper ${style && "back_to_top-2"} ${
-          sticky && "back-to-top-btn-show"
+          showScroll && "back-to-top-btn-show"
         }`}
       >
         <button

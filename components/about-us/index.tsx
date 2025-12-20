@@ -10,7 +10,7 @@ const Aboutus = () => {
   return (
     <>
       <HeaderOne />
-      <Breacrumb titleKey="page_title_about_us" subtitleKey="about_menu" />
+      <Breacrumb titleKey="title_1" subtitleKey="page_3" />
       <VideoArea style_2={true} />
       <TeamArea />
       <TestimonialArea />

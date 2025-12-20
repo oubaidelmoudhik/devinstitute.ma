@@ -36,9 +36,9 @@ const ContactArea = () => {
                 </div>
 
                 <p className="mb-0">
-                  {t("contact_info_phone_label", "contact")}
+                  {t("contact_1", "contact")}
                 </p>
-                <h4>{t("contact_info_phone_value", "contact")}</h4>
+                <h4>{t("contact_2", "contact")}</h4>
               </div>
             </div>
 
@@ -60,9 +60,9 @@ const ContactArea = () => {
                 </div>
 
                 <p className="mb-0">
-                  {t("contact_info_email_label", "contact")}
+                  {t("contact_3", "contact")}
                 </p>
-                <h4>{t("contact_info_email_value", "contact")}</h4>
+                <h4>{t("contact_4", "contact")}</h4>
               </div>
             </div>
 
@@ -84,9 +84,9 @@ const ContactArea = () => {
                 </div>
 
                 <p className="mb-0">
-                  {t("contact_info_address_label", "contact")}
+                  {t("contact_5", "contact")}
                 </p>
-                <h4>{t("contact_info_address_value", "contact")}</h4>
+                <h4>{t("contact_6", "contact")}</h4>
               </div>
             </div>
           </div>
@@ -107,7 +107,7 @@ const ContactArea = () => {
               <div className="col-12 col-lg-10">
                 <div className="contact-form bg-secondary m-0 mt-0">
                   <div className="section-heading text-center">
-                    <h2>{t("contact_form_title", "contact")}</h2>
+                    <h2>{t("form_1", "contact")}</h2>
                   </div>
 
                   <div className="divider-sm"></div>
@@ -119,7 +119,7 @@ const ContactArea = () => {
                           type="text"
                           className="form-control"
                           placeholder={t(
-                            "contact_form_name_placeholder",
+                            "form_2",
                             "contact"
                           )}
                         />
@@ -129,7 +129,7 @@ const ContactArea = () => {
                           type="email"
                           className="form-control"
                           placeholder={t(
-                            "contact_form_email_placeholder",
+                            "form_3",
                             "contact"
                           )}
                         />
@@ -139,7 +139,7 @@ const ContactArea = () => {
                           type="text"
                           className="form-control"
                           placeholder={t(
-                            "contact_form_phone_placeholder",
+                            "form_4",
                             "contact"
                           )}
                         />
@@ -147,13 +147,13 @@ const ContactArea = () => {
                       <div className="col-12 col-lg-6">
                         <select className="form-control">
                           <option value="">
-                            {t("contact_form_subject_placeholder", "contact")}
+                            {t("form_5", "contact")}
                           </option>
                           <option value="">
-                            {t("contact_form_subject_help_support", "contact")}
+                            {t("form_6", "contact")}
                           </option>
                           <option value="">
-                            {t("contact_form_subject_features", "contact")}
+                            {t("form_7", "contact")}
                           </option>
                         </select>
                       </div>
@@ -163,7 +163,7 @@ const ContactArea = () => {
                           rows={20}
                           cols={30}
                           placeholder={t(
-                            "contact_form_message_placeholder",
+                            "form_8",
                             "contact"
                           )}
                         ></textarea>
@@ -175,10 +175,10 @@ const ContactArea = () => {
                             className="btn btn-primary rounded-pill"
                           >
                             <span>
-                              {t("contact_form_submit_button", "contact")}
+                              {t("form_9", "contact")}
                             </span>
                             <span>
-                              {t("contact_form_submit_button", "contact")}
+                              {t("form_9", "contact")}
                             </span>
                           </button>
                         </div>

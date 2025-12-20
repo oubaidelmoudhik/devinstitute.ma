@@ -1,23 +1,23 @@
 {
-  "page_title": "Contactez-nous",
-  "page_subtitle": "Entrez en contact avec notre équipe",
+  "page_1": "Contactez-nous",
+  "page_2": "Entrez en contact avec notre équipe",
 
-  "contact_info_phone_label": "Numéro de téléphone",
-  "contact_info_phone_value": "+212 776 932898",
+  "contact_1": "Numéro de téléphone",
+  "contact_2": "+212 776 932898",
 
-  "contact_info_email_label": "Adresse e-mail",
-  "contact_info_email_value": "contact@devagency.ma",
+  "contact_3": "Adresse e-mail",
+  "contact_4": "contact@devagency.ma",
 
-  "contact_info_address_label": "Adresse du bureau",
-  "contact_info_address_value": "Tetouan, Morocco",
+  "contact_5": "Adresse du bureau",
+  "contact_6": "Tetouan, Morocco",
 
-  "contact_form_title": "Vous avez des questions ? Contactez-nous !",
-  "contact_form_name_placeholder": "Votre nom",
-  "contact_form_email_placeholder": "Adresse e-mail",
-  "contact_form_phone_placeholder": "Votre téléphone",
-  "contact_form_subject_placeholder": "Sélectionnez le sujet",
-  "contact_form_subject_help_support": "Aide et support",
-  "contact_form_subject_features": "Demande de fonctionnalités",
-  "contact_form_message_placeholder": "Tapez votre message",
-  "contact_form_submit_button": "ENVOYER LE MESSAGE"
+  "form_1": "Vous avez des questions ? Contactez-nous !",
+  "form_2": "Votre nom",
+  "form_3": "Adresse e-mail",
+  "form_4": "Votre téléphone",
+  "form_5": "Sélectionnez le sujet",
+  "form_6": "Aide et support",
+  "form_7": "Demande de fonctionnalités",
+  "form_8": "Tapez votre message",
+  "form_9": "ENVOYER LE MESSAGE"
 }

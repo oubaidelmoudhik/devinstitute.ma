@@ -1,13 +1,13 @@
 {
-  "free_consultation_cta": "Consultation gratuite",
-  "get_in_touch_cta": "Prendre contact",
-  "learn_more_cta": "En savoir plus",
-  "submit_form_cta": "Soumettre",
-  "send_message_cta": "Envoyer le message",
-  "contact_us_cta": "Contactez-nous",
-  "view_projects_cta": "Voir nos projets",
-  "read_more_cta": "Lire la suite",
-  "form_validation_email_invalid": "Veuillez saisir une adresse e-mail valide.",
-  "form_error_generic": "Quelque chose s'est mal passé. Réessayez plus tard.",
-  "newsletter_success_message": "Merci de vous être abonné !"
+  "cta_1": "Consultation gratuite",
+  "cta_2": "Prendre contact",
+  "cta_3": "En savoir plus",
+  "cta_4": "Soumettre",
+  "cta_5": "Envoyer le message",
+  "cta_6": "Contactez-nous",
+  "cta_7": "Voir nos projets",
+  "cta_8": "Lire la suite",
+  "form_1": "Veuillez saisir une adresse e-mail valide.",
+  "form_2": "Quelque chose s'est mal passé. Réessayez plus tard.",
+  "newsletter_1": "Merci de vous être abonné !"
 }
