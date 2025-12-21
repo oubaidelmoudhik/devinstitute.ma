@@ -8,6 +8,7 @@ import footerEn from "./en/footer.json";
 import homeEn from "./en/home.json";
 import contactEn from "./en/contact.json";
 import offcanvasEn from "./en/offcanvas.json";
+import serviceEn from "./en/service.json";
 
 import commonFr from "./fr/common.json";
 import navigationFr from "./fr/navigation.json";
@@ -15,6 +16,7 @@ import footerFr from "./fr/footer.json";
 import homeFr from "./fr/home.json";
 import contactFr from "./fr/contact.json";
 import offcanvasFr from "./fr/offcanvas.json";
+import serviceFr from "./fr/service.json";
 
 // Type definitions
 
@@ -25,6 +27,7 @@ type TranslationData = {
   home: typeof homeEn;
   contact: typeof contactEn;
   offcanvas: typeof offcanvasEn;
+  service: typeof serviceEn;
 };
 
 type TranslationNamespace = keyof TranslationData;
@@ -37,6 +40,7 @@ const translations: Record<Locale, TranslationData> = {
     home: homeEn,
     contact: contactEn,
     offcanvas: offcanvasEn,
+    service: serviceEn,
   },
   fr: {
     common: commonFr,
@@ -45,6 +49,7 @@ const translations: Record<Locale, TranslationData> = {
     home: homeFr,
     contact: contactFr,
     offcanvas: offcanvasFr,
+    service: serviceFr,
   },
 };
 

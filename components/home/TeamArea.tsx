@@ -22,7 +22,7 @@ const TeamArea = () => {
                   >
                     <path
                       d="M7 17L16.2 7.8M17 17V7H7"
-                      stroke="#ECC80B"
+                      stroke="#49a078"
                       stroke-width="2"
                       stroke-linecap="square"
                     />
@@ -36,7 +36,7 @@ const TeamArea = () => {
                 <div className="col-12 col-sm-6">
                   <Link href="/team-details">
                     <div className="team-card">
-                      <img src="/assets/img/bg-img/22.jpg" alt="" />
+                      <img src="/assets/img/bg-img/22.webp" alt="" />
 
                       <div className="team-info">
                         <h4>Daniyel Karlos</h4>
@@ -49,7 +49,7 @@ const TeamArea = () => {
                 <div className="col-12 col-sm-6">
                   <Link href="/team-details">
                     <div className="team-card">
-                      <img src="/assets/img/bg-img/23.jpg" alt="" />
+                      <img src="/assets/img/bg-img/23.webp" alt="" />
 
                       <div className="team-info">
                         <h4>Reece Bronson</h4>
@@ -62,7 +62,7 @@ const TeamArea = () => {
                 <div className="col-12 col-sm-6">
                   <Link href="/team-details">
                     <div className="team-card">
-                      <img src="/assets/img/bg-img/24.jpg" alt="" />
+                      <img src="/assets/img/bg-img/24.webp" alt="" />
 
                       <div className="team-info">
                         <h4>Steve Liddle</h4>
@@ -75,7 +75,7 @@ const TeamArea = () => {
                 <div className="col-12 col-sm-6">
                   <Link href="/team-details">
                     <div className="team-card">
-                      <img src="/assets/img/bg-img/25.jpg" alt="" />
+                      <img src="/assets/img/bg-img/25.webp" alt="" />
 
                       <div className="team-info">
                         <h4>Ryan Williams</h4>

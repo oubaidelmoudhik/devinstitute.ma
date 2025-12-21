@@ -8,7 +8,7 @@ export default function ProjectCard({
   title,
   technology,
   link = "#",
-  imgLink = "/assets/img/bg-img/20.jpg",
+  imgLink = "/assets/img/bg-img/20.webp",
 }: ProjectCardProps) {
   return (
     <>

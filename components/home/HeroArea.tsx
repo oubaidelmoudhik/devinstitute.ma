@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslation } from "@/i18n";
-import { NUM_CLIENTS } from "../../data/constants";
+import { NUM_CLIENTS, SOCIALS } from "../../data/constants";
 
 const HeroArea = () => {
   const { t } = useTranslation(["home", "common"]);
@@ -57,9 +57,7 @@ const HeroArea = () => {
                 </p>
 
                 <a
-                  href={
-                    "https://wa.me/212776932898?text=Bonjour%20!%20Je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20services%20de%20d%C3%A9veloppement%20web.%20Pouvez-vous%20me%20donner%20plus%20d'informations%20%3F"
-                  }
+                  href={SOCIALS.whatsapp}
                   className="btn btn-primary wow fadeInUp"
                   data-wow-duration="1000ms"
                   data-wow-delay="1200ms"

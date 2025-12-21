@@ -10,11 +10,15 @@ import BackToTop from "../common/BackToTop";
 const Service = () => {
   return (
     <>
-      <HeaderOne />
-      <Breacrumb title="Services" subtitle="Services" />
+      <HeaderOne style_2 />
+      <Breacrumb
+        title="Services"
+        subtitle="Services"
+        background="/assets/img/bg-img/services.png"
+        isMainHeading={true}
+      />
       <ServiceArea />
       <ServiceAbout />
-      <PriceArea style_2={true} />
       <Cta2Area />
       <FooterOne />
       <BackToTop />

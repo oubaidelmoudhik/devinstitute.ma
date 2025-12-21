@@ -565,7 +565,7 @@ ul li, ol li {
 }
 
 .header-area .navbar-nav li > a:hover {
-  color: #ffc107;
+  color: #49a078;
 }
 
 .header-area .navbar-nav li .devAgency-dd-menu {
@@ -613,7 +613,7 @@ ul li, ol li {
 }
 
 .header-area .navbar-nav li .devAgency-dd-menu li > a:hover, .header-area .navbar-nav li .devAgency-dd-menu li > a:focus {
-  color: #ffc107;
+  color: #49a078;
   background-color: #0000;
 }
 
@@ -630,7 +630,7 @@ ul li, ol li {
 
 .header-area .navbar-nav li.devAgency-dd .dropdown-toggler {
   z-index: 100;
-  color: #ffc107;
+  color: #49a078;
   cursor: pointer;
   background-color: #0000;
   justify-content: flex-end;
@@ -1455,7 +1455,7 @@ ul li, ol li {
 }
 
 .service-two-swiper .swiper-slide .icon-wrapper {
-  background-color: #ecc80b4d;
+  background-color: #49a078;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
@@ -3982,7 +3982,7 @@ form .btn {
 }
 
 .contact-info-card .icon-wrapper {
-  background-color: #ecc80b4d;
+  background-color: #49a078;
   border-radius: 50%;
   justify-content: center;
   align-items: center;

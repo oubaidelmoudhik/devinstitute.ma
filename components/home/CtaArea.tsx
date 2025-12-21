@@ -6,7 +6,7 @@ const CtaArea = () => {
         data-jarallax=""
         data-speed="0.6"
         style={{
-          backgroundImage: "url(/assets/img/bg-img/1.jpg)",
+          backgroundImage: "url(/assets/img/bg-img/1.webp)",
           backgroundAttachment: "fixed",
         }}
       >
@@ -23,10 +23,10 @@ const CtaArea = () => {
                   </div>
 
                   <div className="clients-images">
-                    <img src="/assets/img/bg-img/5.jpg" alt="" />
-                    <img src="/assets/img/bg-img/4.jpg" alt="" />
-                    <img src="/assets/img/bg-img/3.jpg" alt="" />
-                    <img src="/assets/img/bg-img/2.jpg" alt="" />
+                    <img src="/assets/img/bg-img/5.webp" alt="" />
+                    <img src="/assets/img/bg-img/4.webp" alt="" />
+                    <img src="/assets/img/bg-img/3.webp" alt="" />
+                    <img src="/assets/img/bg-img/2.webp" alt="" />
                   </div>
                 </div>
 

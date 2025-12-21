@@ -2,47 +2,43 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useTranslation } from "@/i18n";
 
 const services = [
   {
-    icon: "ads_click",
-    title: "Digital Marketing",
-    description:
-      "Designed user interface contributes to a positive and a good user experience.",
-  },
-  {
-    icon: "web",
-    title: "Web Development",
-    description:
-      "Designed user interface contributes to a positive and a good user experience.",
-  },
-  {
-    icon: "stream_apps",
-    title: "Mobile Apps",
-    description:
-      "Designed user interface contributes to a positive and a good user experience.",
+    icon: "public",
+    titleKey: "services_1",
+    descriptionKey: "services_2",
   },
   {
     icon: "design_services",
-    title: "UI/UX Design",
-    description:
-      "Designed user interface contributes to a positive and a good user experience.",
+    titleKey: "services_3",
+    descriptionKey: "services_4",
   },
   {
-    icon: "ads_click",
-    title: "Digital Marketing",
-    description:
-      "Designed user interface contributes to a positive and a good user experience.",
+    icon: "code",
+    titleKey: "services_5",
+    descriptionKey: "services_6",
   },
   {
-    icon: "web",
-    title: "Web Development",
-    description:
-      "Designed user interface contributes to a positive and a good user experience.",
+    icon: "search",
+    titleKey: "services_7",
+    descriptionKey: "services_8",
+  },
+  {
+    icon: "shopping_cart",
+    titleKey: "services_9",
+    descriptionKey: "services_10",
+  },
+  {
+    icon: "build",
+    titleKey: "services_11",
+    descriptionKey: "services_12",
   },
 ];
 
 const ServiceArea = () => {
+  const { t } = useTranslation(["service"]);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
@@ -68,13 +64,13 @@ const ServiceArea = () => {
                     <h2
                       style={{ bottom: `${activeIndex === i ? "140px" : ""}` }}
                     >
-                      {item.title}
+                      {t(item.titleKey, "service")}
                     </h2>
                     <p
                       className="mb-0"
-                      style={{ bottom: `${activeIndex === i ? "45px" : ""}` }}
+                      style={{ bottom: `${activeIndex === i ? "25px" : ""}` }}
                     >
-                      {item.description}
+                      {t(item.descriptionKey, "service")}
                     </p>
                   </div>
                 </Link>

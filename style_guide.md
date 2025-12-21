@@ -455,10 +455,10 @@ Common background patterns:
 
 ```tsx
 {/* Hero background */}
-<div style={{backgroundImage: "url(/assets/img/bg-img/1.jpg)"}}>
+<div style={{backgroundImage: "url(/assets/img/bg-img/1.webp)"}}>
 
 {/* Section background */}
-<div style={{backgroundImage: "url(/assets/img/bg-img/32.jpg)"}}>
+<div style={{backgroundImage: "url(/assets/img/bg-img/32.webp)"}}>
 ```
 
 ### Icons

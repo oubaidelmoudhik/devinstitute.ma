@@ -1,4 +1,10 @@
+"use client";
+
+import { SOCIALS } from "@/data/constants";
+import { useTranslation } from "@/i18n";
+
 const ServiceAbout = () => {
+  const { t } = useTranslation(["service"]);
   return (
     <>
       <div className="about-us-wrapper bg-secondary">
@@ -6,7 +12,9 @@ const ServiceAbout = () => {
 
         <div
           className="about-left-side-bg bg-img"
-          style={{ backgroundImage: `url(/assets/img/bg-img/32.jpg)` }}
+          style={{
+            backgroundImage: `url(/assets/img/bg-img/services-about.png)`,
+          }}
         ></div>
 
         <div className="container">
@@ -14,14 +22,10 @@ const ServiceAbout = () => {
             <div className="col-12 col-md-6">
               <div className="about-us-text-content ps-md-4">
                 <div className="section-heading">
-                  <h2 className="mb-0">Flawless Design, Premium Brand</h2>
+                  <h2 className="mb-0">{t("about_1", "service")}</h2>
                 </div>
 
-                <p className="mb-0">
-                  If you ask our clients what it's like working with 36, they'll
-                  talk about how much we care about their success. For us, real
-                  relationships fuel real success.
-                </p>
+                <p className="mb-0">{t("about_2", "service")}</p>
 
                 <ul className="ps-0 list-unstyled mb-0">
                   <li>
@@ -37,7 +41,7 @@ const ServiceAbout = () => {
                         fill="#FEFEFE"
                       />
                     </svg>
-                    Simplicity The Biggest Idea A Looked
+                    {t("about_3", "service")}
                   </li>
                   <li>
                     <svg
@@ -52,7 +56,7 @@ const ServiceAbout = () => {
                         fill="#FEFEFE"
                       />
                     </svg>
-                    Mastering The Art Of Conversion
+                    {t("about_4", "service")}
                   </li>
                   <li>
                     <svg
@@ -67,14 +71,14 @@ const ServiceAbout = () => {
                         fill="#FEFEFE"
                       />
                     </svg>
-                    Keeping Advertising Standards High
+                    {t("about_5", "service")}
                   </li>
                 </ul>
 
                 <div>
-                  <a href="#" className="btn btn-primary mt-1">
-                    <span>MORE ABOUT US</span>
-                    <span>MORE ABOUT US</span>
+                  <a href={SOCIALS.whatsapp} className="btn btn-primary mt-1">
+                    <span>{t("about_6", "service")}</span>
+                    <span>{t("about_6", "service")}</span>
                   </a>
                 </div>
               </div>

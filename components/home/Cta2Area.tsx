@@ -1,4 +1,9 @@
+"use client";
+
+import { useTranslation } from "@/i18n";
+
 const Cta2Area = () => {
+  const { t } = useTranslation(["service"]);
   return (
     <>
       <div className="cta-wrapper">
@@ -12,7 +17,7 @@ const Cta2Area = () => {
                 data-wow-duration="1000ms"
                 data-wow-delay="700ms"
               >
-                Let's Work Together
+                {t("cta_1", "service")}
               </h2>
             </div>
             <div className="col-12 col-lg-6">
@@ -21,9 +26,7 @@ const Cta2Area = () => {
                 data-wow-duration="1000ms"
                 data-wow-delay="900ms"
               >
-                Studio agencies excel in graphic design, design, branding, and
-                visual elements, offering comprehensive solutions for
-                businesses' design needs across graphic platforms.
+                {t("cta_2", "service")}
               </p>
               <a
                 href="#"
@@ -31,8 +34,8 @@ const Cta2Area = () => {
                 data-wow-duration="1000ms"
                 data-wow-delay="1100ms"
               >
-                <span>CONTACT US</span>
-                <span>CONTACT US</span>
+                <span>{t("cta_3", "service")}</span>
+                <span>{t("cta_3", "service")}</span>
               </a>
             </div>
           </div>
