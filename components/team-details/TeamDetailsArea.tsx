@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const TeamDetailsArea = () => {
   return (
     <>
@@ -8,7 +10,7 @@ const TeamDetailsArea = () => {
           <div className="row g-4 g-lg-5 align-items-center">
             <div className="col-12 col-lg-6">
               <div className="team-details-img pe-xl-5">
-                <img src="/assets/img/bg-img/22.webp" alt="" />
+                <Image src="/assets/img/bg-img/22.webp" alt="Team member photo" width={500} height={600} />
               </div>
             </div>
 

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface ProjectCardProps {
   title: string;
   technology: string;
@@ -13,7 +15,7 @@ export default function ProjectCard({
   return (
     <>
       <div className="portfolio-card-two">
-        <img src={imgLink} alt="" />
+        <Image src={imgLink} alt={title} fill sizes="100vw" />
 
         <div className="portfolio-overlay-content d-flex align-items-center justify-content-between">
           <a href={link} target="_blank">

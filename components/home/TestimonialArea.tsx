@@ -1,5 +1,6 @@
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image";
 
 const TestimonialArea = () => {
   return (
@@ -50,23 +51,23 @@ const TestimonialArea = () => {
                       </div>
 
                       <div className="company-logo">
-                        <img src="/assets/img/bg-img/27.png" alt="" />
+                        <Image src="/assets/img/bg-img/27.png" alt="Company logo" width={50} height={16} />
                         <span>|</span>
                         <span>54 Reviews</span>
                       </div>
                     </div>
 
                     <p>
-                      “He quickly delivered excellent design a per required
+                      "He quickly delivered excellent design a per required
                       specifications. New landing page will have refreshing
                       simple look, while keeping page load light on images and
                       at the same keeping professional look. Finally, it also
                       seems very reasonable to implement responsive design, so
-                      I'm very happy with that.”
+                      I'm very happy with that."
                     </p>
                     <div className="border-line"></div>
                     <div className="testimonial-info d-flex align-items-center">
-                      <img src="/assets/img/bg-img/16.png" alt="" />
+                      <Image src="/assets/img/bg-img/16.png" alt="Client avatar" width={60} height={60} />
                       <div>
                         <h4>Daniyel Karlos</h4>
                         <p className="mb-0">UX Designer</p>
@@ -93,7 +94,7 @@ const TestimonialArea = () => {
                       </div>
 
                       <div className="company-logo">
-                        <img src="/assets/img/bg-img/27.png" alt="" />
+                        <Image src="/assets/img/bg-img/27.png" alt="Company logo" width={50} height={16} />
                         <span>|</span>
                         <span>54 Reviews</span>
                       </div>
@@ -108,7 +109,7 @@ const TestimonialArea = () => {
                     </p>
                     <div className="border-line"></div>
                     <div className="testimonial-info d-flex align-items-center">
-                      <img src="/assets/img/bg-img/16.png" alt="" />
+                      <Image src="/assets/img/bg-img/16.png" alt="Client avatar" width={60} height={60} />
                       <div>
                         <h4>Daniyel Karlos</h4>
                         <p className="mb-0">UX Designer</p>
@@ -135,7 +136,7 @@ const TestimonialArea = () => {
                       </div>
 
                       <div className="company-logo">
-                        <img src="/assets/img/bg-img/27.png" alt="" />
+                        <Image src="/assets/img/bg-img/27.png" alt="Company logo" width={50} height={16} />
                         <span>|</span>
                         <span>54 Reviews</span>
                       </div>
@@ -150,7 +151,7 @@ const TestimonialArea = () => {
                     </p>
                     <div className="border-line"></div>
                     <div className="testimonial-info d-flex align-items-center">
-                      <img src="/assets/img/bg-img/16.png" alt="" />
+                      <Image src="/assets/img/bg-img/16.png" alt="Client avatar" width={60} height={60} />
                       <div>
                         <h4>Daniyel Karlos</h4>
                         <p className="mb-0">UX Designer</p>

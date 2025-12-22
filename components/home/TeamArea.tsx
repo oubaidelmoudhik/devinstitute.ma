@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import Image from "next/image";
+
 const TeamArea = () => {
   return (
     <>
@@ -36,7 +38,7 @@ const TeamArea = () => {
                 <div className="col-12 col-sm-6">
                   <Link href="/team-details">
                     <div className="team-card">
-                      <img src="/assets/img/bg-img/22.webp" alt="" />
+                      <Image src="/assets/img/bg-img/22.webp" alt="Team member photo" width={400} height={400} />
 
                       <div className="team-info">
                         <h4>Daniyel Karlos</h4>
@@ -49,7 +51,7 @@ const TeamArea = () => {
                 <div className="col-12 col-sm-6">
                   <Link href="/team-details">
                     <div className="team-card">
-                      <img src="/assets/img/bg-img/23.webp" alt="" />
+                      <Image src="/assets/img/bg-img/23.webp" alt="Team member photo" width={400} height={400} />
 
                       <div className="team-info">
                         <h4>Reece Bronson</h4>
@@ -62,7 +64,7 @@ const TeamArea = () => {
                 <div className="col-12 col-sm-6">
                   <Link href="/team-details">
                     <div className="team-card">
-                      <img src="/assets/img/bg-img/24.webp" alt="" />
+                      <Image src="/assets/img/bg-img/24.webp" alt="Team member photo" width={400} height={400} />
 
                       <div className="team-info">
                         <h4>Steve Liddle</h4>
@@ -75,7 +77,7 @@ const TeamArea = () => {
                 <div className="col-12 col-sm-6">
                   <Link href="/team-details">
                     <div className="team-card">
-                      <img src="/assets/img/bg-img/25.webp" alt="" />
+                      <Image src="/assets/img/bg-img/25.webp" alt="Team member photo" width={400} height={400} />
 
                       <div className="team-info">
                         <h4>Ryan Williams</h4>

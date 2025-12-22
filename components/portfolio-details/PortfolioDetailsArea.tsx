@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const PortfolioDetailsArea = () => {
   return (
     <>
@@ -8,7 +10,7 @@ const PortfolioDetailsArea = () => {
           <div className="row g-4 g-xl-5">
             <div className="col-12">
               <div className="portfolio-details-content">
-                <img src="/assets/img/bg-img/38.webp" alt="" />
+                 <Image src="/assets/img/bg-img/38.webp" alt="Portfolio project image" width={800} height={500} />
               </div>
             </div>
 
@@ -32,10 +34,10 @@ const PortfolioDetailsArea = () => {
 
                 <div className="row g-4">
                   <div className="col-6">
-                    <img src="/assets/img/bg-img/7.webp" alt="" />
+                    <Image src="/assets/img/bg-img/7.webp" alt="Portfolio project image" width={400} height={300} />
                   </div>
                   <div className="col-6">
-                    <img src="/assets/img/bg-img/8.webp" alt="" />
+                    <Image src="/assets/img/bg-img/8.webp" alt="Portfolio project image" width={400} height={300} />
                   </div>
                 </div>
 

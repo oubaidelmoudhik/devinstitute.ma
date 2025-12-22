@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import Image from "next/image";
+
 const BlogArea = () => {
   return (
     <>
@@ -22,7 +24,7 @@ const BlogArea = () => {
           <div className="row g-4">
             <div className="col-12 col-md-6 col-lg-4">
               <div className="blog-card-two">
-                <img src="/assets/img/bg-img/28.png" alt="" />
+                <Image src="/assets/img/bg-img/28.png" alt="Blog post image" fill sizes="100vw" />
                 <div className="blog-content">
                   <div className="blog-meta d-flex align-items-center">
                     <a href="#">March 26, 24</a>
@@ -38,7 +40,7 @@ const BlogArea = () => {
 
             <div className="col-12 col-md-6 col-lg-4">
               <div className="blog-card-two">
-                <img src="/assets/img/bg-img/29.png" alt="" />
+                <Image src="/assets/img/bg-img/29.png" alt="Blog post image" fill sizes="100vw" />
                 <div className="blog-content">
                   <div className="blog-meta d-flex align-items-center">
                     <a href="#">March 26, 24</a>
@@ -54,7 +56,7 @@ const BlogArea = () => {
 
             <div className="col-12 col-md-6 col-lg-4">
               <div className="blog-card-two">
-                <img src="/assets/img/bg-img/30.png" alt="" />
+                <Image src="/assets/img/bg-img/30.png" alt="Blog post image" fill sizes="100vw" />
                 <div className="blog-content">
                   <div className="blog-meta d-flex align-items-center">
                     <a href="#">March 26, 24</a>

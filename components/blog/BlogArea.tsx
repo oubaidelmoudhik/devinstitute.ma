@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const BlogArea = () => {
   return (
@@ -11,7 +12,7 @@ const BlogArea = () => {
             <div className="col-12 col-md-7 col-lg-8">
               <div className="d-flex flex-column gap-5">
                 <div className="single-blog">
-                  <img src="/assets/img/bg-img/44.webp" alt="" />
+                   <Image src="/assets/img/bg-img/44.webp" alt="Blog post image" width={800} height={450} />
                   <div className="blog-meta d-flex align-items-center">
                     <a href="#">March 26, 24</a>
                     <div className="dot"></div>
@@ -27,7 +28,7 @@ const BlogArea = () => {
                 </div>
 
                 <div className="single-blog">
-                  <img src="/assets/img/bg-img/45.webp" alt="" />
+                   <Image src="/assets/img/bg-img/45.webp" alt="Blog post image" width={800} height={450} />
                   <div className="blog-meta d-flex align-items-center">
                     <a href="#">March 26, 24</a>
                     <div className="dot"></div>
@@ -43,7 +44,7 @@ const BlogArea = () => {
                 </div>
 
                 <div className="single-blog">
-                  <img src="/assets/img/bg-img/46.webp" alt="" />
+                   <Image src="/assets/img/bg-img/46.webp" alt="Blog post image" width={800} height={450} />
                   <div className="blog-meta d-flex align-items-center">
                     <a href="#">March 26, 24</a>
                     <div className="dot"></div>
@@ -159,7 +160,7 @@ const BlogArea = () => {
                   <div className="d-flex flex-column gap-4">
                     <div className="widget-blog-post">
                       <div className="blog-thumbnail">
-                        <img src="/assets/img/bg-img/41.webp" alt="" />
+                         <Image src="/assets/img/bg-img/41.webp" alt="Blog thumbnail" width={100} height={100} />
                       </div>
                       <div className="blog-content">
                         <h6>
@@ -173,7 +174,7 @@ const BlogArea = () => {
 
                     <div className="widget-blog-post">
                       <div className="blog-thumbnail">
-                        <img src="/assets/img/bg-img/42.webp" alt="" />
+                         <Image src="/assets/img/bg-img/42.webp" alt="Blog thumbnail" width={100} height={100} />
                       </div>
                       <div className="blog-content">
                         <h6>
@@ -187,7 +188,7 @@ const BlogArea = () => {
 
                     <div className="widget-blog-post">
                       <div className="blog-thumbnail">
-                        <img src="/assets/img/bg-img/43.webp" alt="" />
+                         <Image src="/assets/img/bg-img/43.webp" alt="Blog thumbnail" width={100} height={100} />
                       </div>
                       <div className="blog-content">
                         <h6>

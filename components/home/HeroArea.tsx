@@ -2,6 +2,7 @@
 
 import { useTranslation } from "@/i18n";
 import { NUM_CLIENTS, SOCIALS } from "../../data/constants";
+import Image from "next/image";
 
 const HeroArea = () => {
   const { t } = useTranslation(["home", "common"]);
@@ -32,10 +33,12 @@ const HeroArea = () => {
                   data-wow-delay="900ms"
                 >
                   <div className="imgs-group">
-                    <img src="/assets/img/bg-img/lumasmallicon.webp" alt="" />
-                    <img
+                    <Image src="/assets/img/bg-img/lumasmallicon.webp" alt="Partner logo" width={50} height={50} />
+                    <Image
                       src="/assets/img/bg-img/blauseesmallicon.webp"
-                      alt=""
+                      alt="Partner logo"
+                      width={50}
+                      height={50}
                     />
                     <div>
                       <span className="counter">30</span>

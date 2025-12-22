@@ -4,6 +4,7 @@ import Cta2Area from "../home/Cta2Area";
 import HeaderOne from "@/layouts/headers/HeaderOne";
 import Breacrumb from "../common/Breacrumb";
 import BackToTop from "../common/BackToTop";
+import Image from "next/image";
 
 const ErrorArea = () => {
   return (
@@ -17,15 +18,19 @@ const ErrorArea = () => {
           <div className="row">
             <div className="col-12">
               <div className="d-flex justify-content-center">
-                <img
+                <Image
                   className="pb-2 dark-mode-404"
                   src="/assets/img/core-img/404.png"
-                  alt=""
+                  alt="404 Error"
+                  width={500}
+                  height={400}
                 />
-                <img
+                <Image
                   className="pb-2 light-mode-404"
                   src="/assets/img/core-img/404-light.png"
-                  alt=""
+                  alt="404 Error"
+                  width={500}
+                  height={400}
                 />
               </div>
               <div className="section-heading mt-5">

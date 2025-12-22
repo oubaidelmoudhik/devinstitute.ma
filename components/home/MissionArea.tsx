@@ -2,6 +2,7 @@
 
 import { useTranslation } from "@/i18n";
 import { useEffect } from "react";
+import Image from "next/image";
 
 const MissionArea = () => {
   const { t } = useTranslation(["home"]);
@@ -21,7 +22,7 @@ const MissionArea = () => {
           <div className="row g-4 align-items-center">
             <div className="col-12 col-lg-6">
               <div className="mission-vision-img-container">
-                <img src="/assets/img/bg-img/missionarea.webp" alt="" />
+                 <Image src="/assets/img/bg-img/missionarea.webp" alt="Our mission illustration" width={600} height={400} />
 
                 <div className="experience">
                   <h3 className="mb-0">7+</h3>

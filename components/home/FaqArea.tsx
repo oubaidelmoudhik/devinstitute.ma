@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import FAQQuestion from "../reusable/FAQQuestion";
 import { NUM_CLIENTS } from "../../data/constants";
 import { useTranslation } from "@/i18n";
+import Image from "next/image";
 
 const FaqArea = ({ style_2 }: any) => {
   const { t } = useTranslation(["home"]);
@@ -29,7 +30,7 @@ const FaqArea = ({ style_2 }: any) => {
               <div className="divider-sm"></div>
 
               <div className="faq-image">
-                <img src="/assets/img/bg-img/faq.webp" alt="" />
+                 <Image src="/assets/img/bg-img/faq.webp" alt="FAQ illustration" width={500} height={400} />
 
                 <div className="faq-info d-flex align-items-center">
                   <h2 className="mb-0">{NUM_CLIENTS}+</h2>

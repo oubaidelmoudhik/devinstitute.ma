@@ -2,6 +2,8 @@ import Link from "next/link";
 
 // Replace all 'to=' with 'href=' for Next.js compatibility
 
+import Image from "next/image";
+
 const BlogDetailsArea = () => {
   return (
     <>
@@ -12,7 +14,7 @@ const BlogDetailsArea = () => {
           <div className="row g-4 g-xl-5">
             <div className="col-12 col-md-7 col-lg-8">
               <div className="single-blog">
-                <img src="/assets/img/bg-img/46.webp" alt="" />
+                 <Image src="/assets/img/bg-img/46.webp" alt="Blog post image" width={800} height={450} />
                 <div className="blog-meta d-flex align-items-center">
                   <a href="#">March 26, 24</a>
                   <div className="dot"></div>
@@ -313,7 +315,7 @@ const BlogDetailsArea = () => {
                   <div className="d-flex flex-column gap-4">
                     <div className="widget-blog-post">
                       <div className="blog-thumbnail">
-                        <img src="/assets/img/bg-img/41.webp" alt="" />
+                        <Image src="/assets/img/bg-img/41.webp" alt="Blog thumbnail" width={100} height={100} />
                       </div>
                       <div className="blog-content">
                         <h6>
@@ -327,7 +329,7 @@ const BlogDetailsArea = () => {
 
                     <div className="widget-blog-post">
                       <div className="blog-thumbnail">
-                        <img src="/assets/img/bg-img/42.webp" alt="" />
+                        <Image src="/assets/img/bg-img/42.webp" alt="Blog thumbnail" width={100} height={100} />
                       </div>
                       <div className="blog-content">
                         <h6>
@@ -341,7 +343,7 @@ const BlogDetailsArea = () => {
 
                     <div className="widget-blog-post">
                       <div className="blog-thumbnail">
-                        <img src="/assets/img/bg-img/43.webp" alt="" />
+                        <Image src="/assets/img/bg-img/43.webp" alt="Blog thumbnail" width={100} height={100} />
                       </div>
                       <div className="blog-content">
                         <h6>

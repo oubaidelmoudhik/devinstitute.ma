@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const ServiceDetailsArea = () => {
   useEffect(() => {
@@ -18,11 +19,13 @@ const ServiceDetailsArea = () => {
           <div className="row g-4 g-xxl-5">
             <div className="col-12 col-lg-8">
               <div className="service-details-content">
-                <img
-                  className="rounded-lg"
-                  src="/assets/img/bg-img/33.webp"
-                  alt=""
-                />
+                 <Image
+                   className="rounded-lg"
+                   src="/assets/img/bg-img/33.webp"
+                   alt="Service illustration"
+                   width={800}
+                   height={500}
+                 />
                 <h2>Web Development</h2>
                 <p>
                   When an unknown printer took ar galley offer type year anddey
@@ -68,10 +71,10 @@ const ServiceDetailsArea = () => {
 
                 <div className="row g-4">
                   <div className="col-6">
-                    <img src="/assets/img/bg-img/34.webp" alt="" />
+                    <Image src="/assets/img/bg-img/34.webp" alt="Service illustration" width={400} height={300} />
                   </div>
                   <div className="col-6">
-                    <img src="/assets/img/bg-img/35.webp" alt="" />
+                    <Image src="/assets/img/bg-img/35.webp" alt="Service illustration" width={400} height={300} />
                   </div>
                 </div>
 

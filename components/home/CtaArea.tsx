@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const CtaArea = () => {
   return (
     <>
@@ -23,10 +25,10 @@ const CtaArea = () => {
                   </div>
 
                   <div className="clients-images">
-                    <img src="/assets/img/bg-img/5.webp" alt="" />
-                    <img src="/assets/img/bg-img/4.webp" alt="" />
-                    <img src="/assets/img/bg-img/3.webp" alt="" />
-                    <img src="/assets/img/bg-img/2.webp" alt="" />
+                    <Image src="/assets/img/bg-img/5.webp" alt="Client photo" width={80} height={80} />
+                    <Image src="/assets/img/bg-img/4.webp" alt="Client photo" width={80} height={80} />
+                    <Image src="/assets/img/bg-img/3.webp" alt="Client photo" width={80} height={80} />
+                    <Image src="/assets/img/bg-img/2.webp" alt="Client photo" width={80} height={80} />
                   </div>
                 </div>
 
