@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../public/assets/css/style.css";
 import "../styles/style.scss";
-import "animate.css";
+
 
 import React from "react";
 import ClientLayout from "./ClientLayout";

@@ -1437,28 +1437,24 @@ picture.jarallax-img img {
   font-size: 24px;
   letter-spacing: -0.48px;
   margin-bottom: 12px !important;
-  -webkit-transition: all 500ms;
-  transition: all 500ms;
+  transition: transform 0.3s ease, color 0.3s ease;
   position: absolute;
   left: 36px;
   right: 36px;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
   bottom: 50px;
   z-index: 1;
+  will-change: transform;
 }
 .service-slide-card p {
-  -webkit-transition: all 500ms;
-  transition: all 500ms;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
   position: absolute;
   left: 36px;
   right: 36px;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
   bottom: -250px;
   z-index: 1;
   opacity: 0;
   visibility: hidden;
+  will-change: transform;
 }
 
 /* rk-theme css start */
@@ -1476,52 +1472,60 @@ picture.jarallax-img img {
 
 .service-slide-card:hover .service-title,
 .service-slide-card.active .service-title {
-  bottom: 220px;
+  transform: translateY(-170px);
 }
 
 .service-slide-card:hover .service-description,
 .service-slide-card.active .service-description {
-  bottom: 45px;
+  transform: translateY(-295px);
 }
 
 /* Responsive adjustments */
 @media (max-width: 1300px) {
+  .service-slide-card:hover h2,
   .service-slide-card.active h2 {
-    bottom: 150px;
+    transform: translateY(-100px);
   }
 
+  .service-slide-card:hover p,
   .service-slide-card.active p {
-    bottom: 20px;
+    transform: translateY(-270px);
   }
 }
 
 @media (max-width: 1024px) {
+  .service-slide-card:hover h2,
   .service-slide-card.active h2 {
-    bottom: 140px !important;
+    transform: translateY(-90px) !important;
   }
 
+  .service-slide-card:hover p,
   .service-slide-card.active p {
-    bottom: 15px;
+    transform: translateY(-265px);
   }
 }
 
 @media (max-width: 768px) {
+  .service-slide-card:hover h2,
   .service-slide-card.active h2 {
-    bottom: 100px;
+    transform: translateY(-50px);
   }
 
+  .service-slide-card:hover p,
   .service-slide-card.active p {
-    bottom: 10px;
+    transform: translateY(-260px);
   }
 }
 
 @media (max-width: 480px) {
+  .service-slide-card:hover h2,
   .service-slide-card.active h2 {
-    bottom: 80px;
+    transform: translateY(-30px);
   }
 
+  .service-slide-card:hover p,
   .service-slide-card.active p {
-    bottom: 5px;
+    transform: translateY(-255px);
   }
 }
 
