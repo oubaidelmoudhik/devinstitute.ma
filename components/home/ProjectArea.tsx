@@ -2,6 +2,9 @@
 
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
 import ProjectCard from "../reusable/ProjectCard";
 import { PROJECTS } from "../../data/constants";
 import { useTranslation } from "@/i18n";

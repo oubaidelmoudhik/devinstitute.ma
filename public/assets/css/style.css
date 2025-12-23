@@ -1474,10 +1474,12 @@ picture.jarallax-img img {
   transition: bottom 0.3s ease;
 }
 
+.service-slide-card:hover .service-title,
 .service-slide-card.active .service-title {
-  bottom: 140px;
+  bottom: 220px;
 }
 
+.service-slide-card:hover .service-description,
 .service-slide-card.active .service-description {
   bottom: 45px;
 }
@@ -4558,6 +4560,7 @@ form .btn {
   border-radius: 20px;
   border: 1px solid rgba(254, 254, 254, 0.2);
   padding: 50px 36px;
+  height: 100%;
 }
 .process-card-two h4 {
   margin-top: 40px;

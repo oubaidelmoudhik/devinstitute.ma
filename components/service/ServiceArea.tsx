@@ -61,15 +61,10 @@ const ServiceArea = () => {
                     <span className="material-symbols-outlined">
                       {item.icon}
                     </span>
-                    <h2
-                      style={{ bottom: `${activeIndex === i ? "140px" : ""}` }}
-                    >
+                    <h2 className="service-title">
                       {t(item.titleKey, "service")}
                     </h2>
-                    <p
-                      className="mb-0"
-                      style={{ bottom: `${activeIndex === i ? "25px" : ""}` }}
-                    >
+                    <p className="mb-0 service-description">
                       {t(item.descriptionKey, "service")}
                     </p>
                   </div>

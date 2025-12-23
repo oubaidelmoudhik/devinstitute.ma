@@ -11,7 +11,7 @@ const PortfolioArea = () => {
           <div className="row g-4 g-xl-5">
             <div className="col-12 col-md-6">
               <div className="portfolio-card">
-                <Image src="/assets/img/bg-img/7.webp" alt="Portfolio project image" fill sizes="100vw" />
+                <Image src="/assets/img/bg-img/7.webp" alt="Portfolio project image" fill sizes="(max-width: 768px) 100vw, 50vw" />
 
                 <div className="portfolio-overlay-content d-flex align-items-center justify-content-between">
                   <div className="me-4">
@@ -55,7 +55,7 @@ const PortfolioArea = () => {
 
             <div className="col-12 col-md-6">
               <div className="portfolio-card">
-                <Image src="/assets/img/bg-img/8.webp" alt="Portfolio project image" fill sizes="100vw" />
+                <Image src="/assets/img/bg-img/8.webp" alt="Portfolio project image" fill sizes="(max-width: 768px) 100vw, 50vw" />
 
                 <div className="portfolio-overlay-content d-flex align-items-center justify-content-between">
                   <div className="me-4">
@@ -99,7 +99,7 @@ const PortfolioArea = () => {
 
             <div className="col-12 col-md-6">
               <div className="portfolio-card">
-                <Image src="/assets/img/bg-img/9.webp" alt="Portfolio project image" fill sizes="100vw" />
+                <Image src="/assets/img/bg-img/9.webp" alt="Portfolio project image" fill sizes="(max-width: 768px) 100vw, 50vw" />
 
                 <div className="portfolio-overlay-content d-flex align-items-center justify-content-between">
                   <div className="me-4">
@@ -143,7 +143,7 @@ const PortfolioArea = () => {
 
             <div className="col-12 col-md-6">
               <div className="portfolio-card">
-                <Image src="/assets/img/bg-img/10.webp" alt="Portfolio project image" fill sizes="100vw" />
+                <Image src="/assets/img/bg-img/10.webp" alt="Portfolio project image" fill sizes="(max-width: 768px) 100vw, 50vw" />
 
                 <div className="portfolio-overlay-content d-flex align-items-center justify-content-between">
                   <div className="me-4">
@@ -187,7 +187,7 @@ const PortfolioArea = () => {
 
             <div className="col-12 col-md-6">
               <div className="portfolio-card">
-                <Image src="/assets/img/bg-img/36.webp" alt="Portfolio project image" fill sizes="100vw" />
+                <Image src="/assets/img/bg-img/36.webp" alt="Portfolio project image" fill sizes="(max-width: 768px) 100vw, 50vw" />
 
                 <div className="portfolio-overlay-content d-flex align-items-center justify-content-between">
                   <div className="me-4">
@@ -231,7 +231,7 @@ const PortfolioArea = () => {
 
             <div className="col-12 col-md-6">
               <div className="portfolio-card">
-                <Image src="/assets/img/bg-img/37.webp" alt="Portfolio project image" fill sizes="100vw" />
+                <Image src="/assets/img/bg-img/37.webp" alt="Portfolio project image" fill sizes="(max-width: 768px) 100vw, 50vw" />
 
                 <div className="portfolio-overlay-content d-flex align-items-center justify-content-between">
                   <div className="me-4">

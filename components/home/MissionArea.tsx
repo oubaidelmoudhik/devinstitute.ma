@@ -22,7 +22,7 @@ const MissionArea = () => {
           <div className="row g-4 align-items-center">
             <div className="col-12 col-lg-6">
               <div className="mission-vision-img-container">
-                 <Image src="/assets/img/bg-img/missionarea.webp" alt="Our mission illustration" width={600} height={400} />
+                  <Image src="/assets/img/bg-img/missionarea.webp" alt="Our mission illustration" width={600} height={400} sizes="(max-width: 992px) 100vw, 50vw" />
 
                 <div className="experience">
                   <h3 className="mb-0">7+</h3>

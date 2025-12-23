@@ -8,8 +8,8 @@ import ClientLayout from "./ClientLayout";
 import type { Metadata } from "next";
 import { Raleway, Unbounded } from 'next/font/google';
 
-const raleway = Raleway({ subsets: ['latin'], weight: ['400','500','600','700'], display: 'swap' });
-const unbounded = Unbounded({ subsets: ['latin'], weight: ['700'], display: 'swap' });
+const raleway = Raleway({ subsets: ['latin'], weight: ['400','500','600','700'], display: 'swap', variable: '--font-raleway' });
+const unbounded = Unbounded({ subsets: ['latin'], weight: ['700'], display: 'swap', variable: '--font-unbounded' });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://devinstitute.ma"),
