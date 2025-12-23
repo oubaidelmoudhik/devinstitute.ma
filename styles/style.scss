@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap");
 
-@import "swiper/css/bundle";
-// @import "~bootstrap/scss/bootstrap";
+// Override font variables for Next.js optimized fonts
+:root {
+  --ff-text: var(--font-raleway), "Raleway", sans-serif;
+}
 
-
+// Override Unbounded font-family to use optimized version
+.hero-content h2,
+.hero-content.home2 h2 {
+  font-family: var(--font-unbounded), "Unbounded", sans-serif;
+}
 
 // Back to top button styles
 .back-to-top-wrapper {

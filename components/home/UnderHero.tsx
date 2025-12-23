@@ -32,6 +32,7 @@ const UnderHero = ({ style_2 }: any) => {
                   src={IMAGES.underHero}
                   alt="Under hero background"
                   fill
+                  priority={true}
                   sizes="100vw"
                   style={{ borderRadius: '20px' }}
                 />

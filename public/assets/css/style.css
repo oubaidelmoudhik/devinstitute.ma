@@ -639,7 +639,7 @@ picture.jarallax-img img {
   }
 }
 .navbar-brand > img {
-  max-width: 30%;
+  max-width: 70%;
 }
 @media (width < 992px) {
   .navbar-brand > img {

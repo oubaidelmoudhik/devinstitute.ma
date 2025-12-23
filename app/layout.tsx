@@ -6,6 +6,10 @@ import "animate.css";
 import React from "react";
 import ClientLayout from "./ClientLayout";
 import type { Metadata } from "next";
+import { Raleway, Unbounded } from 'next/font/google';
+
+const raleway = Raleway({ subsets: ['latin'], weight: ['400','500','600','700'], display: 'swap' });
+const unbounded = Unbounded({ subsets: ['latin'], weight: ['700'], display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://devinstitute.ma"),
@@ -67,15 +71,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${(raleway as any).variable} ${(unbounded as any).variable}`}>
       <head>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap"
         />
       </head>
       <body>
