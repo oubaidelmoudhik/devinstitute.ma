@@ -2266,8 +2266,11 @@ picture.jarallax-img img {
   position: relative;
   z-index: 1;
   margin-bottom: 28px;
+  overflow: hidden;
+  aspect-ratio: 1.6;
+  height: auto;
 }
-.portfolio-card-two > img {
+.portfolio-card-two img {
   border-radius: 20px;
   -webkit-transition-duration: 400ms;
   transition-duration: 400ms;
@@ -2310,8 +2313,8 @@ picture.jarallax-img img {
   color: var(--clr-black);
   font-size: 36px;
 }
-.portfolio-card-two:hover > img,
-.portfolio-card-two:focus > img {
+.portfolio-card-two:hover img,
+.portfolio-card-two:focus img {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }

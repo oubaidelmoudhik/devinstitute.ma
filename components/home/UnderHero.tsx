@@ -27,14 +27,15 @@ const UnderHero = ({ style_2 }: any) => {
         {style_2 ? <div className="divider"></div> : null}
         <div className="container">
           {style_2 ? null : (
-            <div className="video-wrap">
-              <Image
-                src={IMAGES.hero}
-                alt="Under hero background"
-                fill
-                sizes="100vw"
-              />
-            </div>
+              <div className="video-wrap">
+                <Image
+                  src={IMAGES.underHero}
+                  alt="Under hero background"
+                  fill
+                  sizes="100vw"
+                  style={{ borderRadius: '20px' }}
+                />
+              </div>
           )}
 
           <div className="row g-4 g-lg-5">

@@ -15,7 +15,7 @@ export default function ProjectCard({
   return (
     <>
       <div className="portfolio-card-two">
-        <Image src={imgLink} alt={title} fill sizes="100vw" />
+        <Image src={imgLink} alt={title} fill sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 33vw" priority loading="eager" />
 
         <div className="portfolio-overlay-content d-flex align-items-center justify-content-between">
           <a href={link} target="_blank">
