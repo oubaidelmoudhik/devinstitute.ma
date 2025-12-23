@@ -4801,8 +4801,11 @@ form .btn {
   -ms-flex-pack: center;
   justify-content: center;
 }
+.breadcrumb-wrapper .breadcrumb-content h1 {
+  color: var(--clr-off-white);
+}
 .breadcrumb-wrapper .breadcrumb-content h2 {
-  color: #fefefe;
+  color: var(--clr-off-white);
   text-align: center;
   font-size: 42px;
   font-weight: 700;
