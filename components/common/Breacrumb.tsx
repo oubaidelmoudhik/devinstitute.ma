@@ -39,25 +39,25 @@ const Breacrumb = ({
         <div className="container h-100">
           <div className="breadcrumb-content h-100">
             {isMainHeading ? (
-              <h1
-                className="wow fadeInUp"
-                data-wow-duration="1000ms"
-                data-wow-delay="700ms"
-                style={{
-                  fontSize: 'clamp(2.5rem, 8vw, 4.5rem)',
-                  lineHeight: '1.1'
-                }}
-              >
-                {displayTitle}
-              </h1>
+               <h1
+                 className="wow fadeInUp clr-off-white"
+                 data-wow-duration="1000ms"
+                 data-wow-delay="700ms"
+                 style={{
+                   fontSize: 'clamp(2.5rem, 8vw, 4.5rem)',
+                   lineHeight: '1.1'
+                 }}
+               >
+                 {displayTitle}
+               </h1>
             ) : (
-              <h2
-                className="wow fadeInUp"
-                data-wow-duration="1000ms"
-                data-wow-delay="700ms"
-              >
-                {displayTitle}
-              </h2>
+               <h2
+                 className="wow fadeInUp clr-off-white"
+                 data-wow-duration="1000ms"
+                 data-wow-delay="700ms"
+               >
+                 {displayTitle}
+               </h2>
             )}
             <ul
               className="list-unstyled wow fadeInUp"
