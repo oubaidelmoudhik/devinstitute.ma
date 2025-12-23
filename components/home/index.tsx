@@ -1,5 +1,5 @@
 import HeroArea from "./HeroArea";
-import VideoArea from "./VideoArea";
+import UnderHero from "./UnderHero";
 import MissionArea from "./MissionArea";
 // import ServiceArea from "./ServiceArea";
 import ProjectArea from "./ProjectArea";
@@ -20,7 +20,7 @@ const Home = () => {
     <>
       <HeaderOne style_2={true} />
       <HeroArea />
-      <VideoArea />
+      <UnderHero />
       <MissionArea />
       {/* <ServiceArea /> */}
       <ProjectArea />

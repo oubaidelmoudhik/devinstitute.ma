@@ -45,6 +45,7 @@ export const COUNTER_DATA = [
 
 export const IMAGES = {
   underHero: "/assets/img/bg-img/underHero.webp",
+  hero: "/assets/large-img/bg-img/hero.png",
 };
 
 // projectData.js

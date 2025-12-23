@@ -4,7 +4,7 @@ import HeroArea from "@/components/home/HeroArea";
 import MissionArea from "@/components/home/MissionArea";
 import ProcessArea from "@/components/home/ProcessArea";
 import ProjectArea from "@/components/home/ProjectArea";
-import VideoArea from "@/components/home/VideoArea";
+import UnderHero from "@/components/home/UnderHero";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ const Home = () => {
   return (
     <>
       <HeroArea />
-      <VideoArea />
+      <UnderHero />
       <MissionArea />
       {/* <ServiceArea /> */}
       <ProjectArea />
