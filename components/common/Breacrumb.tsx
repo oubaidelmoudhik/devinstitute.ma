@@ -40,7 +40,7 @@ const Breacrumb = ({
           <div className="breadcrumb-content h-100">
             {isMainHeading ? (
                <h1
-                 className="wow fadeInUp text-white"
+                 className="wow fadeInUp"
                  data-wow-duration="1000ms"
                  data-wow-delay="700ms"
                  style={{
@@ -52,7 +52,7 @@ const Breacrumb = ({
                </h1>
             ) : (
                <h2
-                 className="wow fadeInUp text-white"
+                 className="wow fadeInUp"
                  data-wow-duration="1000ms"
                  data-wow-delay="700ms"
                >
