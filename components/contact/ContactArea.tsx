@@ -1,9 +1,62 @@
 "use client";
 
 import { useTranslation } from "@/i18n";
+import { useState } from "react";
 
 const ContactArea = () => {
   const { t } = useTranslation(["contact"]);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("submitting");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        setStatus("error");
+        setErrorMessage("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+      setErrorMessage("An error occurred. Please try again later.");
+    }
+  };
+
   return (
     <>
       <div className="contact-details-wrap">
@@ -99,42 +152,63 @@ const ContactArea = () => {
 
                   <div className="divider-sm"></div>
 
-                  <form onClick={(e) => e.preventDefault()}>
+                  <form onSubmit={handleSubmit}>
                     <div className="row g-4 g-xl-5">
                       <div className="col-12 col-lg-6">
                         <input
                           type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
                           className="form-control"
                           placeholder={t("form_2", "contact")}
+                          required
                         />
                       </div>
                       <div className="col-12 col-lg-6">
                         <input
                           type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
                           className="form-control"
                           placeholder={t("form_3", "contact")}
+                          required
                         />
                       </div>
                       <div className="col-12 col-lg-6">
                         <input
                           type="text"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
                           className="form-control"
                           placeholder={t("form_4", "contact")}
                         />
                       </div>
                       <div className="col-12 col-lg-6">
-                        <select className="form-control">
+                        <select
+                          className="form-control"
+                          name="subject"
+                          value={formData.subject}
+                          onChange={handleChange}
+                          required
+                        >
                           <option value="">{t("form_5", "contact")}</option>
-                          <option value="">{t("form_6", "contact")}</option>
-                          <option value="">{t("form_7", "contact")}</option>
+                          <option value="Help & Support">{t("form_6", "contact")}</option>
+                          <option value="Features Inquiry">{t("form_7", "contact")}</option>
                         </select>
                       </div>
                       <div className="col-12">
                         <textarea
                           className="form-control"
+                          name="message"
+                          value={formData.message}
+                          onChange={handleChange}
                           rows={20}
                           cols={30}
                           placeholder={t("form_8", "contact")}
+                          required
                         ></textarea>
                       </div>
                       <div className="col-12">
@@ -142,11 +216,28 @@ const ContactArea = () => {
                           <button
                             type="submit"
                             className="btn btn-primary rounded-pill"
+                            disabled={status === "submitting"}
                           >
-                            <span>{t("form_9", "contact")}</span>
-                            <span>{t("form_9", "contact")}</span>
+                           {status === "submitting" ? (
+                              <span>Sending...</span>
+                            ) : (
+                              <>
+                                <span>{t("form_9", "contact")}</span>
+                                <span>{t("form_9", "contact")}</span>
+                              </>
+                            )}
                           </button>
                         </div>
+                        {status === "success" && (
+                          <div className="alert alert-success mt-4">
+                            Message sent successfully!
+                          </div>
+                        )}
+                        {status === "error" && (
+                          <div className="alert alert-danger mt-4">
+                            {errorMessage}
+                          </div>
+                        )}
                       </div>
                     </div>
                   </form>

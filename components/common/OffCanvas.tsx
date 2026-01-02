@@ -86,8 +86,8 @@ const OffCanvas = ({ openCanvas, setOpenCavas }: any) => {
               <div>
                 <p>{t("email_label", "offcanvas")}</p>
                 <h5 className="mb-0">
-                  <a href="mailto:devinstitute.ma@gmail.com" target="_blank">
-                    devinstitute.ma@gmail.com
+                  <a href="mailto:contact@devagency.ma" target="_blank">
+                    contact@devagency.ma
                   </a>
                 </h5>
               </div>

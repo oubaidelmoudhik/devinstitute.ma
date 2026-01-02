@@ -29,4 +29,4 @@
 - TypeScript strict mode enabled (noUnusedLocals, noUnusedParameters)
 - No unused dependencies (Knip check)
 - Build must succeed with image optimization</content>
-<parameter name="filePath">/home/oubaid/Documents/Web Dev/Projects/devinstitute.ma/AGENTS.md
+<parameter name="filePath">/home/oubaid/Documents/Web Dev/Projects/devagency.ma/AGENTS.md

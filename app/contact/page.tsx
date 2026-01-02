@@ -8,18 +8,18 @@ export const metadata: Metadata = {
   description:
     "Get in touch with Dev Institute for your web development needs. Contact our team in Morocco for professional website development services.",
   alternates: {
-    canonical: "https://devinstitute.ma/contact",
+    canonical: "https://devagency.ma/contact",
     languages: {
-      en: "https://devinstitute.ma/contact",
-      fr: "https://devinstitute.ma/fr/contact",
-      "x-default": "https://devinstitute.ma/contact",
+      en: "https://devagency.ma/contact",
+      fr: "https://devagency.ma/fr/contact",
+      "x-default": "https://devagency.ma/contact",
     },
   },
   openGraph: {
     title: "Contact Us | Dev Institute",
     description:
       "Get in touch with Dev Institute for your web development needs.",
-    url: "https://devinstitute.ma/contact",
+    url: "https://devagency.ma/contact",
   },
 };
 

@@ -12,7 +12,7 @@ const raleway = Raleway({ subsets: ['latin'], weight: ['400','500','600','700'],
 const unbounded = Unbounded({ subsets: ['latin'], weight: ['700'], display: 'swap', variable: '--font-unbounded' });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://devinstitute.ma"),
+  metadataBase: new URL("https://devagency.ma"),
   title: {
     default: "Dev Institute – Web Development Agency in Morocco",
     template: "%s | Dev Institute",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Dev Institute – Web Development Agency in Morocco",
     description:
       "Professional web development services in Morocco. We create modern, responsive websites and web applications for businesses.",
-    url: "https://devinstitute.ma",
+    url: "https://devagency.ma",
   },
   twitter: {
     card: "summary_large_image",

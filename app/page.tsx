@@ -12,18 +12,18 @@ export const metadata: Metadata = {
   description:
     "Welcome to Dev Institute, your trusted web development partner in Morocco. We create modern, responsive websites and web applications.",
   alternates: {
-    canonical: "https://devinstitute.ma",
+    canonical: "https://devagency.ma",
     languages: {
-      en: "https://devinstitute.ma",
-      fr: "https://devinstitute.ma/fr",
-      "x-default": "https://devinstitute.ma",
+      en: "https://devagency.ma",
+      fr: "https://devagency.ma/fr",
+      "x-default": "https://devagency.ma",
     },
   },
   openGraph: {
     title: "Home | Dev Institute",
     description:
       "Welcome to Dev Institute, your trusted web development partner in Morocco.",
-    url: "https://devinstitute.ma",
+    url: "https://devagency.ma",
   },
 };
 

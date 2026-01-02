@@ -8,8 +8,8 @@ export const COLORS = {
 };
 
 export const SOCIALS = {
-  facebook: "https://www.facebook.com/devinstitute.ma",
-  instagram: "https://www.instagram.com/devinstitute.ma",
+  facebook: "https://www.facebook.com/devagency.ma",
+  instagram: "https://www.instagram.com/devagency.ma",
   whatsapp:
     "https://wa.me/212776932898?text=Bonjour%20!%20Je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20services%20de%20d%C3%A9veloppement%20web.%20Pouvez-vous%20me%20donner%20plus%20d'informations%20%3F",
 };

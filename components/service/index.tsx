@@ -20,7 +20,6 @@ const Service = () => {
       <ServiceArea />
       <ServiceAbout />
       <Cta2Area />
-      <FooterOne />
       <BackToTop />
     </>
   );

@@ -1,6 +1,6 @@
-# Style Guide for devinstitute.ma
+# Style Guide for devagency.ma
 
-This comprehensive style guide documents all style-related elements used in the devinstitute.ma website, including colors, typography, spacing, borders, components, responsive design, and assets.
+This comprehensive style guide documents all style-related elements used in the devagency.ma website, including colors, typography, spacing, borders, components, responsive design, and assets.
 
 ## 1. Colors
 

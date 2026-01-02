@@ -4,7 +4,7 @@
 
 **Dev Institute** is a modern web development agency website built with Next.js 16, TypeScript, and Bootstrap 5. The site showcases web development services in Morocco with a focus on clean design, performance, and internationalization support.
 
-**Live URL:** https://devinstitute.ma
+**Live URL:** https://devagency.ma
 **Tech Stack:** Next.js 16, TypeScript, Bootstrap 5, SCSS, React 18
 **Languages:** English (default), French
 
@@ -14,7 +14,7 @@
 
 ### Root Directory Structure
 ```
-devinstitute.ma/
+devagency.ma/
 ├── .tmp/                          # Temporary files
 ├── app/                           # Next.js App Router
 │   ├── contact/                   # Contact page
@@ -302,7 +302,7 @@ npm run check-unused # Check for unused dependencies
 
 ### Hosting
 - **Platform:** Vercel (recommended)
-- **Domain:** devinstitute.ma
+- **Domain:** devagency.ma
 - **SSL:** Automatic HTTPS
 - **CDN:** Global edge network
 
