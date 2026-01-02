@@ -5,4 +5,4 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /src/
 
-Sitemap: https://devinstitute.ma/sitemap.xml
+Sitemap: https://devagency.ma/sitemap.xml
