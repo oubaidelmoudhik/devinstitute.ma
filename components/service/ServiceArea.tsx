@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+
 import { useTranslation } from "@/i18n";
 
 const services = [
@@ -50,8 +50,8 @@ const ServiceArea = () => {
           <div className="row g-4 g-lg-5">
             {services.map((item, i) => (
               <div key={i} className="col-12 col-md-6 col-xl-4">
-                <Link href="/service-details">
                   <div
+                    onClick={() => setActiveIndex(i)}
                     onMouseEnter={() => setActiveIndex(i)}
                     onMouseLeave={() => setActiveIndex(null)}
                     className={`service-slide-card  ${
@@ -68,7 +68,6 @@ const ServiceArea = () => {
                       {t(item.descriptionKey, "service")}
                     </p>
                   </div>
-                </Link>
               </div>
             ))}
           </div>
