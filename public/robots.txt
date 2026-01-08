@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /service
+Allow: /service
+Allow: /contact
 Disallow: /api/
 Disallow: /_next/
 Disallow: /src/
