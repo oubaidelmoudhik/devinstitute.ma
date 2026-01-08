@@ -1,8 +1,8 @@
-# Dev Institute Website - Current State
+# Dev Agency Website - Current State
 
 ## 📋 Project Overview
 
-**Dev Institute** is a modern web development agency website built with Next.js 16, TypeScript, and Bootstrap 5. The site showcases web development services in Morocco with a focus on clean design, performance, and internationalization support.
+**Dev Agency** is a modern web development agency website built with Next.js 16, TypeScript, and Bootstrap 5. The site showcases web development services in Morocco with a focus on clean design, performance, and internationalization support.
 
 **Live URL:** https://devagency.ma
 **Tech Stack:** Next.js 16, TypeScript, Bootstrap 5, SCSS, React 18
@@ -13,6 +13,7 @@
 ## 🏗️ Project Structure
 
 ### Root Directory Structure
+
 ```
 devagency.ma/
 ├── .tmp/                          # Temporary files
@@ -72,48 +73,51 @@ devagency.ma/
 
 ### ✅ Active Pages
 
-| Route | Status | Description |
-|-------|--------|-------------|
-| `/` | ✅ Active | Home page with hero, mission, projects, categories, process, and FAQ sections |
-| `/contact` | ✅ Active | Contact page with contact form and information |
-| `/service` | ✅ Active | Services page with service cards and about section |
+| Route      | Status    | Description                                                                   |
+| ---------- | --------- | ----------------------------------------------------------------------------- |
+| `/`        | ✅ Active | Home page with hero, mission, projects, categories, process, and FAQ sections |
+| `/contact` | ✅ Active | Contact page with contact form and information                                |
+| `/service` | ✅ Active | Services page with service cards and about section                            |
 
 ### 🚧 Planned/Inactive Pages
 
-| Route | Status | Notes |
-|-------|--------|-------|
-| `/blog` | 🚧 Planned | Blog listing (components exist but not routed) |
-| `/blog-details` | 🚧 Planned | Individual blog posts |
-| `/portfolio` | 🚧 Planned | Portfolio showcase |
-| `/portfolio-details` | 🚧 Planned | Portfolio project details |
-| `/team` | 🚧 Planned | Team member profiles |
-| `/team-details` | 🚧 Planned | Individual team member pages |
-| `/pricing` | 🚧 Planned | Pricing plans |
-| `/login` | 🚧 Planned | User authentication |
+| Route                | Status     | Notes                                          |
+| -------------------- | ---------- | ---------------------------------------------- |
+| `/blog`              | 🚧 Planned | Blog listing (components exist but not routed) |
+| `/blog-details`      | 🚧 Planned | Individual blog posts                          |
+| `/portfolio`         | 🚧 Planned | Portfolio showcase                             |
+| `/portfolio-details` | 🚧 Planned | Portfolio project details                      |
+| `/team`              | 🚧 Planned | Team member profiles                           |
+| `/team-details`      | 🚧 Planned | Individual team member pages                   |
+| `/pricing`           | 🚧 Planned | Pricing plans                                  |
+| `/login`             | 🚧 Planned | User authentication                            |
 
 ---
 
 ## 🎨 Design System
 
 ### Color Palette
+
 ```css
 :root {
-  --clr-primary-green: #49a078;    /* Primary brand color */
-  --clr-dark-green: #216869;       /* Dark green for hovers */
-  --clr-light-green: #9cc5a1;      /* Light green accents */
-  --clr-black: #1f2421;            /* Primary background */
-  --clr-platinum: #dce1de;         /* Light neutral */
-  --clr-off-white: #f6f5f3;        /* Off-white */
+  --clr-primary-green: #49a078; /* Primary brand color */
+  --clr-dark-green: #216869; /* Dark green for hovers */
+  --clr-light-green: #9cc5a1; /* Light green accents */
+  --clr-black: #1f2421; /* Primary background */
+  --clr-platinum: #dce1de; /* Light neutral */
+  --clr-off-white: #f6f5f3; /* Off-white */
 }
 ```
 
 ### Typography
+
 - **Headings:** "Unbounded" font family (Google Fonts)
 - **Body:** "Raleway" font family (Google Fonts)
 - **Responsive scaling:** Hero titles scale from 56px to 120px
 - **Breadcrumb H1:** Responsive with `clamp(2.5rem, 8vw, 4.5rem)` (40px to 72px)
 
 ### Components
+
 - **Buttons:** Primary green (#49a078) with rounded corners (2rem)
 - **Cards:** Dark background (#1a1a1a) with subtle borders
 - **Forms:** Dark theme with green focus states
@@ -126,23 +130,27 @@ devagency.ma/
 ### ✅ Implemented Features
 
 #### Internationalization (i18n)
+
 - **Languages:** English (default), French
 - **Coverage:** Home, contact, services, navigation, footer, common elements
 - **Implementation:** React i18next with JSON translation files
 - **Routing:** Language-specific URLs (`/fr/contact`)
 
 #### Responsive Design
+
 - **Breakpoints:** Mobile-first approach (320px → 1280px containers)
 - **Typography:** Fluid scaling with clamp() functions
 - **Components:** Bootstrap grid with custom responsive utilities
 
 #### Performance Optimizations
+
 - **Image optimization:** Next.js built-in optimization
 - **CSS:** SCSS compilation with variables
 - **Fonts:** Google Fonts preloading
 - **Build:** Turbopack for faster development
 
 #### UI/UX Enhancements
+
 - **Animations:** Wow.js for scroll-triggered animations
 - **Parallax:** Jarallax library for background effects
 - **Hover effects:** Service cards with smooth transitions
@@ -151,17 +159,20 @@ devagency.ma/
 ### 🎯 Component Architecture
 
 #### Page Components
+
 - **Home Page:** Hero, Video, Mission, Projects, Categories, Process, FAQ
 - **Contact Page:** Breadcrumb, ContactArea, CTA section
 - **Services Page:** Breadcrumb, ServiceArea, ServiceAbout, PriceArea, CTA
 
 #### Shared Components
+
 - **Breadcrumb:** Configurable background images and responsive typography
 - **HeaderOne:** Fixed navigation with language toggle
 - **FooterOne:** Multi-section footer with links
 - **LanguageToggle:** Language switching functionality
 
 #### Feature Components
+
 - **ServiceArea:** Interactive service cards with hover effects
 - **ContactArea:** Contact form with validation
 - **HeroArea:** Full-screen hero with animated content
@@ -172,26 +183,28 @@ devagency.ma/
 ## 📦 Dependencies & Libraries
 
 ### Core Dependencies
+
 ```json
 {
-  "next": "^16.0.10",              // React framework
-  "react": "^18.3.1",              // React library
-  "bootstrap": "^5.3.3",           // CSS framework
-  "i18next": "^25.0.1",            // Internationalization
-  "sass": "^1.77.8",               // CSS preprocessor
-  "animate.css": "^4.1.1",         // CSS animations
-  "jarallax": "^2.2.1",            // Parallax effects
-  "wow.js": "^1.2.2"               // Scroll animations
+  "next": "^16.0.10", // React framework
+  "react": "^18.3.1", // React library
+  "bootstrap": "^5.3.3", // CSS framework
+  "i18next": "^25.0.1", // Internationalization
+  "sass": "^1.77.8", // CSS preprocessor
+  "animate.css": "^4.1.1", // CSS animations
+  "jarallax": "^2.2.1", // Parallax effects
+  "wow.js": "^1.2.2" // Scroll animations
 }
 ```
 
 ### Development Tools
+
 ```json
 {
-  "typescript": "^5.x",            // Type safety
-  "eslint": "^9.x",                // Code linting
-  "knip": "^5.x",                  // Unused dependency checker
-  "@types/*": "various"            // TypeScript definitions
+  "typescript": "^5.x", // Type safety
+  "eslint": "^9.x", // Code linting
+  "knip": "^5.x", // Unused dependency checker
+  "@types/*": "various" // TypeScript definitions
 }
 ```
 
@@ -200,6 +213,7 @@ devagency.ma/
 ## 🚀 Build & Development
 
 ### Available Scripts
+
 ```bash
 npm run dev          # Start development server
 npm run build        # Production build
@@ -209,6 +223,7 @@ npm run check-unused # Check for unused dependencies
 ```
 
 ### Build Configuration
+
 - **Framework:** Next.js 16 with App Router
 - **Styling:** SCSS with CSS modules
 - **Images:** Unoptimized (configured for static hosting)
@@ -219,6 +234,7 @@ npm run check-unused # Check for unused dependencies
 ## 🌍 Internationalization Status
 
 ### ✅ Translated Sections
+
 - **Home page:** Hero, mission, services, process, FAQ, counters
 - **Contact page:** Form labels, contact info, CTA
 - **Services page:** Service cards, about section, CTA
@@ -227,6 +243,7 @@ npm run check-unused # Check for unused dependencies
 - **Common:** Buttons, form elements
 
 ### 📊 Translation Coverage
+
 - **English:** 100% complete
 - **French:** 100% complete
 - **Files:** 7 translation files per language
@@ -237,6 +254,7 @@ npm run check-unused # Check for unused dependencies
 ## 🎯 Current Development Status
 
 ### ✅ Completed Features
+
 - [x] Responsive homepage with all major sections
 - [x] Contact page with functional form
 - [x] Services page with interactive cards
@@ -247,6 +265,7 @@ npm run check-unused # Check for unused dependencies
 - [x] Accessibility considerations
 
 ### 🚧 In Progress / Planned
+
 - [ ] Blog functionality
 - [ ] Portfolio showcase
 - [ ] Team member profiles
@@ -257,6 +276,7 @@ npm run check-unused # Check for unused dependencies
 - [ ] Analytics dashboard
 
 ### 🔧 Recent Updates (Latest Commit)
+
 - 🌐 **feat:** Enhanced services page with translations and UI improvements
 - Added comprehensive internationalization for services page
 - Made breadcrumb background configurable via props
@@ -269,6 +289,7 @@ npm run check-unused # Check for unused dependencies
 ## 📊 Project Metrics
 
 ### Codebase Statistics
+
 - **Components:** 40+ React components
 - **Pages:** 3 active pages
 - **Translation Keys:** 50+ per language
@@ -276,12 +297,14 @@ npm run check-unused # Check for unused dependencies
 - **TypeScript:** Strict type checking enabled
 
 ### Performance
+
 - **Build Time:** ~7 seconds (development)
 - **Bundle Size:** Optimized with Next.js
 - **Lighthouse Score:** Target 90+ (to be measured)
 - **SEO:** Meta tags, structured data, sitemap
 
 ### Browser Support
+
 - **Modern Browsers:** Chrome, Firefox, Safari, Edge
 - **Mobile:** iOS Safari, Chrome Mobile
 - **Responsive:** Mobile-first design (320px+)
@@ -291,16 +314,19 @@ npm run check-unused # Check for unused dependencies
 ## 🔗 External Integrations
 
 ### Analytics
+
 - **Google Analytics 4:** Integrated via `react-ga4`
 - **Tracking:** Page views, user interactions
 - **Configuration:** Environment-based setup
 
 ### Fonts
+
 - **Google Fonts:** Unbounded (headings), Raleway (body)
 - **Material Symbols:** Icon font for UI elements
 - **Preloading:** Optimized font loading
 
 ### Hosting
+
 - **Platform:** Vercel (recommended)
 - **Domain:** devagency.ma
 - **SSL:** Automatic HTTPS
@@ -311,6 +337,7 @@ npm run check-unused # Check for unused dependencies
 ## 📝 Development Guidelines
 
 ### Code Style
+
 - **Language:** TypeScript with strict mode
 - **Components:** Functional React with hooks
 - **Imports:** Relative paths (`../../`)
@@ -318,12 +345,14 @@ npm run check-unused # Check for unused dependencies
 - **Formatting:** No semicolons, single quotes, trailing commas
 
 ### Quality Gates
+
 - **Linting:** ESLint must pass
 - **Types:** TypeScript strict mode
 - **Dependencies:** No unused packages (Knip)
 - **Build:** Must succeed before commits
 
 ### Component Patterns
+
 - **Props:** Explicit interfaces for all props
 - **Styling:** Bootstrap classes + custom SCSS
 - **Animations:** Wow.js for scroll effects
@@ -334,18 +363,21 @@ npm run check-unused # Check for unused dependencies
 ## 🎯 Next Steps & Roadmap
 
 ### Short Term (Next Sprint)
+
 1. **Blog Implementation:** Add blog listing and detail pages
 2. **Portfolio Enhancement:** Complete portfolio showcase
 3. **Contact Form Backend:** Integrate form submission
 4. **Performance Audit:** Optimize Core Web Vitals
 
 ### Medium Term (1-2 Months)
+
 1. **Team Section:** Add team member profiles
 2. **Pricing Pages:** Implement pricing plans
 3. **Case Studies:** Detailed project showcases
 4. **SEO Enhancement:** Advanced SEO optimizations
 
 ### Long Term (3-6 Months)
+
 1. **Admin Dashboard:** Content management system
 2. **User Authentication:** Client portal
 3. **Analytics Dashboard:** Advanced tracking
@@ -355,7 +387,7 @@ npm run check-unused # Check for unused dependencies
 
 ## 📞 Contact & Support
 
-**Project:** Dev Institute Website
+**Project:** Dev Agency Website
 **Maintainer:** Development Team
 **Repository:** [GitHub Repository]
 **Issues:** GitHub Issues
@@ -363,6 +395,6 @@ npm run check-unused # Check for unused dependencies
 
 ---
 
-*Last Updated: December 2025*
-*Next Review: January 2026*</content>
+_Last Updated: December 2025_
+_Next Review: January 2026_</content>
 <parameter name="filePath">state.md

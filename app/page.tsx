@@ -10,7 +10,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "Welcome to Dev Institute, your trusted web development partner in Morocco. We create modern, responsive websites and web applications.",
+    "Welcome to Dev Agency, your trusted web development partner in Morocco. We create modern, responsive websites and web applications.",
   alternates: {
     canonical: "https://devagency.ma",
     languages: {
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Home | Dev Institute",
+    title: "Home | Dev Agency",
     description:
-      "Welcome to Dev Institute, your trusted web development partner in Morocco.",
+      "Welcome to Dev Agency, your trusted web development partner in Morocco.",
     url: "https://devagency.ma",
   },
 };

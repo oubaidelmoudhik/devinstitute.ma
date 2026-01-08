@@ -6,7 +6,7 @@ import ContactArea from "../../components/contact/ContactArea";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Dev Institute for your web development needs. Contact our team in Morocco for professional website development services.",
+    "Get in touch with Dev Agency for your web development needs. Contact our team in Morocco for professional website development services.",
   alternates: {
     canonical: "https://devagency.ma/contact",
     languages: {
@@ -16,9 +16,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Contact Us | Dev Institute",
-    description:
-      "Get in touch with Dev Institute for your web development needs.",
+    title: "Contact Us | Dev Agency",
+    description: "Get in touch with Dev Agency for your web development needs.",
     url: "https://devagency.ma/contact",
   },
 };

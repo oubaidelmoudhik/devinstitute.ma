@@ -2,20 +2,29 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../public/assets/css/style.css";
 import "../styles/style.scss";
 
-
 import React from "react";
 import ClientLayout from "./ClientLayout";
 import type { Metadata } from "next";
-import { Raleway, Unbounded } from 'next/font/google';
+import { Raleway, Unbounded } from "next/font/google";
 
-const raleway = Raleway({ subsets: ['latin'], weight: ['400','500','600','700'], display: 'swap', variable: '--font-raleway' });
-const unbounded = Unbounded({ subsets: ['latin'], weight: ['700'], display: 'swap', variable: '--font-unbounded' });
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-raleway",
+});
+const unbounded = Unbounded({
+  subsets: ["latin"],
+  weight: ["700"],
+  display: "swap",
+  variable: "--font-unbounded",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://devagency.ma"),
   title: {
-    default: "Dev Institute – Web Development Agency in Morocco",
-    template: "%s | Dev Institute",
+    default: "Dev Agency – Web Development Agency in Morocco",
+    template: "%s | Dev Agency",
   },
   description:
     "Professional web development services in Morocco. We create modern, responsive websites and web applications for businesses.",
@@ -25,9 +34,9 @@ export const metadata: Metadata = {
     "website design",
     "web applications",
   ],
-  authors: [{ name: "Dev Institute" }],
-  creator: "Dev Institute",
-  publisher: "Dev Institute",
+  authors: [{ name: "Dev Agency" }],
+  creator: "Dev Agency",
+  publisher: "Dev Agency",
   formatDetection: {
     email: false,
     address: false,
@@ -39,15 +48,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Dev Institute",
-    title: "Dev Institute – Web Development Agency in Morocco",
+    siteName: "Dev Agency",
+    title: "Dev Agency – Web Development Agency in Morocco",
     description:
       "Professional web development services in Morocco. We create modern, responsive websites and web applications for businesses.",
     url: "https://devagency.ma",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dev Institute – Web Development Agency in Morocco",
+    title: "Dev Agency – Web Development Agency in Morocco",
     description:
       "Professional web development services in Morocco. We create modern, responsive websites and web applications for businesses.",
     creator: "@devinstitute",
@@ -71,7 +80,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${(raleway as any).variable} ${(unbounded as any).variable}`}>
+    <html
+      lang="en"
+      className={`${(raleway as any).variable} ${(unbounded as any).variable}`}
+    >
       <head>
         <link
           rel="stylesheet"

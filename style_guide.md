@@ -125,7 +125,7 @@ p {
 {
   /* Hero title */
 }
-<h2 className="hero-content h2">Welcome to Dev Institute</h2>;
+<h2 className="hero-content h2">Welcome to Dev Agency</h2>;
 
 {
   /* Body text */
