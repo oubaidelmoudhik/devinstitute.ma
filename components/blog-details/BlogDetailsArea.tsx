@@ -13,6 +13,48 @@ interface BlogDetailsAreaProps {
   slug?: string
 }
 
+/** Convert inline markdown (**bold**, *italic*) to HTML, escaping raw HTML */
+function formatInline(text: string): string {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*(.+?)\*/g, "<em>$1</em>")
+}
+
+/** Render a blog content string that may contain markdown lists and inline formatting */
+function renderBlogContent(text: string, key: number): React.ReactNode {
+  const lines = text.split("\n")
+
+  // Check if lines form an unordered list (each starts with "- ")
+  const allUl = lines.length > 1 && lines.every((l) => l.trim().startsWith("- "))
+  // Check if lines form an ordered list (each starts with "N. ")
+  const allOl =
+    lines.length > 1 &&
+    lines.every((l) => /^\d+\.\s/.test(l.trim()))
+
+  if (allUl) {
+    const items = lines.map((l, i) => {
+      const content = l.trim().slice(2)
+      return <li key={i} style={{ display: "list-item" }} dangerouslySetInnerHTML={{ __html: formatInline(content) }} />
+    })
+    return <ul key={key}>{items}</ul>
+  }
+
+  if (allOl) {
+    const items = lines.map((l, i) => {
+      const content = l.trim().replace(/^\d+\.\s*/, "")
+      return <li key={i} style={{ display: "list-item" }} dangerouslySetInnerHTML={{ __html: formatInline(content) }} />
+    })
+    return <ol key={key}>{items}</ol>
+  }
+
+  // Single line or mixed content – render as paragraph with <br /> for newlines
+  const html = lines.map((l) => formatInline(l)).join("<br />")
+  return <p key={key} dangerouslySetInnerHTML={{ __html: html }} />
+}
+
 const BlogDetailsArea = ({ slug }: BlogDetailsAreaProps) => {
   const i18nCtx = useContext(I18nContext)
   const locale = i18nCtx?.locale || "en"
@@ -84,9 +126,9 @@ const BlogDetailsArea = ({ slug }: BlogDetailsAreaProps) => {
               </div>
 
               <div className="blog-details-content">
-                {content.map((paragraph, idx) => (
-                  <p key={idx}>{paragraph}</p>
-                ))}
+                {content.map((paragraph, idx) =>
+                  renderBlogContent(paragraph, idx)
+                )}
 
                 {post.quote && quoteText && (
                   <div className="blog-quote">
