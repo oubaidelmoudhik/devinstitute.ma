@@ -17,6 +17,12 @@ const menu_data = [
     link: "/contact",
     has_dropdown: false,
   },
+  {
+    id: 4,
+    title: "nav_6",
+    link: "/blog",
+    has_dropdown: false,
+  },
 ];
 
 export default menu_data;

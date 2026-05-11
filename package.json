@@ -9,7 +9,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "preview": "next start"
+    "preview": "next start",
+    "add-post": "node scripts/add-blog-post.mjs",
+    "blog": "node scripts/blog-cli.mjs"
   },
   "dependencies": {
     "@types/bootstrap": "^5.2.10",

@@ -1,7 +1,134 @@
-import Link from "next/link";
-import Image from "next/image";
+"use client"
+
+import { useState, useEffect, useMemo, useCallback, useContext } from "react"
+import Link from "next/link"
+import Image from "next/image"
+import { useSearchParams, useRouter, usePathname } from "next/navigation"
+import { BLOG_POSTS, BLOG_CATEGORIES, BLOG_TAGS, SIDEBAR_RECENT_POSTS } from "@/data/blog-data"
+import { I18nContext } from "@/i18n"
+import blogEn from "@/i18n/en/blog.json"
+import blogFr from "@/i18n/fr/blog.json"
+
+function createBlogTranslator(locale: string) {
+  const dict = locale === "fr" ? blogFr : blogEn
+  return (key: string): string =>
+    (dict as Record<string, string>)[key] || key
+}
+
+function filterPosts(
+  posts: typeof BLOG_POSTS,
+  searchQuery: string,
+  activeCategory: string,
+  activeTag: string,
+  blogT: ReturnType<typeof createBlogTranslator>,
+) {
+  const activeCatLabel = activeCategory
+    ? BLOG_CATEGORIES.find((c) => c.key === activeCategory)?.label
+    : null
+  const query = searchQuery.toLowerCase()
+
+  return posts.filter((post) => {
+    if (searchQuery) {
+      const title = blogT(post.title).toLowerCase()
+      const excerpt = blogT(post.excerpt).toLowerCase()
+      if (!title.includes(query) && !excerpt.includes(query)) {
+        return false
+      }
+    }
+
+    if (activeCatLabel && post.category !== activeCatLabel) {
+      return false
+    }
+
+    if (activeTag && !post.tags.some((t) => t.toLowerCase() === activeTag.toLowerCase())) {
+      return false
+    }
+
+    return true
+  })
+}
 
 const BlogArea = () => {
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const i18nCtx = useContext(I18nContext)
+  const locale = i18nCtx?.locale || "en"
+  const blogT = useMemo(() => createBlogTranslator(locale), [locale])
+
+  const [searchQuery, setSearchQuery] = useState(searchParams.get("search") || "")
+  const [activeCategory, setActiveCategory] = useState(searchParams.get("category") || "")
+  const [activeTag, setActiveTag] = useState(searchParams.get("tag") || "")
+
+  useEffect(() => {
+    setSearchQuery(searchParams.get("search") || "")
+    setActiveCategory(searchParams.get("category") || "")
+    setActiveTag(searchParams.get("tag") || "")
+  }, [searchParams])
+
+  const syncUrl = useCallback(
+    (search: string, category: string, tag: string) => {
+      const params = new URLSearchParams()
+      if (search) params.set("search", search)
+      if (category) params.set("category", category)
+      if (tag) params.set("tag", tag)
+      const qs = params.toString()
+      router.replace(`${pathname}${qs ? `?${qs}` : ""}`, { scroll: false })
+    },
+    [pathname, router],
+  )
+
+  const handleSearchChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value
+      setSearchQuery(value)
+      syncUrl(value, activeCategory, activeTag)
+    },
+    [activeCategory, activeTag, syncUrl],
+  )
+
+  const handleSearchSubmit = useCallback(
+    (e: React.FormEvent) => {
+      e.preventDefault()
+    },
+    [],
+  )
+
+  const handleCategoryClick = useCallback(
+    (catKey: string) => (e: React.MouseEvent) => {
+      e.preventDefault()
+      const newCategory = catKey === activeCategory ? "" : catKey
+      setActiveCategory(newCategory)
+      syncUrl(searchQuery, newCategory, activeTag)
+    },
+    [activeCategory, activeTag, searchQuery, syncUrl],
+  )
+
+  const handleTagClick = useCallback(
+    (tagLabel: string) => (e: React.MouseEvent) => {
+      e.preventDefault()
+      const newTag = tagLabel === activeTag ? "" : tagLabel
+      setActiveTag(newTag)
+      syncUrl(searchQuery, activeCategory, newTag)
+    },
+    [activeTag, activeCategory, searchQuery, syncUrl],
+  )
+
+  const clearFilters = useCallback(() => {
+    setSearchQuery("")
+    setActiveCategory("")
+    setActiveTag("")
+    router.replace(pathname, { scroll: false })
+  }, [pathname, router])
+
+  const filteredPosts = useMemo(
+    () => filterPosts(BLOG_POSTS, searchQuery, activeCategory, activeTag, blogT),
+    [searchQuery, activeCategory, activeTag, blogT],
+  )
+
+  const hasActiveFilter = !!(searchQuery || activeCategory || activeTag)
+
   return (
     <>
       <div className="blog-page-wrap">
@@ -11,94 +138,99 @@ const BlogArea = () => {
           <div className="row g-4 g-xl-5">
             <div className="col-12 col-md-7 col-lg-8">
               <div className="d-flex flex-column gap-5">
-                <div className="single-blog">
-                   <Image src="/assets/img/bg-img/44.webp" alt="Blog post image" width={800} height={450} />
-                  <div className="blog-meta d-flex align-items-center">
-                    <a href="#">March 26, 24</a>
-                    <div className="dot"></div>
-                    <a href="#">Branding</a>
+                {hasActiveFilter && (
+                  <div className="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                    <p className="mb-0 fz-14">
+                      {filteredPosts.length} {filteredPosts.length === 1 ? "result" : "results"} found
+                      {searchQuery && <> for &ldquo;{searchQuery}&rdquo;</>}
+                      {activeCategory && (
+                        <> in category &ldquo;{blogT(activeCategory)}&rdquo;</>
+                      )}
+                      {activeTag && <> tagged &ldquo;{activeTag}&rdquo;</>}
+                    </p>
+                    <button
+                      type="button"
+                      className="btn btn-sm btn-outline-primary rounded-pill"
+                      onClick={clearFilters}
+                    >
+                      Clear Filters
+                    </button>
                   </div>
-                  <Link className="post-title mb-5" href="/blog-details">
-                    Graphic Design Agency your Brand Needs
-                  </Link>
-                  <Link href="/blog-details" className="btn btn-primary">
-                    <span>READ MORE</span>
-                    <span>READ MORE</span>
-                  </Link>
-                </div>
+                )}
 
-                <div className="single-blog">
-                   <Image src="/assets/img/bg-img/45.webp" alt="Blog post image" width={800} height={450} />
-                  <div className="blog-meta d-flex align-items-center">
-                    <a href="#">March 26, 24</a>
-                    <div className="dot"></div>
-                    <a href="#">Branding</a>
+                {filteredPosts.length === 0 ? (
+                  <div className="text-center py-5">
+                    <h4>No posts found</h4>
+                    <p className="mb-4">Try adjusting your search or filter criteria.</p>
+                    <button
+                      type="button"
+                      className="btn btn-primary rounded-pill"
+                      onClick={clearFilters}
+                    >
+                      Clear Filters
+                    </button>
                   </div>
-                  <Link className="post-title mb-5" href="/blog-details">
-                    Providing Brilliant Ideas For your Business
-                  </Link>
-                  <Link href="/blog-details" className="btn btn-primary">
-                    <span>READ MORE</span>
-                    <span>READ MORE</span>
-                  </Link>
-                </div>
+                ) : (
+                  filteredPosts.map((post) => {
+                    const title = blogT(post.title)
+                    const date = blogT(post.date)
+                    const excerpt = blogT(post.excerpt)
 
-                <div className="single-blog">
-                   <Image src="/assets/img/bg-img/46.webp" alt="Blog post image" width={800} height={450} />
-                  <div className="blog-meta d-flex align-items-center">
-                    <a href="#">March 26, 24</a>
-                    <div className="dot"></div>
-                    <a href="#">Branding</a>
-                  </div>
-                  <Link className="post-title mb-5" href="/blog-details">
-                    The Latest Trends With Digital Marketing
-                  </Link>
-                  <Link href="/blog-details" className="btn btn-primary">
-                    <span>READ MORE</span>
-                    <span>READ MORE</span>
-                  </Link>
-                </div>
-
-                <ul className="blog-pagination list-unstyled">
-                  <li>
-                    <a href="#">1</a>
-                  </li>
-                  <li>
-                    <a href="#">2</a>
-                  </li>
-                  <li>
-                    <a href="#">3</a>
-                  </li>
-                  <li className="active">
-                    <a href="#">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="32"
-                        height="32"
-                        viewBox="0 0 32 32"
-                        fill="none"
-                      >
-                        <path
-                          d="M28.0613 17.0605L19.0613 26.0605C18.7795 26.3423 18.3973 26.5006 17.9988 26.5006C17.6002 26.5006 17.218 26.3423 16.9363 26.0605C16.6545 25.7787 16.4961 25.3965 16.4961 24.998C16.4961 24.5995 16.6545 24.2173 16.9363 23.9355L23.375 17.4992H5C4.60218 17.4992 4.22064 17.3412 3.93934 17.0599C3.65804 16.7786 3.5 16.3971 3.5 15.9992C3.5 15.6014 3.65804 15.2199 3.93934 14.9386C4.22064 14.6573 4.60218 14.4992 5 14.4992H23.375L16.9387 8.05924C16.657 7.77745 16.4986 7.39526 16.4986 6.99674C16.4986 6.59823 16.657 6.21603 16.9387 5.93424C17.2205 5.65245 17.6027 5.49414 18.0012 5.49414C18.3998 5.49414 18.782 5.65245 19.0637 5.93424L28.0637 14.9342C28.2036 15.0738 28.3145 15.2396 28.3901 15.4221C28.4657 15.6046 28.5045 15.8003 28.5043 15.9979C28.5041 16.1955 28.4648 16.391 28.3888 16.5734C28.3127 16.7557 28.2014 16.9213 28.0613 17.0605Z"
-                          fill="#0E0E0E"
+                    return (
+                      <div key={post.id} className="single-blog">
+                        <Image
+                          src={post.image}
+                          alt={title}
+                          width={800}
+                          height={450}
                         />
-                      </svg>
-                    </a>
-                  </li>
-                </ul>
+                        <div className="blog-meta d-flex align-items-center">
+                          <a href="#">{date}</a>
+                          <div className="dot"></div>
+                          <a
+                            href="#"
+                            onClick={handleCategoryClick(
+                              BLOG_CATEGORIES.find((c) => c.label === post.category)?.key || "",
+                            )}
+                          >
+                            {post.category}
+                          </a>
+                        </div>
+                        <Link className="post-title mb-2" href={`/blog/${post.slug}`}>
+                          {title}
+                        </Link>
+                        <p className="mb-4">{excerpt}</p>
+                        <Link href={`/blog/${post.slug}`} className="btn btn-primary">
+                          <span>{blogT("read_more")}</span>
+                          <span>{blogT("read_more")}</span>
+                        </Link>
+                      </div>
+                    )
+                  })
+                )}
+
+                {filteredPosts.length > 0 && (
+                  <ul className="blog-pagination list-unstyled">
+                    <li className="active">
+                      <a href="#">1</a>
+                    </li>
+                  </ul>
+                )}
               </div>
             </div>
 
             <div className="col-12 col-md-5 col-lg-4">
               <div className="d-flex flex-column gap-5">
+                {/* Search Widget */}
                 <div className="blog-widget">
-                  <h4 className="mb-4">Search Here</h4>
-
-                  <form onClick={(e) => e.preventDefault()}>
+                  <h4 className="mb-4">{blogT("search_heading")}</h4>
+                  <form onSubmit={handleSearchSubmit}>
                     <input
                       type="search"
-                      placeholder="Search..."
+                      placeholder={blogT("search_placeholder")}
                       className="form-control"
+                      value={searchQuery}
+                      onChange={handleSearchChange}
                     />
                     <button type="submit">
                       <svg
@@ -117,119 +249,69 @@ const BlogArea = () => {
                   </form>
                 </div>
 
+                {/* Categories Widget */}
                 <div className="blog-widget">
-                  <h4 className="mb-4">Categories</h4>
-
+                  <h4 className="mb-4">{blogT("categories_heading")}</h4>
                   <ul className="blog-list">
-                    <li>
-                      <Link href="/blog-details">
-                        Agency
-                        <span>(03)</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/blog-details">
-                        Business
-                        <span>(01)</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/blog-details">
-                        Development
-                        <span>(05)</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/blog-details">
-                        UI/UX Design
-                        <span>(02)</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/blog-details">
-                        Marketing
-                        <span>(04)</span>
-                      </Link>
-                    </li>
+                    {BLOG_CATEGORIES.map((cat, idx) => (
+                      <li key={idx}>
+                        <a
+                          href={`?category=${cat.key}`}
+                          onClick={handleCategoryClick(cat.key)}
+                          className={activeCategory === cat.key ? "active" : ""}
+                        >
+                          {blogT(cat.key)}
+                          <span>({cat.count.toString().padStart(2, "0")})</span>
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </div>
 
+                {/* Recent Posts Widget */}
                 <div className="blog-widget">
-                  <h4 className="mb-4">Recent Post</h4>
-
+                  <h4 className="mb-4">{blogT("recent_posts_heading")}</h4>
                   <div className="d-flex flex-column gap-4">
-                    <div className="widget-blog-post">
-                      <div className="blog-thumbnail">
-                         <Image src="/assets/img/bg-img/41.webp" alt="Blog thumbnail" width={100} height={100} />
-                      </div>
-                      <div className="blog-content">
-                        <h6>
-                          <Link href="/blog-details">
-                            Graphic Design Agency your Brand Needs.
-                          </Link>
-                        </h6>
-                        <p className="mb-0">March 26, 2024</p>
-                      </div>
-                    </div>
-
-                    <div className="widget-blog-post">
-                      <div className="blog-thumbnail">
-                         <Image src="/assets/img/bg-img/42.webp" alt="Blog thumbnail" width={100} height={100} />
-                      </div>
-                      <div className="blog-content">
-                        <h6>
-                          <Link href="/blog-details">
-                            Providing Brilliant Ideas For your Business
-                          </Link>
-                        </h6>
-                        <p className="mb-0">March 26, 2024</p>
-                      </div>
-                    </div>
-
-                    <div className="widget-blog-post">
-                      <div className="blog-thumbnail">
-                         <Image src="/assets/img/bg-img/43.webp" alt="Blog thumbnail" width={100} height={100} />
-                      </div>
-                      <div className="blog-content">
-                        <h6>
-                          <Link href="/blog-details">
-                            The Latest Trends With Digital Marketing
-                          </Link>
-                        </h6>
-                        <p className="mb-0">March 26, 2024</p>
-                      </div>
-                    </div>
+                    {SIDEBAR_RECENT_POSTS.map((rp, idx) => {
+                      const rpTitle = blogT(rp.title)
+                      const rpDate = blogT(rp.date)
+                      return (
+                        <div key={idx} className="widget-blog-post">
+                          <div className="blog-thumbnail">
+                            <Image
+                              src={rp.image || "/assets/img/bg-img/41.webp"}
+                              alt={rpTitle}
+                              width={100}
+                              height={100}
+                            />
+                          </div>
+                          <div className="blog-content">
+                            <h6>
+                              <Link href={`/blog/${rp.slug}`}>{rpTitle}</Link>
+                            </h6>
+                            <p className="mb-0">{rpDate}</p>
+                          </div>
+                        </div>
+                      )
+                    })}
                   </div>
                 </div>
 
+                {/* Tag Cloud Widget */}
                 <div className="blog-widget">
-                  <h4 className="mb-4">Tag Cloud</h4>
-
+                  <h4 className="mb-4">{blogT("tag_cloud_heading")}</h4>
                   <ul className="tag-list list-unstyled">
-                    <li>
-                      <a href="#">Agency</a>
-                    </li>
-                    <li>
-                      <a href="#">Business</a>
-                    </li>
-                    <li>
-                      <a href="#">Marketing</a>
-                    </li>
-                    <li>
-                      <a href="#">Modern</a>
-                    </li>
-                    <li>
-                      <a href="#">Creative</a>
-                    </li>
-                    <li>
-                      <a href="#">Digital</a>
-                    </li>
-                    <li>
-                      <a href="#">Design</a>
-                    </li>
-                    <li>
-                      <a href="#">Awards</a>
-                    </li>
+                    {BLOG_TAGS.map((tag, idx) => (
+                      <li key={idx}>
+                        <a
+                          href={`?tag=${tag.label}`}
+                          onClick={handleTagClick(tag.label)}
+                          className={activeTag === tag.label ? "active" : ""}
+                        >
+                          {tag.label}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -240,7 +322,7 @@ const BlogArea = () => {
         <div className="divider"></div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default BlogArea;
+export default BlogArea

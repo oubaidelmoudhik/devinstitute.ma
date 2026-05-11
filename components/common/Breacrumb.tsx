@@ -1,7 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useTranslation } from "../../i18n";
+import { useContext } from "react";
+import { useTranslation, I18nContext } from "../../i18n";
+import blogEn from "@/i18n/en/blog.json";
+import blogFr from "@/i18n/fr/blog.json";
 
 interface BreadcrumbProps {
   title?: string;
@@ -10,6 +13,8 @@ interface BreadcrumbProps {
   subtitleKey?: string;
   isMainHeading?: boolean;
   background?: string;
+  blogTitleKey?: string;
+  blogCategoryKey?: string;
 }
 
 const Breacrumb = ({
@@ -19,10 +24,32 @@ const Breacrumb = ({
   subtitleKey,
   isMainHeading = false,
   background,
+  blogTitleKey,
+  blogCategoryKey,
 }: BreadcrumbProps) => {
   const { t } = useTranslation(["navigation"]);
-  const displayTitle = titleKey ? t(titleKey, "navigation") : title;
-  const displaySubtitle = subtitleKey ? t(subtitleKey, "navigation") : subtitle;
+  const i18nCtx = useContext(I18nContext);
+  const locale = i18nCtx?.locale || "en";
+
+  // Translate blog post title key using blog i18n dictionaries
+  const blogT = (key: string): string => {
+    const dict = locale === "fr" ? blogFr : blogEn;
+    return (dict as Record<string, string>)[key] || key
+  }
+
+  let displayTitle: string
+  if (blogTitleKey) {
+    displayTitle = blogT(blogTitleKey)
+  } else {
+    displayTitle = titleKey ? t(titleKey, "navigation") : (title || "")
+  }
+
+  let displaySubtitle: string | undefined
+  if (blogCategoryKey) {
+    displaySubtitle = blogT(blogCategoryKey)
+  } else {
+    displaySubtitle = subtitleKey ? t(subtitleKey, "navigation") : subtitle
+  }
   return (
     <>
       <div
@@ -43,10 +70,11 @@ const Breacrumb = ({
                  className="wow fadeInUp"
                  data-wow-duration="1000ms"
                  data-wow-delay="700ms"
-                 style={{
-                   fontSize: 'clamp(2.5rem, 8vw, 4.5rem)',
-                   lineHeight: '1.1'
-                 }}
+                  style={{
+                    fontSize: 'clamp(2.5rem, 8vw, 4.5rem)',
+                    lineHeight: '1.1',
+                    textAlign: 'center'
+                  }}
                >
                  {displayTitle}
                </h1>

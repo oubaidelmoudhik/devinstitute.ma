@@ -1,10 +1,72 @@
-import Link from "next/link";
+"use client"
 
-// Replace all 'to=' with 'href=' for Next.js compatibility
+import { useContext, useState, useCallback } from "react"
+import Link from "next/link"
+import Image from "next/image"
+import { useRouter } from "next/navigation"
+import { getBlogPostBySlug, BLOG_POSTS, BLOG_CATEGORIES, BLOG_TAGS, SIDEBAR_RECENT_POSTS } from "@/data/blog-data"
+import { I18nContext } from "@/i18n"
+import blogEn from "@/i18n/en/blog.json"
+import blogFr from "@/i18n/fr/blog.json"
 
-import Image from "next/image";
+interface BlogDetailsAreaProps {
+  slug?: string
+}
 
-const BlogDetailsArea = () => {
+const BlogDetailsArea = ({ slug }: BlogDetailsAreaProps) => {
+  const i18nCtx = useContext(I18nContext)
+  const locale = i18nCtx?.locale || "en"
+  const blogT = (key: string): string => {
+    const dict = locale === "fr" ? blogFr : blogEn
+    return (dict as Record<string, string>)[key] || key
+  }
+
+  const router = useRouter()
+  const [searchValue, setSearchValue] = useState("")
+
+  const handleSearchSubmit = useCallback(
+    (e: React.FormEvent) => {
+      e.preventDefault()
+      const query = searchValue.trim()
+      if (query) {
+        router.push(`/blog?search=${encodeURIComponent(query)}`)
+      }
+    },
+    [searchValue, router],
+  )
+
+  const post = getBlogPostBySlug(slug || BLOG_POSTS[0]?.slug || "")
+
+  if (!post) {
+    return (
+      <div className="blog-page-wrap">
+        <div className="divider"></div>
+        <div className="container">
+          <div className="row">
+            <div className="col-12 text-center py-5">
+              <h2>Post Not Found</h2>
+              <Link href="/blog" className="btn btn-primary mt-3">
+                <span>BACK TO BLOG</span>
+                <span>BACK TO BLOG</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="divider"></div>
+      </div>
+    )
+  }
+
+  const date = blogT(post.date)
+  const content = post.content.map((c) => blogT(c))
+  const quoteText = post.quote ? blogT(post.quote.text) : null
+
+  const navigateRandom = useCallback(() => {
+    const others = BLOG_POSTS.filter((p) => p.slug !== post.slug)
+    const random = others[Math.floor(Math.random() * others.length)]
+    router.push(`/blog/${random.slug}`)
+  }, [post.slug, router])
+
   return (
     <>
       <div className="blog-page-wrap">
@@ -14,89 +76,56 @@ const BlogDetailsArea = () => {
           <div className="row g-4 g-xl-5">
             <div className="col-12 col-md-7 col-lg-8">
               <div className="single-blog">
-                 <Image src="/assets/img/bg-img/46.webp" alt="Blog post image" width={800} height={450} />
                 <div className="blog-meta d-flex align-items-center">
-                  <a href="#">March 26, 24</a>
+                  <a href="#">{date}</a>
                   <div className="dot"></div>
-                  <a href="#">Branding</a>
+                  <a href="#">{post.category}</a>
                 </div>
-                <a className="post-title mb-5" href="#">
-                  The Latest Trends With Digital Marketing
-                </a>
               </div>
 
               <div className="blog-details-content">
-                <p>
-                  In recent years, the healthcare industry has witnessed a
-                  groundbreaking transformation driven by the integration of
-                  artificial intelligence (AI) technologies. These advancements
-                  are revolutionizing patient care, medical research,
-                  diagnostics.
-                </p>
+                {content.map((paragraph, idx) => (
+                  <p key={idx}>{paragraph}</p>
+                ))}
 
-                <p>
-                  One of the most remarkable applications of AI in healthcare is
-                  in diagnostics. Machine and learning algorithms are capable of
-                  analyzing vast amounts of medical data with speed to
-                  unprecedented speed and accuracy. This has led to earlier and
-                  more precise disease speed detection, greatly enhancing the
-                  chances of successful treatment.
-                </p>
+                {post.quote && quoteText && (
+                  <div className="blog-quote">
+                    <div className="blog-quote-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="60"
+                        height="60"
+                        viewBox="0 0 60 60"
+                        fill="none"
+                      >
+                        <path
+                          d="M34.5977 30.898H47.481C47.003 36.6266 42.2094 41.1427 36.3885 41.1427C35.8702 41.1427 35.451 41.564 35.451 42.0849V48.1495C35.451 48.6704 35.8702 49.0917 36.3885 49.0917C46.8877 49.0917 55.4297 40.5078 55.4297 29.9558V9.9615C55.4297 9.44064 55.0104 9.01929 54.4922 9.01929H34.5977C34.0794 9.01929 33.6602 9.44064 33.6602 9.9615V29.956C33.6602 30.4766 34.0796 30.898 34.5977 30.898ZM35.5352 10.9037H53.5547V29.956C53.5547 39.1527 46.3567 46.6913 37.326 47.1817V42.9932C44.0625 42.5092 49.3944 36.8467 49.3944 29.9558C49.3944 29.4349 48.9752 29.0136 48.4569 29.0136H35.5352V10.9037Z"
+                          fill="#0E0E0E"
+                        />
+                        <path
+                          d="M6.48438 30.8982H19.3696C18.8916 36.6269 14.0999 41.1429 8.27706 41.1429C7.75881 41.1429 7.33956 41.5643 7.33956 42.0851V48.1497C7.33956 48.6706 7.75881 49.092 8.27706 49.092C18.7763 49.092 27.3183 40.508 27.3183 29.956V9.96174C27.3183 9.44089 26.899 9.01953 26.3808 9.01953H6.48438C5.96613 9.01953 5.54688 9.44089 5.54688 9.96174V29.9562C5.54688 30.4769 5.96631 30.8982 6.48438 30.8982ZM7.42188 10.904H25.4431V29.9562C25.4431 39.1529 18.2451 46.6916 9.21438 47.1819V42.9934C15.9509 42.5095 21.2828 36.847 21.2828 29.956C21.2828 29.4352 20.8636 29.0138 20.3453 29.0138H7.42188V10.904Z"
+                          fill="#0E0E0E"
+                        />
+                      </svg>
+                    </div>
 
-                <div className="blog-quote">
-                  <div className="blog-quote-icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="60"
-                      height="60"
-                      viewBox="0 0 60 60"
-                      fill="none"
-                    >
-                      <path
-                        d="M34.5977 30.898H47.481C47.003 36.6266 42.2094 41.1427 36.3885 41.1427C35.8702 41.1427 35.451 41.564 35.451 42.0849V48.1495C35.451 48.6704 35.8702 49.0917 36.3885 49.0917C46.8877 49.0917 55.4297 40.5078 55.4297 29.9558V9.9615C55.4297 9.44064 55.0104 9.01929 54.4922 9.01929H34.5977C34.0794 9.01929 33.6602 9.44064 33.6602 9.9615V29.956C33.6602 30.4766 34.0796 30.898 34.5977 30.898ZM35.5352 10.9037H53.5547V29.956C53.5547 39.1527 46.3567 46.6913 37.326 47.1817V42.9932C44.0625 42.5092 49.3944 36.8467 49.3944 29.9558C49.3944 29.4349 48.9752 29.0136 48.4569 29.0136H35.5352V10.9037Z"
-                        fill="#0E0E0E"
-                      />
-                      <path
-                        d="M6.48438 30.8982H19.3696C18.8916 36.6269 14.0999 41.1429 8.27706 41.1429C7.75881 41.1429 7.33956 41.5643 7.33956 42.0851V48.1497C7.33956 48.6706 7.75881 49.092 8.27706 49.092C18.7763 49.092 27.3183 40.508 27.3183 29.956V9.96174C27.3183 9.44089 26.899 9.01953 26.3808 9.01953H6.48438C5.96613 9.01953 5.54688 9.44089 5.54688 9.96174V29.9562C5.54688 30.4769 5.96631 30.8982 6.48438 30.8982ZM7.42188 10.904H25.4431V29.9562C25.4431 39.1529 18.2451 46.6916 9.21438 47.1819V42.9934C15.9509 42.5095 21.2828 36.847 21.2828 29.956C21.2828 29.4352 20.8636 29.0138 20.3453 29.0138H7.42188V10.904Z"
-                        fill="#0E0E0E"
-                      />
-                    </svg>
+                    <p>&ldquo;{quoteText}&rdquo;</p>
                   </div>
-
-                  <p>
-                    “Mosico has been an invaluable partner to us. Any talent
-                    we've worked with has shown a deep understanding of digital
-                    experiences. They're seamlessly integrate with our team and
-                    meet the level of craft that we hold ourselves accountable
-                    with our team and meet to.”
-                  </p>
-                </div>
-
-                <p>
-                  AI-driven predictive analytics are being used to forecast
-                  disease outbreaks and patient admission rates, enabling
-                  hospitals and healthcare facilities to allocate resources more
-                  efficiently. This is especially crucial during public health
-                  emergencies.
-                </p>
+                )}
               </div>
 
               <div className="tags-share">
                 <ul className="tags-list list-unstyled">
-                  <li>Tags:</li>
-                  <li>
-                    <a href="#">Marketing</a>
-                  </li>
-                  <li>
-                    <a href="#">Brand</a>
-                  </li>
-                  <li>
-                    <a href="#">Business</a>
-                  </li>
+                  <li>{blogT("tags_label")}</li>
+                  {post.tags.map((tag, idx) => (
+                    <li key={idx}>
+                      <Link href={`/blog?tag=${encodeURIComponent(tag)}`}>{tag}</Link>
+                    </li>
+                  ))}
                 </ul>
 
                 <ul className="share-list list-unstyled">
-                  <li>Share:</li>
+                  <li>{blogT("share_label")}</li>
                   <li>
                     <a href="#">
                       <svg
@@ -143,38 +172,47 @@ const BlogDetailsArea = () => {
               </div>
 
               <div className="blog-pager">
-                <a href="#">
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    navigateRandom()
+                  }}
+                >
                   <span className="material-symbols-outlined">arrow_back</span>{" "}
-                  PREVIOUS POST
+                  {blogT("prev_post")}
                 </a>
-                <a href="#">
-                  NEXT POST{" "}
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    navigateRandom()
+                  }}
+                >
+                  {blogT("next_post")} {" "}
                   <span className="material-symbols-outlined">
                     arrow_forward
                   </span>
                 </a>
               </div>
 
+              {/*
               <div className="divider-sm"></div>
 
               <div className="blog-comments">
-                <h3 className="mb-5">01 Comment</h3>
+                <h3 className="mb-5">01 {blogT("comments_heading")}</h3>
                 <ul className="list-unstyled blog-comments-list">
                   <li>
-                    <p className="mb-0">
-                      Contrary to popular belief, Lorem Ipsum is not simply
-                      random text. It has roots in a piece of classical Latin
-                      literature from 45 BC, making
-                    </p>
+                    <p className="mb-0">{blogT("comment_text_1")}</p>
 
                     <div className="d-flex align-items-center justify-content-between flex-wrap gap-4 mt-4">
                       <div>
-                        <h4 className="mb-1">Laura johnson</h4>
-                        <p className="mb-0">December 23,2023 at 8:50 P.M</p>
+                        <h4 className="mb-1">{blogT("comment_author_1")}</h4>
+                        <p className="mb-0">{blogT("comment_date_1")}</p>
                       </div>
                       <a href="#" className="btn btn-sm btn-primary">
-                        <span>REPLY</span>
-                        <span>REPLY</span>
+                        <span>{blogT("reply_btn")}</span>
+                        <span>{blogT("reply_btn")}</span>
                       </a>
                     </div>
                   </li>
@@ -185,11 +223,8 @@ const BlogDetailsArea = () => {
 
               <div className="comment-form contact-form m-0 p-0">
                 <div className="mb-5">
-                  <h3 className="mb-1">Leave A Comment</h3>
-                  <p className="mb-0 fz-14">
-                    Your email address will not be published. Required fields
-                    are marked *
-                  </p>
+                  <h3 className="mb-1">{blogT("comment_form_heading")}</h3>
+                  <p className="mb-0 fz-14">{blogT("comment_form_subtext")}</p>
                 </div>
 
                 <form onClick={(e) => e.preventDefault()}>
@@ -198,28 +233,28 @@ const BlogDetailsArea = () => {
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Your Name"
+                        placeholder={blogT("comment_form_name")}
                       />
                     </div>
                     <div className="col-12 col-lg-6">
                       <input
                         type="email"
                         className="form-control"
-                        placeholder="Email Address"
+                        placeholder={blogT("comment_form_email")}
                       />
                     </div>
                     <div className="col-12 col-lg-6">
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Your Phone"
+                        placeholder={blogT("comment_form_phone")}
                       />
                     </div>
                     <div className="col-12 col-lg-6">
                       <select className="form-control">
-                        <option value="">Select Subject</option>
-                        <option value="">Help &amp; Support</option>
-                        <option value="">Features Inquiry</option>
+                        <option value="">{blogT("comment_form_subject")}</option>
+                        <option value="">{blogT("comment_form_subject_1")}</option>
+                        <option value="">{blogT("comment_form_subject_2")}</option>
                       </select>
                     </div>
                     <div className="col-12">
@@ -227,7 +262,7 @@ const BlogDetailsArea = () => {
                         className="form-control"
                         rows={20}
                         cols={30}
-                        placeholder="Type your message"
+                        placeholder={blogT("comment_form_message")}
                       ></textarea>
                     </div>
                     <div className="col-12">
@@ -235,25 +270,28 @@ const BlogDetailsArea = () => {
                         type="submit"
                         className="btn btn-primary rounded-pill"
                       >
-                        <span>SEND MESSAGE</span>
-                        <span>SEND MESSAGE</span>
+                        <span>{blogT("comment_form_submit")}</span>
+                        <span>{blogT("comment_form_submit")}</span>
                       </button>
                     </div>
                   </div>
                 </form>
               </div>
+              */}
             </div>
 
             <div className="col-12 col-md-7 col-lg-4">
               <div className="d-flex flex-column gap-5">
                 <div className="blog-widget">
-                  <h4 className="mb-4">Search Here</h4>
+                  <h4 className="mb-4">{blogT("search_heading")}</h4>
 
-                  <form onClick={(e) => e.preventDefault()}>
+                  <form onSubmit={handleSearchSubmit}>
                     <input
                       type="search"
-                      placeholder="Search..."
+                      placeholder={blogT("search_placeholder")}
                       className="form-control"
+                      value={searchValue}
+                      onChange={(e) => setSearchValue(e.target.value)}
                     />
                     <button type="submit">
                       <svg
@@ -273,118 +311,53 @@ const BlogDetailsArea = () => {
                 </div>
 
                 <div className="blog-widget">
-                  <h4 className="mb-4">Categories</h4>
+                  <h4 className="mb-4">{blogT("categories_heading")}</h4>
 
                   <ul className="blog-list">
-                    <li>
-                      <Link href="/blog-details">
-                        Agency
-                        <span>(03)</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/blog-details">
-                        Business
-                        <span>(01)</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/blog-details">
-                        Development
-                        <span>(05)</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/blog-details">
-                        UI/UX Design
-                        <span>(02)</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/blog-details">
-                        Marketing
-                        <span>(04)</span>
-                      </Link>
-                    </li>
+                    {BLOG_CATEGORIES.map((cat, idx) => (
+                      <li key={idx}>
+                        <Link href={`/blog?category=${cat.key}`}>
+                          {blogT(cat.key)}
+                          <span>({cat.count.toString().padStart(2, "0")})</span>
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
 
                 <div className="blog-widget">
-                  <h4 className="mb-4">Recent Post</h4>
+                  <h4 className="mb-4">{blogT("recent_posts_heading")}</h4>
 
                   <div className="d-flex flex-column gap-4">
-                    <div className="widget-blog-post">
-                      <div className="blog-thumbnail">
-                        <Image src="/assets/img/bg-img/41.webp" alt="Blog thumbnail" width={100} height={100} />
-                      </div>
-                      <div className="blog-content">
-                        <h6>
-                          <Link href="/blog-details">
-                            Graphic Design Agency your Brand Needs.
-                          </Link>
-                        </h6>
-                        <p className="mb-0">March 26, 2024</p>
-                      </div>
-                    </div>
-
-                    <div className="widget-blog-post">
-                      <div className="blog-thumbnail">
-                        <Image src="/assets/img/bg-img/42.webp" alt="Blog thumbnail" width={100} height={100} />
-                      </div>
-                      <div className="blog-content">
-                        <h6>
-                          <Link href="/blog-details">
-                            Providing Brilliant Ideas For your Business
-                          </Link>
-                        </h6>
-                        <p className="mb-0">March 26, 2024</p>
-                      </div>
-                    </div>
-
-                    <div className="widget-blog-post">
-                      <div className="blog-thumbnail">
-                        <Image src="/assets/img/bg-img/43.webp" alt="Blog thumbnail" width={100} height={100} />
-                      </div>
-                      <div className="blog-content">
-                        <h6>
-                          <Link href="/blog-details">
-                            The Latest Trends With Digital Marketing
-                          </Link>
-                        </h6>
-                        <p className="mb-0">March 26, 2024</p>
-                      </div>
-                    </div>
+                    {SIDEBAR_RECENT_POSTS.map((rp, idx) => {
+                      const rpTitle = blogT(rp.title)
+                      const rpDate = blogT(rp.date)
+                      return (
+                        <div key={idx} className="widget-blog-post">
+                          <div className="blog-thumbnail">
+                            <Image src={rp.image} alt={rpTitle} width={100} height={100} />
+                          </div>
+                          <div className="blog-content">
+                            <h6>
+                              <Link href={`/blog/${rp.slug}`}>{rpTitle}</Link>
+                            </h6>
+                            <p className="mb-0">{rpDate}</p>
+                          </div>
+                        </div>
+                      )
+                    })}
                   </div>
                 </div>
 
                 <div className="blog-widget">
-                  <h4 className="mb-4">Tag Cloud</h4>
+                  <h4 className="mb-4">{blogT("tag_cloud_heading")}</h4>
 
                   <ul className="tag-list list-unstyled">
-                    <li>
-                      <a href="#">Agency</a>
-                    </li>
-                    <li>
-                      <a href="#">Business</a>
-                    </li>
-                    <li>
-                      <a href="#">Marketing</a>
-                    </li>
-                    <li>
-                      <a href="#">Modern</a>
-                    </li>
-                    <li>
-                      <a href="#">Creative</a>
-                    </li>
-                    <li>
-                      <a href="#">Digital</a>
-                    </li>
-                    <li>
-                      <a href="#">Design</a>
-                    </li>
-                    <li>
-                      <a href="#">Awards</a>
-                    </li>
+                    {BLOG_TAGS.map((tag, idx) => (
+                      <li key={idx}>
+                        <Link href={`/blog?tag=${encodeURIComponent(tag.label)}`}>{tag.label}</Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
