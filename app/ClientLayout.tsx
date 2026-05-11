@@ -6,6 +6,7 @@ import ClientProviders from "./ClientProviders";
 import HeaderOne from "@/layouts/headers/HeaderOne";
 import ScrollToTop from "@/hooks/scroll-to-top";
 import BackToTop from "@/components/common/BackToTop";
+import GoogleAnalytics from "@/components/common/GoogleAnalytics";
 
 export default function ClientLayout({
   children,
@@ -22,6 +23,7 @@ export default function ClientLayout({
 
   return (
     <ClientProviders>
+      <GoogleAnalytics />
       <HeaderOne style_2={true} />
       <main>{children}</main>
       <FooterOne style_2={true} />

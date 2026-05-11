@@ -1,13 +1,14 @@
 import { MetadataRoute } from 'next'
+import { BLOG_POSTS } from '@/data/blog-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://devagency.ma'
 
-  return [
+  const staticPages = [
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 1,
       alternates: {
         languages: {
@@ -19,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/service`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 0.9,
       alternates: {
         languages: {
@@ -31,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 0.8,
       alternates: {
         languages: {
@@ -40,5 +41,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
     },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/blog`,
+          fr: `${baseUrl}/fr/blog`,
+        },
+      },
+    },
   ]
+
+  const blogPosts = BLOG_POSTS.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+    alternates: {
+      languages: {
+        en: `${baseUrl}/blog/${post.slug}`,
+        fr: `${baseUrl}/fr/blog/${post.slug}`,
+      },
+    },
+  }))
+
+  return [...staticPages, ...blogPosts]
 }
