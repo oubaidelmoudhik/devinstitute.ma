@@ -159,9 +159,8 @@ export const BLOG_POSTS: BlogPost[] = [
       "blog_post_6_p_39",
       "blog_post_6_p_40",
       "blog_post_6_p_41",
-      "blog_post_6_p_42",
     ],
-    tags: ["Digital", "Business", "Creative", "Modern", "Agency"],
+    tags: ["Digital", "Modern", "Business", "Creative", "Agency"],
     author: "Dev Agency",
   },
 ]
