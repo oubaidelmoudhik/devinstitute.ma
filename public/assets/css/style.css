@@ -337,6 +337,17 @@ ol li {
   color: var(--clr-black);
 }
 
+.btn-outline-primary {
+  --bs-btn-color: var(--clr-primary-green);
+  --bs-btn-border-color: var(--clr-primary-green);
+  --bs-btn-hover-color: var(--clr-black);
+  --bs-btn-hover-bg: var(--clr-primary-green);
+  --bs-btn-hover-border-color: var(--clr-primary-green);
+  --bs-btn-active-color: var(--clr-black);
+  --bs-btn-active-bg: var(--clr-dark-green);
+  --bs-btn-active-border-color: var(--clr-dark-green);
+}
+
 .btn-dark {
   background-color: #141212;
   color: #ffffff !important;

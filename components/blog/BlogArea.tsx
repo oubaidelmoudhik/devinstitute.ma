@@ -60,6 +60,7 @@ const BlogArea = () => {
   const [searchQuery, setSearchQuery] = useState(searchParams.get("search") || "")
   const [activeCategory, setActiveCategory] = useState(searchParams.get("category") || "")
   const [activeTag, setActiveTag] = useState(searchParams.get("tag") || "")
+  const [sortOrder, setSortOrder] = useState<"newest" | "oldest">("newest")
 
   useEffect(() => {
     setSearchQuery(searchParams.get("search") || "")
@@ -68,11 +69,12 @@ const BlogArea = () => {
   }, [searchParams])
 
   const syncUrl = useCallback(
-    (search: string, category: string, tag: string) => {
+    (search: string, category: string, tag: string, sort: string) => {
       const params = new URLSearchParams()
       if (search) params.set("search", search)
       if (category) params.set("category", category)
       if (tag) params.set("tag", tag)
+      if (sort && sort !== "newest") params.set("sort", sort)
       const qs = params.toString()
       router.replace(`${pathname}${qs ? `?${qs}` : ""}`, { scroll: false })
     },
@@ -83,9 +85,9 @@ const BlogArea = () => {
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const value = e.target.value
       setSearchQuery(value)
-      syncUrl(value, activeCategory, activeTag)
+      syncUrl(value, activeCategory, activeTag, sortOrder)
     },
-    [activeCategory, activeTag, syncUrl],
+    [activeCategory, activeTag, sortOrder, syncUrl],
   )
 
   const handleSearchSubmit = useCallback(
@@ -100,9 +102,10 @@ const BlogArea = () => {
       e.preventDefault()
       const newCategory = catKey === activeCategory ? "" : catKey
       setActiveCategory(newCategory)
-      syncUrl(searchQuery, newCategory, activeTag)
+      setActiveTag("")
+      syncUrl(searchQuery, newCategory, "", sortOrder)
     },
-    [activeCategory, activeTag, searchQuery, syncUrl],
+    [activeCategory, searchQuery, sortOrder, syncUrl],
   )
 
   const handleTagClick = useCallback(
@@ -110,9 +113,10 @@ const BlogArea = () => {
       e.preventDefault()
       const newTag = tagLabel === activeTag ? "" : tagLabel
       setActiveTag(newTag)
-      syncUrl(searchQuery, activeCategory, newTag)
+      setActiveCategory("")
+      syncUrl(searchQuery, "", newTag, sortOrder)
     },
-    [activeTag, activeCategory, searchQuery, syncUrl],
+    [activeTag, searchQuery, sortOrder, syncUrl],
   )
 
   const clearFilters = useCallback(() => {
@@ -122,10 +126,31 @@ const BlogArea = () => {
     router.replace(pathname, { scroll: false })
   }, [pathname, router])
 
-  const filteredPosts = useMemo(
-    () => filterPosts(BLOG_POSTS, searchQuery, activeCategory, activeTag, blogT),
-    [searchQuery, activeCategory, activeTag, blogT],
-  )
+  const handleSortToggle = useCallback(() => {
+    setSortOrder((prev) => {
+      const next = prev === "newest" ? "oldest" : "newest"
+      syncUrl(searchQuery, activeCategory, activeTag, next)
+      return next
+    })
+  }, [searchQuery, activeCategory, activeTag, syncUrl])
+
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = {}
+    BLOG_POSTS.forEach((post) => {
+      const catLabel = post.category
+      counts[catLabel] = (counts[catLabel] || 0) + 1
+    })
+    return counts
+  }, [])
+
+  const filteredPosts = useMemo(() => {
+    const filtered = filterPosts(BLOG_POSTS, searchQuery, activeCategory, activeTag, blogT)
+    const sorted = [...filtered].sort((a, b) => {
+      const cmp = a.sortDate.localeCompare(b.sortDate)
+      return sortOrder === "newest" ? -cmp : cmp
+    })
+    return sorted
+  }, [searchQuery, activeCategory, activeTag, blogT, sortOrder])
 
   const hasActiveFilter = !!(searchQuery || activeCategory || activeTag)
 
@@ -148,12 +173,33 @@ const BlogArea = () => {
                       )}
                       {activeTag && <> tagged &ldquo;{activeTag}&rdquo;</>}
                     </p>
+                    <div className="d-flex align-items-center gap-2">
+                      <button
+                        type="button"
+                        className="btn btn-sm btn-outline-primary rounded-pill"
+                        onClick={handleSortToggle}
+                      >
+                        {sortOrder === "newest" ? "Oldest First" : "Newest First"}
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn-sm btn-outline-primary rounded-pill"
+                        onClick={clearFilters}
+                      >
+                        Clear Filters
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {!hasActiveFilter && (
+                  <div className="d-flex align-items-center justify-content-end">
                     <button
                       type="button"
                       className="btn btn-sm btn-outline-primary rounded-pill"
-                      onClick={clearFilters}
+                      onClick={handleSortToggle}
                     >
-                      Clear Filters
+                      {sortOrder === "newest" ? "Oldest First" : "Newest First"}
                     </button>
                   </div>
                 )}
@@ -253,7 +299,7 @@ const BlogArea = () => {
                 <div className="blog-widget">
                   <h4 className="mb-4">{blogT("categories_heading")}</h4>
                   <ul className="blog-list">
-                    {BLOG_CATEGORIES.map((cat, idx) => (
+                    {BLOG_CATEGORIES.filter((cat) => (categoryCounts[cat.label] || 0) > 0).map((cat, idx) => (
                       <li key={idx}>
                         <a
                           href={`?category=${cat.key}`}
@@ -261,7 +307,7 @@ const BlogArea = () => {
                           className={activeCategory === cat.key ? "active" : ""}
                         >
                           {blogT(cat.key)}
-                          <span>({cat.count.toString().padStart(2, "0")})</span>
+                          <span>({categoryCounts[cat.label].toString().padStart(2, "0")})</span>
                         </a>
                       </li>
                     ))}

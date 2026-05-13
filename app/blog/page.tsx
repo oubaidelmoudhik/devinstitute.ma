@@ -50,7 +50,7 @@ function BlogAreaFallback() {
 const BlogPage = () => {
   return (
     <>
-      <Breacrumb titleKey="title_5" subtitleKey="title_5" isMainHeading />
+      <Breacrumb titleKey="title_5" subtitleKey="title_5" isMainHeading background="/assets/img/bg-img/services.png" />
       <Suspense fallback={<BlogAreaFallback />}>
         <BlogArea />
       </Suspense>

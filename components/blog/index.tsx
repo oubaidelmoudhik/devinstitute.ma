@@ -9,7 +9,12 @@ const Blog = () => {
   return (
     <>
       <HeaderOne />
-      <Breacrumb title="Blog" subtitle="Blog" />
+      <Breacrumb
+        title="Blog"
+        subtitle="Blog"
+        background="/assets/img/bg-img/services.png"
+        isMainHeading={true}
+      />
       <BlogArea />
       <Cta2Area />
       <FooterOne />

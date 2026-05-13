@@ -3,6 +3,7 @@ export interface BlogPost {
   title: string
   slug: string
   date: string
+  sortDate: string
   category: string
   image: string
   excerpt: string
@@ -50,6 +51,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "blog_post_4_title",
     slug: "why-digital-communication-matters-for-your-business-in-2026",
     date: "blog_post_4_date",
+    sortDate: "2026-05-11",
     category: "Marketing",
     image: "/assets/img/bg-img/47.webp",
     excerpt: "blog_post_4_excerpt",
@@ -83,6 +85,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "blog_post_5_title",
     slug: "digital-transformation-it-s-not-just-software",
     date: "blog_post_5_date",
+    sortDate: "2026-05-11",
     category: "UI/UX Design",
     image: "/assets/img/bg-img/48.webp",
     excerpt: "blog_post_5_excerpt",
@@ -114,6 +117,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "blog_post_6_title",
     slug: "why-most-small-businesses-in-morocco-need-a-website-in-2026",
     date: "blog_post_6_date",
+    sortDate: "2026-05-13",
     category: "UI/UX Design",
     image: "/assets/img/bg-img/49.webp",
     excerpt: "blog_post_6_excerpt",
