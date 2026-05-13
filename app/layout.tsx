@@ -4,6 +4,7 @@ import "../styles/style.scss";
 
 import React from "react";
 import ClientLayout from "./ClientLayout";
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Raleway, Unbounded } from "next/font/google";
 
@@ -92,6 +93,7 @@ export default function RootLayout({
       </head>
       <body>
         <ClientLayout>{children}</ClientLayout>
+        <Analytics />
       </body>
     </html>
   );
