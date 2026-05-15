@@ -122,6 +122,12 @@ const BlogDetailsArea = ({ slug }: BlogDetailsAreaProps) => {
                   <a href="#">{date}</a>
                   <div className="dot"></div>
                   <a href="#">{post.category}</a>
+                  {post.readingTimeMinutes > 0 && (
+                    <>
+                      <div className="dot"></div>
+                      <span className="reading-time">{post.readingTimeMinutes} {blogT("reading_time")}</span>
+                    </>
+                  )}
                 </div>
               </div>
 

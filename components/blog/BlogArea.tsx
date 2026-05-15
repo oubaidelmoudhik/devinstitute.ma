@@ -241,6 +241,12 @@ const BlogArea = () => {
                           >
                             {post.category}
                           </a>
+                          {post.readingTimeMinutes > 0 && (
+                            <>
+                              <div className="dot"></div>
+                              <span className="reading-time">{post.readingTimeMinutes} {blogT("reading_time")}</span>
+                            </>
+                          )}
                         </div>
                         <Link className="post-title mb-2" href={`/blog/${post.slug}`}>
                           {title}

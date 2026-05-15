@@ -114,6 +114,21 @@ function formatDate(locale) {
   return `${m[now.getMonth()]} ${now.getDate()}, ${String(now.getFullYear()).slice(2)}`
 }
 
+// ── Format from ISO date string ───────────────────────────────────────────────
+function formatDateFromIso(isoString, locale) {
+  if (!isoString) return formatDate(locale)
+  const date = new Date(isoString)
+  if (isNaN(date.getTime())) return formatDate(locale)
+  if (locale === "fr") {
+    const m = ["janvier", "février", "mars", "avril", "mai", "juin",
+      "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+    return `${date.getDate()} ${m[date.getMonth()]} ${String(date.getFullYear()).slice(2)}`
+  }
+  const m = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"]
+  return `${m[date.getMonth()]} ${date.getDate()}, ${String(date.getFullYear()).slice(2)}`
+}
+
 // ═══════════════════════════════════════════════════════════════════════════════
 //  DATA LAYER — Read & write blog-data.ts and i18n files
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -223,6 +238,8 @@ function parsePostBlock(block) {
     quote: findObj("quote"),
     tags: findArr("tags") || [],
     author: findStr("author"),
+    readingTimeMinutes: parseInt(findStr("readingTimeMinutes")) || 5,
+    serviceAlignment: findStr("serviceAlignment") || null,
   }
 }
 
@@ -231,6 +248,9 @@ function generatePostBlock(post) {
   const content = post.content.map(k => `      "${k}",`).join("\n")
   const quote = post.quote?.text
     ? `\n    quote: {\n      text: "${post.quote.text}",\n    },`
+    : ""
+  const serviceLine = post.serviceAlignment
+    ? `\n    serviceAlignment: "${post.serviceAlignment}",`
     : ""
 
   return `  {
@@ -246,6 +266,7 @@ ${content}
     ],${quote}
     tags: [${tags}],
     author: "${post.author || "Dev Agency"}",
+    readingTimeMinutes: ${post.readingTimeMinutes || 5},${serviceLine}
   }`
 }
 
@@ -468,13 +489,19 @@ async function cmdAdd() {
   print(`  Title: ${C.bold}${md.title}${C.reset}`)
   print(`  Paragraphs: ${md.paragraphs.length}`)
   if (md.quote) print(`  Quote: ${C.dim}yes${C.reset}`)
+  if (md.publishDate) print(`  Publish date: ${C.dim}${md.publishDate}${C.reset}`)
+  if (md.readingTimeMinutes) print(`  Reading time: ${C.dim}${md.readingTimeMinutes} min${C.reset}`)
+  if (md.serviceAlignment) print(`  Service: ${C.dim}${md.serviceAlignment}${C.reset}`)
 
   // 3. Translate + SEO via OpenAI
   const srcLang = isEn ? "en" : "fr"
   const tgtLang = isEn ? "fr" : "en"
 
+  const formattedSrcDate = formatDateFromIso(md.publishDate, srcLang)
+  const formattedTgtDate = formatDateFromIso(md.publishDate, tgtLang)
+
   const srcTexts = {
-    title: md.title, date: formatDate(srcLang), excerpt: md.excerpt,
+    title: md.title, date: formattedSrcDate, excerpt: md.excerpt,
     paragraphs: md.paragraphs, quote: md.quote || "",
   }
 
@@ -506,7 +533,7 @@ async function cmdAdd() {
         if (tParas.length !== md.paragraphs.length) {
           print(`  ${C.yellow}⚠ Paragraph count mismatch (AI: ${tParas.length}, expected: ${md.paragraphs.length}), adjusting...${C.reset}`)
         }
-        tgtTexts = { title: tTitle, date: formatDate(tgtLang), excerpt: tExcerpt || md.excerpt, paragraphs: tParas, quote: tQuote || "" }
+        tgtTexts = { title: tTitle, date: formattedTgtDate, excerpt: tExcerpt || md.excerpt, paragraphs: tParas, quote: tQuote || "" }
         md.paragraphs = tParas
         print(`  ${C.green}✓ Translated${C.reset}`)
       } else {
@@ -529,7 +556,7 @@ async function cmdAdd() {
       tParas.push(await ask(`  ${C.cyan}?${C.reset} Paragraph ${i + 1} (${label}):`, md.paragraphs[i]))
     let tQuote = ""
     if (md.quote) tQuote = await ask(`  ${C.cyan}?${C.reset} Quote (${label}):`, md.quote)
-    tgtTexts = { title: tTitle, date: formatDate(tgtLang), excerpt: tExcerpt, paragraphs: tParas, quote: tQuote }
+    tgtTexts = { title: tTitle, date: formattedTgtDate, excerpt: tExcerpt, paragraphs: tParas, quote: tQuote }
   }
 
   // AI SEO
@@ -555,14 +582,20 @@ async function cmdAdd() {
   const enTexts = isEn ? srcTexts : tgtTexts
   const frTexts = isEn ? tgtTexts : srcTexts
 
+  // Determine sortDate from YAML publishDate or today
+  const sortDate = md.publishDate || new Date().toISOString().slice(0, 10)
+
   // Add to blog-data.ts
   posts.push({
     id: md.id, title: `blog_post_${md.id}_title`, slug: md.slug,
-    date: `blog_post_${md.id}_date`, category: md.category,
+    date: `blog_post_${md.id}_date`, sortDate,
+    category: md.category,
     image: imagePath, excerpt: `blog_post_${md.id}_excerpt`,
     content: md.paragraphs.map((_, i) => `blog_post_${md.id}_p_${i + 1}`),
     quote: md.quote ? { text: `blog_post_${md.id}_quote` } : undefined,
     tags: md.tags, author: "Dev Agency",
+    readingTimeMinutes: md.readingTimeMinutes,
+    serviceAlignment: md.serviceAlignment || undefined,
   })
   writeAllPosts(posts)
 
@@ -580,12 +613,65 @@ async function cmdAdd() {
   }
 }
 
+/**
+ * Simple YAML frontmatter parser for the limited subset we use.
+ * Returns { fm: { key: value, tags: [...] }, body: string }
+ */
+function parseFrontmatter(md) {
+  const match = md.match(/^---\n([\s\S]*?)\n---\n/)
+  if (!match) return { fm: null, body: md.trim() }
+
+  const raw = match[1]
+  const body = md.slice(match[0].length).trim()
+  const fm = {}
+
+  for (const line of raw.split("\n")) {
+    const trimmed = line.trim()
+    if (!trimmed || trimmed.startsWith("#")) continue
+
+    // Array value: tags: ["a", "b"]
+    if (trimmed.includes("[") && trimmed.includes("]")) {
+      const colonIdx = trimmed.indexOf(":")
+      const key = trimmed.slice(0, colonIdx).trim()
+      const arrMatch = trimmed.match(/\[([\s\S]*?)\]/)
+      if (arrMatch) {
+        fm[key] = arrMatch[1].split(",").map(s =>
+          s.trim().replace(/^["']|["']$/g, "")
+        ).filter(Boolean)
+      }
+      continue
+    }
+
+    // String value: key: "value" or key: value
+    const colonIdx = trimmed.indexOf(":")
+    if (colonIdx === -1) continue
+    const key = trimmed.slice(0, colonIdx).trim()
+    let val = trimmed.slice(colonIdx + 1).trim()
+    // Strip surrounding quotes
+    val = val.replace(/^["']|["']$/g, "")
+    fm[key] = val
+  }
+
+  return { fm, body }
+}
+
+/**
+ * Extract reading time minutes from strings like "10 min read" or "5 min"
+ */
+function parseReadingTimeMinutes(val) {
+  if (!val) return 5
+  const m = String(val).match(/(\d+)/)
+  return m ? parseInt(m[1], 10) : 5
+}
+
 function parseMd(md) {
-  // Strip YAML frontmatter (---\n...\n---) before parsing
-  const clean = md.replace(/^---[\s\S]*?^---\n*/m, '').trim()
-  const lines = clean.split("\n")
+  // 1. Parse YAML frontmatter
+  const { fm, body } = parseFrontmatter(md)
+
+  // 2. Parse body (headings + paragraphs)
+  const lines = body.split("\n")
   const titleLine = lines.find(l => /^#{1,3}\s+/.test(l))
-  const title = titleLine ? titleLine.replace(/^#+\s+/, "").trim() : "New Blog Post"
+  const bodyTitle = titleLine ? titleLine.replace(/^#+\s+/, "").trim() : null
   const cl = lines.filter(l => !/^#{1,3}\s+/.test(l))
   let raw = cl.join("\n").split(/\n\s*\n/).map(p => p.trim()).filter(Boolean)
 
@@ -604,25 +690,63 @@ function parseMd(md) {
   const quotes = raw.filter(p => p.startsWith(">"))
   const paras = raw.filter(p => !p.startsWith(">") && p.length > 20)
   const quote = quotes.length > 0 ? quotes[0].replace(/^>\s?/, "").trim() : null
-  const excerpt = paras[0] ? paras[0].replace(/<[^>]*>/g, "").slice(0, 180).replace(/\s+\S*$/, "") + "..." : title
 
-  const lower = md.toLowerCase()
+  // 3. Resolve final values: YAML overrides heuristics
+  const title = fm?.title || bodyTitle || "New Blog Post"
+
+  const excerpt = fm?.description
+    ? fm.description.replace(/<[^>]*>/g, "").slice(0, 200).replace(/\s+\S*$/, "") + "..."
+    : (paras[0] ? paras[0].replace(/<[^>]*>/g, "").slice(0, 180).replace(/\s+\S*$/, "") + "..." : title)
+
+  // Category: use serviceAlignment if present, else keyword detect
+  const lower = (fm?.serviceAlignment || body || title || "").toLowerCase()
   let cat = "Development"
-  if (/\b(design|ui|ux|graphic|visual|creative)\b/.test(lower)) cat = "UI/UX Design"
-  else if (/\b(marketing|seo|social.?media|content|brand)\b/.test(lower)) cat = "Marketing"
-  else if (/\b(business|startup|entrepreneur|growth|strategy)\b/.test(lower)) cat = "Business"
-  else if (/\b(agency|client|service|consulting)\b/.test(lower)) cat = "Agency"
+  if (fm?.serviceAlignment) {
+    const alignMap = {
+      "web-development": "Development",
+      "maintenance": "Development",
+      "ui-ux-design": "UI/UX Design",
+      "marketing": "Marketing",
+      "branding": "Agency",
+      "mobile-app": "Development",
+      "consulting": "Business",
+    }
+    cat = alignMap[fm.serviceAlignment] || cat
+  }
+  if (cat === "Development") {
+    if (/\b(design|ui|ux|graphic|visual|creative)\b/.test(lower)) cat = "UI/UX Design"
+    else if (/\b(marketing|seo|social.?media|content|brand)\b/.test(lower)) cat = "Marketing"
+    else if (/\b(business|startup|entrepreneur|growth|strategy)\b/.test(lower)) cat = "Business"
+    else if (/\b(agency|client|service|consulting)\b/.test(lower)) cat = "Agency"
+  }
 
+  // Tags: YAML tags take priority, merged with detected
+  const tags = new Set()
+  if (fm?.tags && Array.isArray(fm.tags)) fm.tags.forEach(t => tags.add(t))
   const tagMap = {
     Agency: ["agency", "creative", "brand"], Business: ["business", "growth", "strategy", "startup"],
     Marketing: ["marketing", "seo", "digital", "social"], Modern: ["modern", "trend", "innovation", "future"],
     Design: ["design", "ui", "ux", "graphic", "visual"], Digital: ["digital", "tech", "technology", "web"],
   }
-  const tags = new Set(["Modern"])
   for (const [tag, kws] of Object.entries(tagMap)) { if (kws.some(kw => lower.includes(kw))) tags.add(tag) }
+  if (!tags.has("Modern")) tags.add("Modern")
   tags.add(cat)
 
-  return { title, excerpt, paragraphs: paras, quote, category: cat, tags: [...tags].slice(0, 5) }
+  // Reading time & publish date from YAML
+  const readingTimeMinutes = parseReadingTimeMinutes(fm?.readingTime)
+  const publishDate = fm?.publishDate || null
+
+  return {
+    title,
+    excerpt,
+    paragraphs: paras,
+    quote,
+    category: cat,
+    tags: [...tags].slice(0, 6),
+    readingTimeMinutes,
+    publishDate,
+    serviceAlignment: fm?.serviceAlignment || null,
+  }
 }
 
 async function fetchImage(query) {

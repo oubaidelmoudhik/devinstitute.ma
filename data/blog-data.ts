@@ -14,6 +14,8 @@ export interface BlogPost {
   }
   tags: string[]
   author: string
+  readingTimeMinutes: number
+  serviceAlignment?: string
 }
 
 export interface BlogCategory {
@@ -78,6 +80,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     tags: ["Digital", "Business", "Creative", "Modern", "Marketing"],
     author: "Dev Agency",
+    readingTimeMinutes: 12,
   },
 
   {
@@ -110,6 +113,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     tags: ["Digital", "Business", "Marketing", "Modern", "Design"],
     author: "Dev Agency",
+    readingTimeMinutes: 10,
   },
 
   {
@@ -166,6 +170,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     tags: ["Digital", "Modern", "Business", "Creative", "Agency"],
     author: "Dev Agency",
+    readingTimeMinutes: 22,
   },
 ]
 
