@@ -106,11 +106,73 @@
   }
 }
 
+// ── Bootstrap button CSS variable overrides ──────────────────────────────
+// Bootstrap's .btn:first-child:active (0,0,3,0) beats .btn-primary:active (0,0,2,0),
+// so we must override the CSS variables it reads — these are set on .btn-primary
+// (0,0,1,0) which loads after Bootstrap and thus wins for CSS variable values.
+.btn-primary {
+  --bs-btn-bg: var(--clr-primary-green);
+  --bs-btn-hover-bg: var(--clr-dark-green);
+  --bs-btn-active-bg: var(--clr-dark-green);
+  --bs-btn-border-color: var(--clr-primary-green);
+  --bs-btn-hover-border-color: var(--clr-dark-green);
+  --bs-btn-active-border-color: var(--clr-dark-green);
+  --bs-btn-color: var(--clr-black);
+  --bs-btn-hover-color: var(--clr-black);
+  --bs-btn-active-color: var(--clr-black);
+}
+
+.btn-dark {
+  --bs-btn-bg: #141212;
+  --bs-btn-hover-bg: #252424;
+  --bs-btn-active-bg: #252424;
+  --bs-btn-border-color: #141212;
+  --bs-btn-hover-border-color: #252424;
+  --bs-btn-active-border-color: #252424;
+  --bs-btn-color: #ffffff;
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-active-color: #ffffff;
+}
+
 // Reading time in blog meta
 .reading-time {
   color: #c8c8cd;
   font-size: 14px;
   font-family: var(--ff-text);
+}
+
+// Admin page form controls inherit Bootstrap, but textareas need dark bg
+.admin-textarea {
+  background-color: transparent;
+  color: #c8c8cd;
+  border: 1px solid rgba(254, 254, 254, 0.2);
+  border-radius: 8px;
+  padding: 17px 24px;
+  width: 100%;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  line-height: 1.67;
+
+  &:focus {
+    border: 1px solid var(--clr-primary-green);
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+// Admin page container — follows site responsive container pattern
+.admin-container {
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 24px;
+
+  @media (min-width: 400px) { max-width: 360px; }
+  @media (min-width: 480px) { max-width: 420px; }
+  @media (min-width: 576px) { max-width: 520px; }
+  @media (min-width: 768px) { max-width: 700px; }
+  @media (min-width: 992px) { max-width: 940px; }
+  @media (min-width: 1200px) { max-width: 1120px; }
+  @media (min-width: 1400px) { max-width: 1280px; }
 }
 
 // Hero title responsive font size

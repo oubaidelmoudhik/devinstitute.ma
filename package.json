@@ -14,6 +14,7 @@
     "blog": "node scripts/blog-cli.mjs"
   },
   "dependencies": {
+    "@mdxeditor/editor": "^4.0.0",
     "@types/bootstrap": "^5.2.10",
     "@types/nodemailer": "^7.0.4",
     "@vercel/analytics": "^2.0.1",
@@ -21,6 +22,7 @@
     "bootstrap": "^5.3.3",
     "i18next": "^25.0.1",
     "jarallax": "^2.2.1",
+    "jose": "^6.2.3",
     "next": "^16.0.10",
     "nodemailer": "^7.0.12",
     "react": "^18.3.1",
