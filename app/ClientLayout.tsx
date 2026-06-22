@@ -31,20 +31,6 @@ export default function ClientLayout({
     import("bootstrap/dist/js/bootstrap.bundle.min.js");
     // @ts-ignore
     import("animate.css");
-
-    // Deferred Material Symbols font — switch from print to all media once loaded
-    const materialLink = document.querySelector<HTMLLinkElement>(
-      'link[href*="Material+Symbols+Outlined"][media="print"]'
-    );
-    if (materialLink) {
-      materialLink.onload = () => {
-        materialLink.media = "all";
-      };
-      // Fallback: if already loaded or load event doesn't fire
-      setTimeout(() => {
-        if (materialLink.media === "print") materialLink.media = "all";
-      }, 3000);
-    }
   }, []);
 
   return (

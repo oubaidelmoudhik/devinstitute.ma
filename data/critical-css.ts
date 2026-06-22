@@ -169,31 +169,28 @@ input:invalid, textarea:invalid {
   letter-spacing: -1.8px;
 }
 
-/* ── Material Symbols ──────────────────────────── */
+/* ── Material Symbols (self-hosted) ────────────── */
+@font-face {
+  font-family: "Material Symbols Outlined";
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/material-symbols-outlined.woff2) format("woff2");
+}
 .material-symbols-outlined {
   font-family: "Material Symbols Outlined";
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
-  display: inline-block;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
   line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
   direction: ltr;
+  -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-.material-symbols-rounded {
-  font-family: "Material Symbols Rounded";
-  font-weight: normal;
-  font-style: normal;
-  display: inline-block;
-  line-height: 1;
-  direction: ltr;
-}
-.material-symbols-sharp {
-  font-family: "Material Symbols Sharp";
-  font-weight: normal;
-  font-style: normal;
-  display: inline-block;
-  line-height: 1;
-  direction: ltr;
 }
 
 /* ── Header Area ───────────────────────────────── */
@@ -377,6 +374,16 @@ input:invalid, textarea:invalid {
   color: var(--clr-black);
   margin-left: auto;
   margin-right: auto;
+}
+
+/* ── Hero title responsive font size ──────────── */
+.hero-title-responsive {
+  font-size: calc(1.375rem + 1.5vw);
+}
+@media (min-width: 768px) {
+  .hero-title-responsive {
+    font-size: 5.1rem;
+  }
 }
 
 /* ── Heading override from style.scss ──────────── */
