@@ -16,15 +16,16 @@
     {
       "phase": 1,
       "name": "Critical — Highest Impact",
-      "color": "red",
+      "color": "green",
       "estimatedPointsGain": "+30",
+      "status": "done",
       "steps": [
         {
           "id": "1.1.1",
           "title": "Subset & self-host Google Fonts",
-          "description": "The Google Fonts woff2 payload is 3,860 KiB (75%+ of total page weight). Subset to Latin + only needed weights, self-host locally to eliminate external DNS/TLS round trips. Partially done: axis range subsetted (24,400,0,0 instead of full 20..48,100..700,0..1,-50..200). Still pending: self-hosting.",
+          "description": "Raleway (latin, 400-700) and Unbounded (latin, 700) loaded via next/font/google which auto-self-hosts during build — no external CDN requests. Material Symbols deferred via media=\"print\" pattern. All fonts are now self-hosted or deferred.",
           "files": ["app/layout.tsx"],
-          "status": "partial",
+          "status": "done",
           "priority": "critical",
           "estimatedSavings": "~3,800 KiB transferred, ~750ms blocking time",
           "metric": "LCP, FCP, TBT"
@@ -42,9 +43,9 @@
         {
           "id": "1.2.1",
           "title": "Inline critical CSS for above-the-fold content",
-          "description": "3 CSS chunks (bc8470f73e47345d.css, ac8b093.css, aaf0bb1927b91dc7.css) block rendering for 19.6s on mobile. Extract critical above-the-fold styles and inline them in <head>.",
-          "files": ["app/layout.tsx", "styles/style.scss"],
-          "status": "pending",
+          "description": "Critical CSS extracted to data/critical-css.ts and inlined via <style>{criticalCSS}</style> in layout.tsx <head>. Covers CSS variables, reset, typography, container, buttons, header, hero, and utilities.",
+          "files": ["app/layout.tsx", "data/critical-css.ts"],
+          "status": "done",
           "priority": "critical",
           "estimatedSavings": "~19,500ms render-blocking time",
           "metric": "FCP, LCP"
@@ -52,9 +53,9 @@
         {
           "id": "1.2.2",
           "title": "Defer non-critical CSS",
-          "description": "44 KiB of unused CSS across the 3 chunks. Load non-critical CSS asynchronously (media=\"print\" onload=\"this.media='all'\" pattern).",
-          "files": ["app/layout.tsx"],
-          "status": "pending",
+          "description": "Full CSS files (bootstrap.min.css, style.css) loaded dynamically via ClientLayout.tsx useEffect. No render-blocking CSS imports in layout.tsx.",
+          "files": ["app/layout.tsx", "app/ClientLayout.tsx"],
+          "status": "done",
           "priority": "critical",
           "estimatedSavings": "~44 KiB, reduced blocking time",
           "metric": "FCP, LCP"
@@ -98,13 +99,11 @@
         {
           "id": "1.3.4",
           "title": "Fix incorrect image aspect ratios",
-          "description": "underHero.webp (displayed 0.87 vs actual 1.50) and logos/portfolio images all have wrong aspect ratios. Use object-fit: cover with properly sized containers, or regenerate images at correct display aspect ratios.",
+          "description": "Logo.tsx width/height updated from 200x50 (4:1) to 200x92/200x94 to match source aspect ratios (~2.15:1). fill images (underHero, portfolio) use object-fit:cover for intentional cropping — aspect ratio mismatch expected.",
           "files": [
-            "components/home/UnderHero.tsx",
-            "components/reusable/ProjectCard.tsx",
             "components/common/Logo.tsx"
           ],
-          "status": "pending",
+          "status": "done",
           "priority": "high",
           "estimatedSavings": "Fixes Best Practices score, visual quality",
           "metric": "Best Practices, UX"
@@ -112,9 +111,9 @@
         {
           "id": "1.4.1",
           "title": "Ensure LCP image does not use 'loading=lazy'",
-          "description": "Verify underHero.webp does not have loading=lazy. Currently uses priority={true} in Next.js Image component which should set loading=eager, but confirm.",
-          "files": ["components/home/UnderHero.tsx"],
-          "status": "pending",
+          "description": "Verified: UnderHero.tsx uses priority={true} on the Image component, which sets loading=\"eager\" and fetchpriority=\"high\". Combined with <link rel=\"preload\"> in layout.tsx for optimal LCP timing.",
+          "files": ["components/home/UnderHero.tsx", "app/layout.tsx"],
+          "status": "done",
           "priority": "critical",
           "estimatedSavings": "Critical for LCP timing",
           "metric": "LCP"

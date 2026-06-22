@@ -11,7 +11,7 @@ export default function Logo({ className }: any) {
           src={LOGO.dark}
           alt="Dev Agency Logo"
           width={200}
-          height={50}
+          height={92}
           priority
         />
         <Image
@@ -19,7 +19,7 @@ export default function Logo({ className }: any) {
           src={LOGO.light}
           alt="Dev Agency Logo"
           width={200}
-          height={50}
+          height={94}
           priority
         />
       </Link>
