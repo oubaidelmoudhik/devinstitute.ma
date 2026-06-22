@@ -1,0 +1,369 @@
+{
+  "meta": {
+    "project": "devagency.ma",
+    "generated": "2026-06-22",
+    "source": "pagespeed-report.md",
+    "currentScores": {
+      "mobile": 55,
+      "desktop": 61
+    },
+    "targetScores": {
+      "mobile": 95,
+      "desktop": 97
+    }
+  },
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Critical — Highest Impact",
+      "color": "red",
+      "estimatedPointsGain": "+30",
+      "steps": [
+        {
+          "id": "1.1.1",
+          "title": "Subset & self-host Google Fonts",
+          "description": "The Google Fonts woff2 payload is 3,860 KiB (75%+ of total page weight). Subset to Latin + only needed weights, self-host locally to eliminate external DNS/TLS round trips. Partially done: axis range subsetted (24,400,0,0 instead of full 20..48,100..700,0..1,-50..200). Still pending: self-hosting.",
+          "files": ["app/layout.tsx"],
+          "status": "partial",
+          "priority": "critical",
+          "estimatedSavings": "~3,800 KiB transferred, ~750ms blocking time",
+          "metric": "LCP, FCP, TBT"
+        },
+        {
+          "id": "1.1.2",
+          "title": "Defer Material Symbols font CSS",
+          "description": "The Google Fonts Material Symbols CSS loaded via <link> in layout.tsx <head> is render-blocking. Loaded dynamically via ClientLayout useEffect with media=\"print\" fallback + subsetted axis range.",
+          "files": ["app/layout.tsx", "app/ClientLayout.tsx"],
+          "status": "done",
+          "priority": "critical",
+          "estimatedSavings": "~200ms blocking time",
+          "metric": "FCP, LCP"
+        },
+        {
+          "id": "1.2.1",
+          "title": "Inline critical CSS for above-the-fold content",
+          "description": "3 CSS chunks (bc8470f73e47345d.css, ac8b093.css, aaf0bb1927b91dc7.css) block rendering for 19.6s on mobile. Extract critical above-the-fold styles and inline them in <head>.",
+          "files": ["app/layout.tsx", "styles/style.scss"],
+          "status": "pending",
+          "priority": "critical",
+          "estimatedSavings": "~19,500ms render-blocking time",
+          "metric": "FCP, LCP"
+        },
+        {
+          "id": "1.2.2",
+          "title": "Defer non-critical CSS",
+          "description": "44 KiB of unused CSS across the 3 chunks. Load non-critical CSS asynchronously (media=\"print\" onload=\"this.media='all'\" pattern).",
+          "files": ["app/layout.tsx"],
+          "status": "pending",
+          "priority": "critical",
+          "estimatedSavings": "~44 KiB, reduced blocking time",
+          "metric": "FCP, LCP"
+        },
+        {
+          "id": "1.3.1",
+          "title": "Enable Next.js image optimization",
+          "description": "Removed images.unoptimized: true from next.config.js. Next.js image optimization (sharp resizing, WebP/AVIF conversion, responsive srcSet) is now enabled.",
+          "files": ["next.config.js"],
+          "status": "done",
+          "priority": "critical",
+          "estimatedSavings": "~306 KiB (mobile), ~199 KiB (desktop)",
+          "metric": "LCP, FCP"
+        },
+        {
+          "id": "1.3.2",
+          "title": "Resize oversized images to display dimensions",
+          "description": "Images resized: underHero 1920→1440px, missionarea 1000→600px, logos 917→400px / 924→400px. Portfolio images re-encoded with sharp (quality 80). ~88K total disk savings, larger transfer savings with Next.js optimization generating responsive WebP/AVIF.",
+          "files": [
+            "public/assets/img/bg-img/underHero.webp",
+            "public/assets/img/bg-img/missionarea.webp",
+            "public/assets/img/core-img/logo-light.webp",
+            "public/assets/img/core-img/logo.webp",
+            "public/assets/img/portfolio/*.webp"
+          ],
+          "status": "done",
+          "priority": "critical",
+          "estimatedSavings": "~306 KiB (mobile), ~199 KiB (desktop)",
+          "metric": "LCP, FCP"
+        },
+        {
+          "id": "1.3.3",
+          "title": "Preload LCP image with fetchpriority='high'",
+          "description": "Added <link rel=\"preload\" as=\"image\" fetchPriority=\"high\"> for underHero.webp in layout.tsx <head>. Combined with priority={true} on the Image component for fastest LCP discovery.",
+          "files": ["app/layout.tsx", "components/home/UnderHero.tsx"],
+          "status": "done",
+          "priority": "critical",
+          "estimatedSavings": "~2,000ms LCP improvement",
+          "metric": "LCP"
+        },
+        {
+          "id": "1.3.4",
+          "title": "Fix incorrect image aspect ratios",
+          "description": "underHero.webp (displayed 0.87 vs actual 1.50) and logos/portfolio images all have wrong aspect ratios. Use object-fit: cover with properly sized containers, or regenerate images at correct display aspect ratios.",
+          "files": [
+            "components/home/UnderHero.tsx",
+            "components/reusable/ProjectCard.tsx",
+            "components/common/Logo.tsx"
+          ],
+          "status": "pending",
+          "priority": "high",
+          "estimatedSavings": "Fixes Best Practices score, visual quality",
+          "metric": "Best Practices, UX"
+        },
+        {
+          "id": "1.4.1",
+          "title": "Ensure LCP image does not use 'loading=lazy'",
+          "description": "Verify underHero.webp does not have loading=lazy. Currently uses priority={true} in Next.js Image component which should set loading=eager, but confirm.",
+          "files": ["components/home/UnderHero.tsx"],
+          "status": "pending",
+          "priority": "critical",
+          "estimatedSavings": "Critical for LCP timing",
+          "metric": "LCP"
+        }
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "High Impact",
+      "color": "orange",
+      "estimatedPointsGain": "+15",
+      "steps": [
+        {
+          "id": "2.1.1",
+          "title": "Configure build to skip legacy polyfills",
+          "description": "14 KiB of polyfills (Array.prototype.at, flat, flatMap, Object.fromEntries, Object.hasOwn, String.trimEnd/trimStart) are unnecessary for modern browsers. Update browserslist/target config.",
+          "files": ["tsconfig.json", "next.config.js"],
+          "status": "pending",
+          "priority": "high",
+          "estimatedSavings": "~14 KiB JS",
+          "metric": "LCP, FCP"
+        },
+        {
+          "id": "2.1.2",
+          "title": "Code-split heavy JavaScript chunks",
+          "description": "chunks/a443e665....js (66.9 KiB, 21.5 KiB unused) and chunks/f83dccd61d1fecb4.js (31.9 KiB, 31.9 KiB unused) carry significant dead code. Implement dynamic imports for non-critical components.",
+          "files": [
+            "components/home/UnderHero.tsx",
+            "components/home/TestimonialArea.tsx",
+            "app/ClientLayout.tsx"
+          ],
+          "status": "pending",
+          "priority": "high",
+          "estimatedSavings": "~53 KiB JS, ~250ms main thread",
+          "metric": "TBT, LCP"
+        },
+        {
+          "id": "2.1.3",
+          "title": "Defer Google Tag Manager loading",
+          "description": "GTM is 176 KiB with 225ms main thread time. Load it after user interaction or use Partytown to offload to a web worker.",
+          "files": [
+            "components/common/GoogleAnalytics.tsx",
+            "app/ga/LayoutWithAnalytics.tsx"
+          ],
+          "status": "pending",
+          "priority": "high",
+          "estimatedSavings": "~176 KiB deferred, ~225ms main thread",
+          "metric": "TBT, LCP"
+        },
+        {
+          "id": "2.1.4",
+          "title": "Eliminate forced reflows in JavaScript",
+          "description": "chunks/a443e665....js:2:8066 causes 62ms forced reflow (mobile). Likely Wow.js or scroll handler reading offsetWidth after DOM mutations. Investigate and debounce/batch reads.",
+          "files": ["hooks/", "components/"],
+          "status": "pending",
+          "priority": "high",
+          "estimatedSavings": "~62ms main thread (mobile)",
+          "metric": "TBT"
+        },
+        {
+          "id": "2.2.1",
+          "title": "Purge unused CSS (Bootstrap + custom)",
+          "description": "44 KiB unused CSS across chunks bc8470f73e47345d.css and aaf0bb1927b91dc7.css. Most is likely unused Bootstrap. Configure PurgeCSS in the build pipeline.",
+          "files": ["styles/style.scss", "next.config.js"],
+          "status": "pending",
+          "priority": "high",
+          "estimatedSavings": "~44 KiB CSS",
+          "metric": "FCP, LCP"
+        },
+        {
+          "id": "2.3.1",
+          "title": "Fix non-composited animations (44-50 elements)",
+          "description": "Animating color and border-color triggers expensive repaints. Switch to composited properties (transform, opacity) for animations across Swiper overlays, accordions, footer links, etc.",
+          "files": ["styles/style.scss"],
+          "status": "pending",
+          "priority": "high",
+          "estimatedSavings": "Reduced jank, improved CLS",
+          "metric": "CLS"
+        }
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "Medium Impact",
+      "color": "yellow",
+      "estimatedPointsGain": "+5-10",
+      "steps": [
+        {
+          "id": "3.1.1",
+          "title": "Add Content Security Policy (CSP) header",
+          "description": "No CSP found in enforcement mode (High severity). Add CSP via next.config.js headers() or vercel.json to mitigate XSS attacks.",
+          "files": ["next.config.js", "vercel.json"],
+          "status": "pending",
+          "priority": "high",
+          "estimatedSavings": "Best Practices score improvement, security",
+          "metric": "Best Practices"
+        },
+        {
+          "id": "3.1.2",
+          "title": "Fix HSTS (add includeSubDomains + preload)",
+          "description": "HSTS header is missing includeSubDomains and preload directives (Medium severity). Add both.",
+          "files": ["next.config.js", "vercel.json"],
+          "status": "pending",
+          "priority": "high",
+          "estimatedSavings": "Best Practices score improvement, security",
+          "metric": "Best Practices"
+        },
+        {
+          "id": "3.1.3",
+          "title": "Add COOP, X-Frame-Options, and Trusted Types headers",
+          "description": "Missing Cross-Origin-Opener-Policy, X-Frame-Options, and Trusted Types CSP directive (all High severity). Add all three.",
+          "files": ["next.config.js", "vercel.json"],
+          "status": "pending",
+          "priority": "high",
+          "estimatedSavings": "Best Practices score improvement, security",
+          "metric": "Best Practices"
+        },
+        {
+          "id": "3.2.1",
+          "title": "Add aria-labels to social media links",
+          "description": "Facebook and Instagram links in footer (and side menu button on desktop) lack discernible names. Add aria-label=\"Facebook\" etc.",
+          "files": ["layouts/footers/FooterOne.tsx", "components/common/OffCanvas.tsx"],
+          "status": "pending",
+          "priority": "medium",
+          "estimatedSavings": "Accessibility 94 → 96+",
+          "metric": "Accessibility"
+        },
+        {
+          "id": "3.2.2",
+          "title": "Fix heading hierarchy",
+          "description": "Headings skip levels (h6 → h4 → h5 → h6 → h5). Restructure to maintain sequential descending order (h1 → h2 → h3 → h4).",
+          "files": [
+            "components/home/UnderHero.tsx",
+            "components/home/CategoryArea.tsx",
+            "components/home/ServiceArea.tsx"
+          ],
+          "status": "pending",
+          "priority": "medium",
+          "estimatedSavings": "Accessibility 94 → 97+",
+          "metric": "Accessibility"
+        },
+        {
+          "id": "3.3.1",
+          "title": "Fix layout shift from web fonts (CLS 0.002)",
+          "description": "Desktop CLS of 0.002 is caused by web font swap. Add explicit font-size-adjust fallback or set min-height on navbar to prevent shift.",
+          "files": ["styles/style.scss", "app/layout.tsx"],
+          "status": "pending",
+          "priority": "medium",
+          "estimatedSavings": "CLS 0.002 → 0",
+          "metric": "CLS"
+        }
+      ]
+    },
+    {
+      "phase": 4,
+      "name": "Polish — Lower Impact",
+      "color": "blue",
+      "estimatedPointsGain": "+2-5",
+      "steps": [
+        {
+          "id": "4.1.1",
+          "title": "Reduce DOM size (439 elements)",
+          "description": "Total DOM elements is 439 with depth of 12. Simplify deeply nested Bootstrap grid structures and reduce unnecessary wrapper divs.",
+          "files": ["components/"],
+          "status": "pending",
+          "priority": "low",
+          "estimatedSavings": "Improved style/layout calculations",
+          "metric": "TBT"
+        },
+        {
+          "id": "4.2.1",
+          "title": "Break up long main-thread tasks",
+          "description": "6 long tasks found on mobile (longest: 154ms). Use requestIdleCallback, code splitting, and setTimeout/yield to break up execution.",
+          "files": ["app/ClientLayout.tsx", "components/common/ClientInitializer.tsx"],
+          "status": "pending",
+          "priority": "low",
+          "estimatedSavings": "Improved TBT, input readiness",
+          "metric": "TBT"
+        },
+        {
+          "id": "4.3.1",
+          "title": "Improve Agentic Browsing score (1/2 → 2/2)",
+          "description": "Fix accessibility tree issues (same as 3.2.1) plus add llms.txt file and validate structured data with Schema.org testing tool.",
+          "files": ["public/llms.txt"],
+          "status": "pending",
+          "priority": "low",
+          "estimatedSavings": "Agentic Browsing 1/2 → 2/2",
+          "metric": "Agentic Browsing"
+        },
+        {
+          "id": "4.4.1",
+          "title": "Verify and validate structured data",
+          "description": "Run Structured Data Testing Tool to validate current Schema.org markup. Add Organization, LocalBusiness, and Service schemas if missing.",
+          "files": ["app/layout.tsx"],
+          "status": "pending",
+          "priority": "low",
+          "estimatedSavings": "SEO validation",
+          "metric": "SEO"
+        },
+        {
+          "id": "4.4.2",
+          "title": "Improve cache headers for static assets",
+          "description": "Cloudflare email-decode.min.js has only 2-day cache TTL. Increase cache lifetimes for immutable assets in vercel.json or Cloudflare config.",
+          "files": ["vercel.json"],
+          "status": "pending",
+          "priority": "low",
+          "estimatedSavings": "Improved repeat visit performance",
+          "metric": "FCP, LCP"
+        }
+      ]
+    }
+  ],
+  "quickWins": [
+    {
+      "order": 1,
+      "title": "Enable Next.js image optimization",
+      "action": "Remove `images.unoptimized: true` from next.config.js and regenerate all images",
+      "ref": "1.3.1"
+    },
+    {
+      "order": 2,
+      "title": "Preload LCP image with fetchpriority='high'",
+      "action": "Add <link rel=\"preload\"> tag for underHero.webp in layout.tsx <head>",
+      "ref": "1.3.3"
+    },
+    {
+      "order": 3,
+      "title": "Self-host and aggressively subset Google Fonts",
+      "action": "Limit to Latin subset + only needed weights; self-host locally",
+      "ref": "1.1.1"
+    },
+    {
+      "order": 4,
+      "title": "Defer Material Symbols CSS",
+      "action": "Use non-blocking CSS load pattern for the Material Symbols stylesheet",
+      "ref": "1.1.2"
+    },
+    {
+      "order": 5,
+      "title": "Add aria-labels to social links",
+      "action": "Add aria-label to Facebook/Instagram footer links and side menu button",
+      "ref": "3.2.1"
+    }
+  ],
+  "summary": {
+    "currentMobile": 55,
+    "targetMobile": 95,
+    "currentDesktop": 61,
+    "targetDesktop": 97,
+    "totalSteps": 29
+  }
+}

@@ -1,12 +1,9 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../public/assets/css/style.css";
-import "../styles/style.scss";
-
 import React from "react";
 import ClientLayout from "./ClientLayout";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Raleway, Unbounded } from "next/font/google";
+import criticalCSS from "../data/critical-css";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -86,9 +83,18 @@ export default function RootLayout({
       className={`${(raleway as any).variable} ${(unbounded as any).variable}`}
     >
       <head>
+        <style>{criticalCSS}</style>
+        <link
+          rel="preload"
+          href="/assets/img/bg-img/underHero.webp"
+          as="image"
+          fetchPriority="high"
+        />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+          media="print"
+          data-once="true"
         />
       </head>
       <body>
